@@ -1,0 +1,32 @@
+@font-face {
+	font-family: "Ethnocentric";
+	src: url("../fonts/ethnocentric/Ethnocentric.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+#header {
+	font-size: 45pt;
+	border: solid 15px #1f2421;
+	background-color: #dce1de;
+	text-align: center;
+	font-family: "Ethnocentric", Arial, Helvetica, sans-serif;
+	word-spacing: 1%;
+}
+
+/* https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text */
+h1 {
+	color: #49a078;
+	text-decoration: solid 1px #1f2421;
+	text-shadow: 4px 0 #9cc5a1, -1px 0 #9cc5a1, 0 4px #9cc5a1, 0 -1px #9cc5a1,
+		2px 2px #9cc5a1, -2px -2px #9cc5a1, 2px -2px #9cc5a1, -2px 2px #9cc5a1;
+}
+
+body {
+	background-color: #1f2421;
+}
+
+a {
+	text-decoration: none;
+}
