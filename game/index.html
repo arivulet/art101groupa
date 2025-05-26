@@ -15,15 +15,36 @@
 		<link rel="stylesheet" type="text/css" href="css/game.css" />
 		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		<script type="text/javascript" src="js/game.js" defer></script>
+
 	</head>
 	<body>
 		<main id="content">
 			<section id="header">
 				<a href="../mainpage/index.html">
 					<h1>Type That Tune!</h1>
+			<div id="randomsong">
+  			<!-- <button id="randomsongb">Random Song</button> -->
+			</div>
+
+
 				</a>
 			</section>
 			<div id="karaokebox"></div>
+			<!--creating a homepage button-->
+			<div id="button">
+  			<a href="../mainpage/index.html" class="home-button">Back to Home</a>
+			</div>
+
+			<!--creating a typing area-->
+			<div id="typing-container" style="display: none;">
+ 			 <h2 id="song-title"></h2>
+				<p id="lyrics-display" tabindex="0"></p>
+
+
+ 			 <!-- <textarea id="typing-input" placeholder="Type the lyrics here..."></textarea>
+			</div> -->
+
+
 			<nav id="links">
 				<!-- Put links to other pages (including the homepage) here. -->
 			</nav>
