@@ -9,7 +9,7 @@ const songs = [
   },
   {
     title: "I've Got A Feeling - The Beatles", 
-    lyrics: "I've got a feeling, a feeling deep inside, oh yeah. I got a feeling, a feeling I can't hide, oh no. "
+    lyrics: "I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah. Yeah. I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no. "
   }
 ];
 
