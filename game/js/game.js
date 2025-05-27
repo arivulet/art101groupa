@@ -7,6 +7,10 @@ const songs = [
     title: "Die With a Smile",
     lyrics: "If the world was ending, I'd wanna be next to you If the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile If the world was ending, I'd wanna be next to you"
   },
+  {
+    title: "I've Got A Feeling - The Beatles", 
+    lyrics: "I've got a feeling, a feeling deep inside, oh yeah. I got a feeling, a feeling I can't hide, oh no. "
+  }
 ];
 
 let currentIndex = 0;
