@@ -25,6 +25,8 @@ function renderLyrics(lyrics) {
   }
 }
 
+// Typing input logic and span coloring inspired with help from ChatGPT (OpenAI)
+
 function loadRandomSong() {
   const randomSong = songs[Math.floor(Math.random() * songs.length)];
   currentIndex = 0;
