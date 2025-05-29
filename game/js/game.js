@@ -1,4 +1,3 @@
-//referenced in YouTube Video:https://youtu.be/E_tZH9R_zi8?feature=shared
 const songs = [
   {
     title: "Glue Song (feat Clario)",
@@ -15,15 +14,12 @@ const songs = [
     file: "songs/I've Got A Feeling (Remastered 2009).mp3",
     photo: "images/rooftopconcert.jpeg",
   },
-
   { 
     title: "Child of Nature (Esher Demo) - The Beatles",
     lyrics: "On the road to Rishikesh, I was dreaming more or less.  And the dream I had was true, yes the dream I had was true.  I'm just a child of nature, I don't need much to set me free.", 
-    file: "songs/Child Of Nature (Esher Demo).mp3"
-
-
+    file: "songs/Child Of Nature (Esher Demo).mp3",
+    photo: "images/ontheroad.jpg"
   }
-
 ];
 
 let currentIndex = 0;
@@ -38,34 +34,36 @@ function renderLyrics(lyrics) {
   }
 }
 
-// Typing input logic and span coloring inspired with help from ChatGPT (OpenAI)
-// referenced in YouTube Video:https://youtu.be/E_tZH9R_zi8?feature=shared
-
-function loadRandomSong() {
-  const randomSong = songs[Math.floor(Math.random() * songs.length)];
+function loadSongByIndex(index) {
+  if (index < 0 || index >= songs.length) {
+    console.warn("Invalid song index:", index);
+    return;
+  }
   currentIndex = 0;
+  const song = songs[index];
 
- 
-  renderLyrics(randomSong.lyrics);
+  renderLyrics(song.lyrics);
+  $("#song-title").html("<h2>" + song.title + "</h2>");
+  $("#typing-container").css("display", "block");
 
-  $("#song-title").append("<h2>" + randomSong.title + "</h2>")
-  
-  
-  $("#typing-container").css("display", "block")
+  if (song.file) {
+    $("#player").attr("src", song.file).show();
+  } else {
+    $("#player").removeAttr("src").hide();
+  }
 
-  $("#player").attr("src", randomSong.file);
-  $("#song-photo").attr("src", randomSong.photo);
+  if (song.photo) {
+    $("#song-photo").attr("src", song.photo).show();
+  } else {
+    $("#song-photo").hide();
+  }
+
   const audio = $("#player")[0];
-  audio.load(); 
+  audio.load();
   audio.play();
-  
-  // Set focus on the lyrics container so it receives keyboard input
-  const lyricsDisplay = document.getElementById("lyrics-display");
 
-
-$("#song-title").css("color", "white") 
-
-  lyricsDisplay.focus();
+  $("#song-title").css("color", "white");
+  $("#lyrics-display").focus();
 }
 
 function handleTyping(event) {
@@ -75,10 +73,7 @@ function handleTyping(event) {
   const expectedChar = lyricsSpans[currentIndex].textContent;
   const typedChar = event.key;
 
-  // Allow navigation keys without effect
   if (event.ctrlKey || event.altKey || event.metaKey) return;
-
-  // Only process printable characters or backspace
   if (typedChar.length !== 1 && event.key !== "Backspace") return;
 
   if (event.key === "Backspace") {
@@ -103,20 +98,15 @@ function handleTyping(event) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  const mode = new URLSearchParams(window.location.search).get("mode");
-  const randomButton = document.getElementById("randomsongb");
+  const urlParams = new URLSearchParams(window.location.search);
+  const songIndex = urlParams.get("song");
 
-  if (mode === "random") {
-    loadRandomSong();
+  if (songIndex !== null) {
+    loadSongByIndex(parseInt(songIndex));
+  } else {
+    // Load random song if no parameter provided
+    loadSongByIndex(Math.floor(Math.random() * songs.length));
   }
 
-
-
-  // Listen on the lyrics-display container for typing
-  const lyricsDisplay = $('#lyrics-display').on('keydown', handleTyping);
-  lyricsDisplay.addEventListener('keydown', handleTyping);
-
-  console.log("game.js loaded");
+  $('#lyrics-display').on('keydown', handleTyping);
 });
-
-
