@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- This title is used for tabs and bookmarks -->
-		<title>Type That Tune!</title>
 
-		<!-- Use UTF character set, a good idea with any webpage -->
-		<meta charset="UTF-8" />
-		<!-- Set viewport so page remains consistently scaled w narrow devices -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Type That Tune!</title>
 
-		<!-- Include a sitewide CSS file for consistent styling across the site -->
-		<link rel="stylesheet" type="text/css" href="../css/sitewide.css" />
-		<!-- Lab-specifc CSS file for any special styling of this particular page -->
-		<link rel="stylesheet" type="text/css" href="css/game.css" />
-		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-		<script type="text/javascript" src="js/game.js" defer></script>
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	</head>
-	<body>
-		<main id="content">
-			<section id="header">
-				<a href="../mainpage/index.html">
-					<h1>Type That Tune!</h1>
-			<div id="randomsong">
-  			<!-- <button id="randomsongb">Random Song</button> -->
-			</div>
-			
-			<audio controls autoplay> 
-				<source src="songs/I've Got A Feeling (Remastered 2009).mp3">
-			</audio>
+	<!-- Include a sitewide CSS file for consistent styling across the site -->
+	<link rel="stylesheet" type="text/css" href="../css/sitewide.css" />
+	<!-- Lab-specifc CSS file for any special styling of this particular page -->
+	<link rel="stylesheet" type="text/css" href="css/game.css" />
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script type="text/javascript" src="js/game.js" defer></script>
 
-				</a>
-			</section>
-			<div id="karaokebox"></div>
-			<!--creating a homepage button-->
-			<div id="button">
-  			<a href="../mainpage/index.html" class="home-button">Back to Home</a>
-			</div>
+</head>
 
-			<!--creating a typing area-->
-			<div id="typing-container" style="display: none;">
- 			 <h2 id="song-title"></h2>
-				<p id="lyrics-display" tabindex="0"></p>
+<body>
+	<main id="content">
+		<section id="header">
+			<a href="../index.html">
+				<h1>Type That Tune!</h1>
+				<div id="randomsong">
+					<!-- <button id="randomsongb">Random Song</button> -->
+				</div>
+
+				<audio controls autoplay>
+					<source src="songs/I've Got A Feeling (Remastered 2009).mp3">
+				</audio>
+
+			</a>
+		</section>
+		<div id="karaokebox"></div>
+
+		<!--creating a typing area-->
+		<div id="typing-container" style="display: none;">
+			<h2 id="song-title"></h2>
+			<p id="lyrics-display" tabindex="0"></p>
 
 
- 			 <!-- <textarea id="typing-input" placeholder="Type the lyrics here..."></textarea>
+			<!-- <textarea id="typing-input" placeholder="Type the lyrics here..."></textarea>
 			</div> -->
 
 
 			<nav id="links">
 				<!-- Put links to other pages (including the homepage) here. -->
 			</nav>
-		</main>
-	</body>
+	</main>
+</body>
+
 </html>
