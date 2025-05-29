@@ -1,3 +1,4 @@
+//referenced in YouTube Video:https://youtu.be/E_tZH9R_zi8?feature=shared
 const songs = [
   {
     title: "Glue Song (feat Clario)",
@@ -26,6 +27,7 @@ function renderLyrics(lyrics) {
 }
 
 // Typing input logic and span coloring inspired with help from ChatGPT (OpenAI)
+// referenced in YouTube Video:https://youtu.be/E_tZH9R_zi8?feature=shared
 
 function loadRandomSong() {
   const randomSong = songs[Math.floor(Math.random() * songs.length)];
