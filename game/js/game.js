@@ -12,7 +12,8 @@ const songs = [
   {
     title: "I've Got A Feeling - The Beatles", 
     lyrics: "I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah. Yeah. I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no. ",
-    file: "songs/I've Got A Feeling (Remastered 2009).mp3"
+    file: "songs/I've Got A Feeling (Remastered 2009).mp3",
+    photo: "images/rooftopconcert.jpeg",
   },
 
   { 
@@ -53,6 +54,7 @@ function loadRandomSong() {
   $("#typing-container").css("display", "block")
 
   $("#player").attr("src", randomSong.file);
+  $("#song-photo").attr("src", randomSong.photo);
   const audio = $("#player")[0];
   audio.load(); 
   audio.play();
