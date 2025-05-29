@@ -5,12 +5,23 @@ const songs = [
   },
   {
     title: "Die With a Smile",
-    lyrics: "If the world was ending, I'd wanna be next to you If the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile If the world was ending, I'd wanna be next to you"
+    lyrics: "If the world was ending, I'd wanna be next to you If the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile If the world was ending, I'd wanna be next to you",
+    file: "songs/Lady Gaga, Bruno Mars - Die With A Smile (Official Audio).mp3"
   },
   {
     title: "I've Got A Feeling - The Beatles", 
-    lyrics: "I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah. Yeah. I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no. "
+    lyrics: "I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah. Yeah. I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no. ",
+    file: "songs/I've Got A Feeling (Remastered 2009).mp3"
+  },
+
+  { 
+    title: "Child of Nature (Esher Demo) - The Beatles",
+    lyrics: "On the road to Rishikesh, I was dreaming more or less.  And the dream I had was true, yes the dream I had was true.  I'm just a child of nature, I don't need much to set me free.", 
+    file: "songs/Child Of Nature (Esher Demo).mp3"
+
+
   }
+
 ];
 
 let currentIndex = 0;
@@ -31,14 +42,24 @@ function loadRandomSong() {
   const randomSong = songs[Math.floor(Math.random() * songs.length)];
   currentIndex = 0;
 
-  document.getElementById("song-title").textContent = randomSong.title;
+ 
   renderLyrics(randomSong.lyrics);
 
-  document.getElementById("typing-container").style.display = "block";
+  $("#song-title").append("<h2>" + randomSong.title + "</h2>")
+  
+  
+  $("#typing-container").css("display", "block")
 
+  $("#player").attr("src", randomSong.file);
+  const audio = $("#player")[0];
+  audio.load(); 
+  audio.play();
+  
   // Set focus on the lyrics container so it receives keyboard input
   const lyricsDisplay = document.getElementById("lyrics-display");
-  document.getElementById("song-title").style.color = "white";
+
+
+$("#song-title").css("color", "white") 
 
   lyricsDisplay.focus();
 }
@@ -88,7 +109,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   // Listen on the lyrics-display container for typing
-  const lyricsDisplay = document.getElementById("lyrics-display");
+  const lyricsDisplay = $('#lyrics-display').on('keydown', handleTyping);
   lyricsDisplay.addEventListener('keydown', handleTyping);
 
   console.log("game.js loaded");

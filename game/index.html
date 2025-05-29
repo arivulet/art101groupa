@@ -28,20 +28,20 @@
 					<!-- <button id="randomsongb">Random Song</button> -->
 				</div>
 
-				<audio controls autoplay>
-					<source src="songs/I've Got A Feeling (Remastered 2009).mp3">
-				</audio>
-
+				  
 			</a>
 		</section>
 		<div id="karaokebox"></div>
 
 		<!--creating a typing area-->
 		<div id="typing-container" style="display: none;">
-			<h2 id="song-title"></h2>
+			<div id="song-title"></div>
 			<p id="lyrics-display" tabindex="0"></p>
 
-
+			<audio id="player" controls autoplay>
+				<source id="audio-source" src="" type="audio/mpeg">
+			</audio>
+			  
 			<!-- <textarea id="typing-input" placeholder="Type the lyrics here..."></textarea>
 			</div> -->
 
