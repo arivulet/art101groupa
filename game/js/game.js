@@ -13,14 +13,15 @@ const songs = [
 	{
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
-			"I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah. Yeah. I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no. ",
+			"I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah! Yeah! I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no! Oh no! Yeah, yeah! I've got a feeling.  I've got a feeling. All these years I've been wandering around, wondering how come nobody told me all that I was looking for was somebody who looked like you!  I've got a feeling that keeps me on my toes, oh yeah.  Oh yeah!  I've got a feeling, I think that everybody knows, oh yeah, oh yeah! Oh yeah! Yeah! I've got a feeling yeah! Everybody had a hard year. Everybody had a good time. Everybody had a wet dream. Everybody saw the sunshine. Oh yeah, oh yeah, oh yeah. Everybody had a good year. Everybody let their hair down. Everybody pulled their socks up, yeah. Everybody put their foot down, oh yeah. I've got a feeling, a feeling deep inside, oh yeah.  Everybody had a wet dream, oh yeah. Everybody saw the sunshine. I've got a feeling, a feeling I can hide, oh no. Everybody pulled their socks up, oh no no. Everybody put their foot down, oh! Yeah! I've got a feeling. I've got a feeling, oh yeah. I've got a feeling.  ",
 		file: "songs/I've Got A Feeling (Remastered 2009).mp3",
 		photo: "images/rooftopconcert.jpeg",
+    photoSize: "800px"
 	},
 	{
 		title: "Child of Nature (Esher Demo) - The Beatles",
-		lyrics:
-			"On the road to Rishikesh, I was dreaming more or less.  And the dream I had was true, yes the dream I had was true.  I'm just a child of nature, I don't need much to set me free.",
+		lyrics: 
+      "On the road to Rishikesh, I was dreaming more or less.  And the dream I had was true, yes the dream I had was true.  I'm just a child of nature, I don't need much to set me free.",
 		file: "songs/Child Of Nature (Esher Demo).mp3",
 		photo: "images/ontheroad.jpg",
 	},
@@ -31,6 +32,20 @@ const songs = [
 		file: "songs/Jeff Buckley - Forget Her.mp3",
 		photo: "img/jeff-buckley.jpg",
 	},
+
+
+  {
+    title: "What Ever Happened - The Strokes",
+    lyrics: 
+    ""
+  
+
+
+
+
+
+
+  }
 ];
 
 let currentIndex = 0;
@@ -68,6 +83,10 @@ function loadSongByIndex(index) {
 	} else {
 		$("#song-photo").hide();
 	}
+
+  $("#song-photo")
+  .attr("src", song.photo)
+  .css("max-width", song.photoSize || "450px"); // default size fallback
 
 	const audio = $("#player")[0];
 	audio.load();

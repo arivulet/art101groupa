@@ -28,7 +28,7 @@ h1{
 
 #lyrics-display {
   font-family: monospace;
-  font-size: 18px;
+  font-size: 25px;
   white-space: pre-wrap;
   outline: none; /* remove default focus outline */
   cursor: text;
