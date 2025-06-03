@@ -71,8 +71,16 @@ const songs = [
   lyrics: "When the rain comes, they run and hide their heads.",
   file: "videos/The Beatles - Rain.mp4",
   videoSize: "800px",
+  },
 
-  }
+  {
+  id: "fake",
+  title: "Fake Tales of San Francisco - Arctic Monkeys",
+  lyrics: "Fake tales of San Francisco echo through the room.",
+  file: "videos/Arctic Monkeys - Fake Tales Of San Francisco (Official Video).mp4",
+  videoSize: "700px"
+
+  },
 
 
 
@@ -93,36 +101,18 @@ function renderLyrics(lyrics) {
 }
 
 
-
 function loadSongByIndex(index) {
-	if (index < 0 || index >= songs.length) {
-		console.warn("Invalid song index:", index);
-		return;
-	}
-	currentIndex = 0;
-	const song = songs[index];
-
+  if (index < 0 || index >= songs.length) {
+    console.warn("Invalid song index:", index);
+    return;
+  }
+  currentIndex = 0;
+  const song = songs[index];
   
-
-
-
-	if (song.photo) {
-		$("#song-photo").attr("src", song.photo).show();
-	} else {
-		$("#song-photo").hide();
-	}
-
-  $("#song-photo")
-  .attr("src", song.photo)
-  .css("max-width", song.photoSize || "450px"); // default size fallback
-
-	const audio = $("#player")[0];
-	audio.load();
-	audio.play();
-
-	$("#song-title").css("color", "white");
-	$("#lyrics-display").focus();
+  // You can just call loadSong here
+  loadSong(song);
 }
+
 function updateCursor() {
   const spans = document.querySelectorAll("#lyrics-display span");
   spans.forEach(span => span.classList.remove("cursor"));
@@ -165,7 +155,6 @@ function loadSong(song) {
     return;
   }
 
-  // Detect audio (mp3) or video (anything else)
   const isAudio = song.file.toLowerCase().endsWith(".mp3");
 
   player.pause();
@@ -173,84 +162,19 @@ function loadSong(song) {
   player.load();
 
   if (isAudio) {
-    // Style player for audio-only playback
     player.style.display = "block";
-    player.style.width = song.fileSize || "300px"; // Use fileSize if provided or default
-    player.style.height = "30px"; // minimal height for audio controls
+    player.style.width = song.fileSize || "300px";
+    player.style.height = "30px";
     player.style.maxWidth = "none";
   } else {
-    // Style player for video playback
     player.style.display = "block";
     player.style.width = "100%";
     player.style.height = "auto";
-    player.style.maxWidth = song.videoSize || "700px"; // fallback default
+    player.style.maxWidth = song.videoSize || "700px";
   }
 
   player.play();
 
-  // Keep your existing UI updates for title, photo, lyrics:
-  $("#song-title").html("<h2>" + song.title + "</h2>");
-$("#song-title").css("color", "white");  // <-- this line sets the color to white
-$("#typing-container").css("display", "block");
-
-if (song.file) { 
-  $("#song.file")
-  .attr("src", song.file)
-  .css("max-width,", song.file)
-  .show ();
-}
-
-  if (song.photo) {
-    $("#song-photo")
-      .attr("src", song.photo)
-      .css("max-width", song.photoSize || "450px")
-      .show();
-  } else {
-    $("#song-photo").hide();
-  }
-
-  renderLyrics(song.lyrics);
-  updateCursor();
-
-  $("#lyrics-display").focus();
-}
-
-
-function loadSong(song) {
-  const player = document.getElementById("player");
-
-  if (!song.file) {
-    player.pause();
-    player.removeAttribute("src");
-    player.style.display = "none";
-    player.load();
-    return;
-  }
-
-  // Detect audio (mp3) or video (anything else)
-  const isAudio = song.file.toLowerCase().endsWith(".mp3");
-
-  player.pause();
-  player.src = song.file;
-  player.load();
-
-  if (isAudio) {
-    // Style player for audio-only playback
-    player.style.display = "block";
-    player.style.width = song.fileSize || "300px"; // Use fileSize if provided or default
-    player.style.height = "30px"; // minimal height for audio controls
-    player.style.maxWidth = "none";
-  } else {
-    // Style player for video playback
-    player.style.display = "block";
-    player.style.width = "100%";
-    player.style.height = "auto";
-    player.style.maxWidth = song.videoSize || "700px"; // fallback default
-  }
-
-  player.play();
-
-  // Keep your existing UI updates for title, photo, lyrics:
   $("#song-title").html("<h2>" + song.title + "</h2>");
   $("#typing-container").css("display", "block");
 
@@ -267,6 +191,8 @@ function loadSong(song) {
   updateCursor();
 
   $("#lyrics-display").focus();
+
+
 }
 
 	$("#lyrics-display").on("keydown", handleTyping);
@@ -334,8 +260,11 @@ function switchToVideo(src) {
   videoPlayer.style.display = 'block';
   videoPlayer.load();
   videoPlayer.play();
+
+  updateBackgroundColor(song);
+  
+   
 }
 
-  
   
 });
