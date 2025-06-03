@@ -29,6 +29,28 @@ h1{
     color:#4CAA7E;
 }
 
+#lyrics-display span.cursor {
+  border-left: 2px solid #00ffcc;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+#lyrics-display span.cursor::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: cyan;
+  animation: blink 1s step-start infinite;
+}
+
+
 #lyrics-display {
   white-space: nowrap;  /* if you want horizontal scroll effect */
   max-width: 100%;
@@ -43,6 +65,7 @@ h1{
   margin: 0 auto;
   font-size: 1.5rem;
   scroll-behavior: smooth;
+  color:azure
 }
 #typing-container {
   max-width: 1000px;
@@ -98,3 +121,17 @@ h1{
 #lyrics-display:focus {
   outline: 2px solid #2196f3;
 }
+#player {
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(135deg, #4CAA7E, #2196f3);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.6);
+  outline: none;
+  cursor: pointer;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* Optional: hide default controls and make custom play button */
+/* That would require more JS, but this simple style helps a lot */

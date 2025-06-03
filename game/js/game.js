@@ -45,9 +45,14 @@ const songs = [
      "I wanna be forgotten and I don't wanna be reminded. You say please don't make this harder. No I won't yet.  I wanna be beside her. She wanna be admired, you say please don't make this harder. No I won't yet. Oh dear is it really all true? Did they offend us and they want it to sound true? Top ten ideas for countdown shows, whose culture is this and does anybody know? I wait and tell myself, life ain't chess, but no one comes in and yes, you're alone. You don't miss me, I know. Oh Tennessee what did you write? ",
     file: "songs/What Ever Happened_.mp3",
     photo: "images/strokes2.jpg"
-
-
-
+  }, 
+  {
+  id: "everything",
+  title: "Everything She Wants - Wham!",
+  lyrics: "Ah ha ha. Oh yeah. Work. Somebody told me, boy everything she wants is everything she sees. I guess I must've loved you because I said you were the perfect girl for me, baby. And now we're six months older and everything you want and everything you see, is out of reach not good enough. I don't know what the hell you want from me, oh. Somebody tell me, won't you tell me, why I work so hard for you. Give you money, work to give you money.",
+  file: "songs/Everything She Wants.mp3",
+  photo: "images/wp4296903-wham-wallpapers.jpg",
+  photoSize: "610px"
 
 
 
@@ -116,36 +121,18 @@ function loadSongByIndex(index) {
 	$("#song-title").css("color", "white");
 	$("#lyrics-display").focus();
 }
+function updateCursor() {
+  const spans = document.querySelectorAll("#lyrics-display span");
+  spans.forEach(span => span.classList.remove("cursor"));
 
-function handleTyping(event) {
-	const lyricsSpans = document.querySelectorAll("#lyrics-display span");
-	if (currentIndex >= lyricsSpans.length) return;
-
-	const expectedChar = lyricsSpans[currentIndex].textContent;
-	const typedChar = event.key;
-
-	if (event.ctrlKey || event.altKey || event.metaKey) return;
-	if (typedChar.length !== 1 && event.key !== "Backspace") return;
-
-	if (event.key === "Backspace") {
-		if (currentIndex > 0) {
-			currentIndex--;
-			lyricsSpans[currentIndex].classList.remove("correct", "incorrect");
-		}
-		event.preventDefault();
-		return;
-	}
-
-	if (typedChar === expectedChar) {
-		lyricsSpans[currentIndex].classList.add("correct");
-		lyricsSpans[currentIndex].classList.remove("incorrect");
-	} else {
-		lyricsSpans[currentIndex].classList.add("incorrect");
-		lyricsSpans[currentIndex].classList.remove("correct");
-	}
-
-	currentIndex++;
-	event.preventDefault();
+  if (currentIndex < spans.length) {
+    spans[currentIndex].classList.add("cursor");
+    spans[currentIndex].scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest"
+    });
+  }
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -167,8 +154,11 @@ if (songId) {
 
 
 function loadSong(song) {
+  updateCursor();
+
 	currentIndex = 0;
 	renderLyrics(song.lyrics);
+  updateCursor(); 
 
 	$("#song-title").html("<h2>" + song.title + "</h2>");
 	$("#typing-container").css("display", "block");
@@ -198,7 +188,6 @@ function loadSong(song) {
 
 	$("#lyrics-display").on("keydown", handleTyping);
 
-
   function handleTyping(event) {
     const lyricsSpans = document.querySelectorAll("#lyrics-display span");
     if (currentIndex >= lyricsSpans.length) return;
@@ -215,6 +204,7 @@ function loadSong(song) {
         lyricsSpans[currentIndex].classList.remove("correct", "incorrect");
       }
       event.preventDefault();
+      updateCursor();
       updateProgress();
       return;
     }
@@ -228,24 +218,12 @@ function loadSong(song) {
     }
   
     currentIndex++;
-    event.preventDefault();
+    updateCursor();
+    updateProgress();
   
-    function autoScrollCurrent() {
-      const lyricsSpans = document.querySelectorAll("#lyrics-display span");
-      const currentSpan = lyricsSpans[currentIndex - 1];
-      if (currentSpan) {
-        currentSpan.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-      }
-    }
-    
-    
-    lyricsSpans[currentIndex].scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center" // 👈 this is crucial for horizontal scroll
-    });
-    
+    event.preventDefault();
   }
+  
   
   function updateProgress() {
     const progress = (currentIndex / document.querySelectorAll("#lyrics-display span").length) * 100;
