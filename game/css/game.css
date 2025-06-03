@@ -38,10 +38,15 @@ h1{
   50% { border-color: transparent; }
 }
 
+#song-title { 
+color: white;
+
+}
+
 
 #lyrics-display span.cursor::after {
   content: "";
-  position: absolute;
+  position: relative;
   right: -1px;
   top: 0;
   width: 2px;
@@ -51,28 +56,18 @@ h1{
 }
 
 
-#lyrics-display {
-  white-space: nowrap;  /* if you want horizontal scroll effect */
-  max-width: 100%;
-  overflow: hidden;         /* preserves spaces and line breaks */
-  overflow-x: auto;           /* enables horizontal scrolling */
-  overflow-y: hidden;
-  display: flex;
-  flex-wrap: nowrap;            /* Layout spans in a row */
-  gap: 1px;                  /* Optional spacing */
-  padding: 2rem;
-  max-width: 90vw;
-  margin: 0 auto;
-  font-size: 1.5rem;
-  scroll-behavior: smooth;
-  color:azure
-}
+
 #typing-container {
   max-width: 1000px;
   margin: 0 auto;
   overflow: hidden; /* Hide all overflow here */
   position: relative;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 #typing-container::-webkit-scrollbar {
   display: none; /* Hide scrollbar in WebKit */
@@ -88,6 +83,7 @@ h1{
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
+  color: azure;
   padding: 1rem;
   font-size: 1.5rem;
   line-height: 1.4;

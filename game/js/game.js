@@ -18,7 +18,7 @@ const songs = [
 		lyrics:
 			"I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah! Yeah! I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no! Oh no! Oh no.Yeah, yeah! I've got a feeling.  I've got a feeling. All these years I've been wandering around, wondering how come nobody told me all that I was looking for was somebody who looked like you!  I've got a feeling that keeps me on my toes, oh yeah.  Oh yeah!  I've got a feeling, I think that everybody knows, oh yeah, oh yeah! Oh yeah! Yeah! I've got a feeling yeah! Everybody had a hard year. Everybody had a good time. Everybody had a wet dream. Everybody saw the sunshine. Oh yeah, oh yeah, oh yeah. Everybody had a good year. Everybody let their hair down. Everybody pulled their socks up, yeah. Everybody put their foot down, oh yeah. I've got a feeling, a feeling deep inside, oh yeah.  Everybody had a wet dream, oh yeah. Everybody saw the sunshine. I've got a feeling, a feeling I can hide, oh no. Everybody pulled their socks up, oh no no. Everybody put their foot down, oh! Yeah! I've got a feeling. I've got a feeling, oh yeah. I've got a feeling.  ",
 		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
-    photoSize: "650px"
+    videoSize: "575px"
 	},
 	{
     id: "nature",
@@ -61,8 +61,22 @@ const songs = [
   title: "Paperback Writer - The Beatles",
   lyrics: "Paperback writer. Dear Sir or Madam will you read my book, it took me years to write will you take a look?",
   file: "videos/The Beatles - Paperback Writer.mp4",
+  videoSize: "800px",
  
+  },
+
+  { 
+  id: "rain",
+  title: "Rain - The Beatles",
+  lyrics: "When the rain comes, they run and hide their heads.",
+  file: "videos/The Beatles - Rain.mp4",
+  videoSize: "800px",
+
   }
+
+
+
+
 ];
 
 let currentIndex = 0;
@@ -88,26 +102,8 @@ function loadSongByIndex(index) {
 	currentIndex = 0;
 	const song = songs[index];
 
-	function renderLyrics(lyrics) {
-    const container = document.getElementById("lyrics-display");
-    container.innerHTML = "";
-  
-    for (let char of lyrics) {
-      const span = document.createElement("span");
-      span.textContent = char === " " ? "\u00A0" : char; // Use non-breaking space
-      container.appendChild(span);
-    }
-  }
-  
   
 
-	if (song.file) {
-		$("#player").attr("src", song.file).show();
-	} else {
-		$("#player").removeAttr("src").hide();
-	}
-  
- 
 
 
 	if (song.photo) {
@@ -158,38 +154,119 @@ if (songId) {
   loadSong(songs[Math.floor(Math.random() * songs.length)]);
 }
 
-
 function loadSong(song) {
+  const player = document.getElementById("player");
+
+  if (!song.file) {
+    player.pause();
+    player.removeAttribute("src");
+    player.style.display = "none";
+    player.load();
+    return;
+  }
+
+  // Detect audio (mp3) or video (anything else)
+  const isAudio = song.file.toLowerCase().endsWith(".mp3");
+
+  player.pause();
+  player.src = song.file;
+  player.load();
+
+  if (isAudio) {
+    // Style player for audio-only playback
+    player.style.display = "block";
+    player.style.width = song.fileSize || "300px"; // Use fileSize if provided or default
+    player.style.height = "30px"; // minimal height for audio controls
+    player.style.maxWidth = "none";
+  } else {
+    // Style player for video playback
+    player.style.display = "block";
+    player.style.width = "100%";
+    player.style.height = "auto";
+    player.style.maxWidth = song.videoSize || "700px"; // fallback default
+  }
+
+  player.play();
+
+  // Keep your existing UI updates for title, photo, lyrics:
+  $("#song-title").html("<h2>" + song.title + "</h2>");
+$("#song-title").css("color", "white");  // <-- this line sets the color to white
+$("#typing-container").css("display", "block");
+
+if (song.file) { 
+  $("#song.file")
+  .attr("src", song.file)
+  .css("max-width,", song.file)
+  .show ();
+}
+
+  if (song.photo) {
+    $("#song-photo")
+      .attr("src", song.photo)
+      .css("max-width", song.photoSize || "450px")
+      .show();
+  } else {
+    $("#song-photo").hide();
+  }
+
+  renderLyrics(song.lyrics);
   updateCursor();
 
-	currentIndex = 0;
-	renderLyrics(song.lyrics);
-  updateCursor(); 
+  $("#lyrics-display").focus();
+}
 
-	$("#song-title").html("<h2>" + song.title + "</h2>");
-	$("#typing-container").css("display", "block");
 
-	if (song.file) {
-		$("#player").attr("src", song.file).show();
-	} else {
-		$("#player").removeAttr("src").hide();
-	}
+function loadSong(song) {
+  const player = document.getElementById("player");
 
-	if (song.photo) {
-		$("#song-photo")
-			.attr("src", song.photo)
-			.css("max-width", song.photoSize || "450px")
-			.show();
-	} else {
-		$("#song-photo").hide();
-	}
+  if (!song.file) {
+    player.pause();
+    player.removeAttribute("src");
+    player.style.display = "none";
+    player.load();
+    return;
+  }
 
-	const audio = $("#player")[0];
-	audio.load();
-	audio.play();
+  // Detect audio (mp3) or video (anything else)
+  const isAudio = song.file.toLowerCase().endsWith(".mp3");
 
-	$("#song-title").css("color", "white");
-	$("#lyrics-display").focus();
+  player.pause();
+  player.src = song.file;
+  player.load();
+
+  if (isAudio) {
+    // Style player for audio-only playback
+    player.style.display = "block";
+    player.style.width = song.fileSize || "300px"; // Use fileSize if provided or default
+    player.style.height = "30px"; // minimal height for audio controls
+    player.style.maxWidth = "none";
+  } else {
+    // Style player for video playback
+    player.style.display = "block";
+    player.style.width = "100%";
+    player.style.height = "auto";
+    player.style.maxWidth = song.videoSize || "700px"; // fallback default
+  }
+
+  player.play();
+
+  // Keep your existing UI updates for title, photo, lyrics:
+  $("#song-title").html("<h2>" + song.title + "</h2>");
+  $("#typing-container").css("display", "block");
+
+  if (song.photo) {
+    $("#song-photo")
+      .attr("src", song.photo)
+      .css("max-width", song.photoSize || "450px")
+      .show();
+  } else {
+    $("#song-photo").hide();
+  }
+
+  renderLyrics(song.lyrics);
+  updateCursor();
+
+  $("#lyrics-display").focus();
 }
 
 	$("#lyrics-display").on("keydown", handleTyping);
@@ -235,6 +312,30 @@ function loadSong(song) {
     const progress = (currentIndex / document.querySelectorAll("#lyrics-display span").length) * 100;
     document.getElementById("progress-bar").style.width = progress + "%";
   }
+
+  const player = document.getElementById("player");
+const source = document.getElementById("video-source");
+const songUrl = yourSongObject.url; // assuming this is how you get it
+
+source.src = songUrl;
+player.load();
+
+function switchToVideo(src) {
+  const videoPlayer = document.getElementById('video-player');
+  const audioPlayer = document.getElementById('audio-player');
+
+  // Stop and hide the audio player
+  audioPlayer.pause();
+  audioPlayer.currentTime = 0;
+  audioPlayer.style.display = 'none';
+
+  // Load and show the video
+  videoPlayer.src = src;
+  videoPlayer.style.display = 'block';
+  videoPlayer.load();
+  videoPlayer.play();
+}
+
   
   
 });
