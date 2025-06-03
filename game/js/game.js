@@ -17,8 +17,7 @@ const songs = [
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
 			"I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah! Yeah! I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no! Oh no! Oh no.Yeah, yeah! I've got a feeling.  I've got a feeling. All these years I've been wandering around, wondering how come nobody told me all that I was looking for was somebody who looked like you!  I've got a feeling that keeps me on my toes, oh yeah.  Oh yeah!  I've got a feeling, I think that everybody knows, oh yeah, oh yeah! Oh yeah! Yeah! I've got a feeling yeah! Everybody had a hard year. Everybody had a good time. Everybody had a wet dream. Everybody saw the sunshine. Oh yeah, oh yeah, oh yeah. Everybody had a good year. Everybody let their hair down. Everybody pulled their socks up, yeah. Everybody put their foot down, oh yeah. I've got a feeling, a feeling deep inside, oh yeah.  Everybody had a wet dream, oh yeah. Everybody saw the sunshine. I've got a feeling, a feeling I can hide, oh no. Everybody pulled their socks up, oh no no. Everybody put their foot down, oh! Yeah! I've got a feeling. I've got a feeling, oh yeah. I've got a feeling.  ",
-		file: "songs/I've Got A Feeling (Remastered 2009).mp3",
-		photo: "images/rooftopconcert.jpeg",
+		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
     photoSize: "650px"
 	},
 	{
@@ -28,6 +27,7 @@ const songs = [
       "On the road to Rishikesh, I was dreaming more or less. And the dream I had was true, yes the dream I had was true.  I'm just a child of nature, I don't need much to set me free.",
 		file: "songs/Child Of Nature (Esher Demo).mp3",
 		photo: "images/ontheroad.jpg",
+    photoSize: "500px"
 	},
 	{
     id: "forget",
@@ -44,7 +44,8 @@ const songs = [
     lyrics: 
      "I wanna be forgotten and I don't wanna be reminded. You say please don't make this harder. No I won't yet.  I wanna be beside her. She wanna be admired, you say please don't make this harder. No I won't yet. Oh dear is it really all true? Did they offend us and they want it to sound true? Top ten ideas for countdown shows, whose culture is this and does anybody know? I wait and tell myself, life ain't chess, but no one comes in and yes, you're alone. You don't miss me, I know. Oh Tennessee what did you write? ",
     file: "songs/What Ever Happened_.mp3",
-    photo: "images/strokes2.jpg"
+    photo: "images/strokes2.jpg",
+    photoSize: "610px",
   }, 
   {
   id: "everything",
@@ -52,10 +53,15 @@ const songs = [
   lyrics: "Ah ha ha. Oh yeah. Work. Somebody told me, boy everything she wants is everything she sees. I guess I must've loved you because I said you were the perfect girl for me, baby. And now we're six months older and everything you want and everything you see, is out of reach not good enough. I don't know what the hell you want from me, oh. Somebody tell me, won't you tell me, why I work so hard for you. Give you money, work to give you money.",
   file: "songs/Everything She Wants.mp3",
   photo: "images/wp4296903-wham-wallpapers.jpg",
-  photoSize: "610px"
+  photoSize: "610px",
+  },
 
-
-
+  {
+  id: "paperback",
+  title: "Paperback Writer - The Beatles",
+  lyrics: "Paperback writer. Dear Sir or Madam will you read my book, it took me years to write will you take a look?",
+  file: "videos/The Beatles - Paperback Writer.mp4",
+ 
   }
 ];
 

@@ -38,15 +38,28 @@
 		<div id="progress-container" style="background: #333; border-radius: 8px; height: 10px; margin-bottom: 15px; overflow: hidden;">
 			<div id="progress-bar" style="background: #0cf404; width: 0%; height: 100%; transition: width 0.2s ease;"></div>
 		  </div>
+
+		  <video id="player" src="" style="max-width: 500px; display: block; margin: 10px auto;" controls autoplay>
+			<source id="video-source" src="" type="video/mp4">
+			not support the video tag.
+		  </video>
+		  <div id="progress-bar" style="background: #0cf404; width: 0%; height: 100%; transition: width 0.2s ease;"></div>
+		</div>
+
+		  <div id="typing-container" style="display: none;">
+			<div id="song-title"></div>
+			<p id="lyrics-display" tabindex="0"></p>
+
+		  <audio id="audioplayer" controls autoplay>
+			<source id="audio-source" src="" type="audio/mpeg">
+		</audio>
+		
 		  
 		<div id="typing-container" style="display: none;">
 			<div id="song-title"></div>
 			<p id="lyrics-display" tabindex="0"></p>
 
-			<audio id="player" controls autoplay>
-				<source id="audio-source" src="" type="audio/mpeg">
-			</audio>
-			
+
 	
 			  
 			  

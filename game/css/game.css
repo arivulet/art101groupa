@@ -121,17 +121,8 @@ h1{
 #lyrics-display:focus {
   outline: 2px solid #2196f3;
 }
-#player {
-  width: 100%;
-  max-width: 400px;
-  background: linear-gradient(135deg, #4CAA7E, #2196f3);
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.6);
-  outline: none;
-  cursor: pointer;
-  margin: 1rem auto;
-  display: block;
-}
+
+
 
 /* Optional: hide default controls and make custom play button */
 /* That would require more JS, but this simple style helps a lot */
