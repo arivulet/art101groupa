@@ -14,6 +14,9 @@
   background-color: #0056b3;
 }
 
+
+
+
 #button {
   margin-top: 20px;
   text-align: center;
@@ -27,29 +30,68 @@ h1{
 }
 
 #lyrics-display {
-  font-family: monospace;
-  font-size: 18px;
-  white-space: pre-wrap;
-  outline: none; /* remove default focus outline */
-  cursor: text;
-  user-select: none;
-  min-height: 6em;
-  color:white;
+  white-space: nowrap;  /* if you want horizontal scroll effect */
+  max-width: 100%;
+  overflow: hidden;         /* preserves spaces and line breaks */
+  overflow-x: auto;           /* enables horizontal scrolling */
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;            /* Layout spans in a row */
+  gap: 1px;                  /* Optional spacing */
+  padding: 2rem;
+  max-width: 90vw;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  scroll-behavior: smooth;
+}
+#typing-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden; /* Hide all overflow here */
+  position: relative;
 }
 
+#typing-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit */
+}
+#typing-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Lyrics display scrolls horizontally ONLY, no vertical scroll, no scrollbar visible */
+#lyrics-display {
+  white-space: nowrap; /* keep text in one line for horizontal scroll */
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 0 auto;
+  user-select: none;
+  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+#lyrics-display::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* Your existing span styles */
 #lyrics-display span {
-  opacity: 0.3;
+  opacity: 0.7;
   transition: opacity 0.3s ease, color 0.3s ease;
   user-select: none;
 }
 
 #lyrics-display span.correct {
-  color: #4caf50;
+  color: #20fa27;
   opacity: 1;
 }
 
 #lyrics-display span.incorrect {
-  color: #f44336;
+  color: #f71a0a;
   opacity: 1;
 }
 

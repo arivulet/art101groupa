@@ -25,7 +25,7 @@ const songs = [
     id: "nature",
 		title: "Child of Nature (Esher Demo) - The Beatles",
 		lyrics: 
-      "On the road to Rishikesh, I was dreaming more or less.  And the dream I had was true, yes the dream I had was true.  I'm just a child of nature, I don't need much to set me free.",
+      "On the road to Rishikesh, I was dreaming more or less. And the dream I had was true, yes the dream I had was true.  I'm just a child of nature, I don't need much to set me free.",
 		file: "songs/Child Of Nature (Esher Demo).mp3",
 		photo: "images/ontheroad.jpg",
 	},
@@ -38,13 +38,11 @@ const songs = [
 		photo: "img/jeff-buckley.jpg",
   
 	},
-
-
   {
     id: "what",
     title: "What Ever Happened - The Strokes",
     lyrics: 
-    "",
+     "I wanna be forgotten and I don't wanna be reminded. You say please don't make this harder. No I won't yet.  I wanna be beside her. She wanna be admired, you say please don't make this harder. No I won't yet. Oh dear is it really all true? Did they offend us and they want it to sound true? Top ten ideas for countdown shows, whose culture is this and does anybody know? I wait and tell myself, life ain't chess, but no one comes in and yes, you're alone. You don't miss me, I know. Oh Tennessee what did you write? ",
     file: "songs/What Ever Happened_.mp3",
     photo: "images/strokes2.jpg"
 
@@ -59,14 +57,17 @@ const songs = [
 let currentIndex = 0;
 
 function renderLyrics(lyrics) {
-	const container = document.getElementById("lyrics-display");
-	container.innerHTML = "";
-	for (let char of lyrics) {
-		const span = document.createElement("span");
-		span.textContent = char;
-		container.appendChild(span);
-	}
+  const container = document.getElementById("lyrics-display");
+  container.innerHTML = "";
+
+  for (let char of lyrics) {
+    const span = document.createElement("span");
+    span.innerHTML = char === " " ? "&nbsp;" : char;
+    container.appendChild(span);
+  }
 }
+
+
 
 function loadSongByIndex(index) {
 	if (index < 0 || index >= songs.length) {
@@ -76,9 +77,18 @@ function loadSongByIndex(index) {
 	currentIndex = 0;
 	const song = songs[index];
 
-	renderLyrics(song.lyrics);
-	$("#song-title").html("<h2>" + song.title + "</h2>");
-	$("#typing-container").css("display", "block");
+	function renderLyrics(lyrics) {
+    const container = document.getElementById("lyrics-display");
+    container.innerHTML = "";
+  
+    for (let char of lyrics) {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char; // Use non-breaking space
+      container.appendChild(span);
+    }
+  }
+  
+  
 
 	if (song.file) {
 		$("#player").attr("src", song.file).show();
@@ -155,6 +165,7 @@ if (songId) {
   loadSong(songs[Math.floor(Math.random() * songs.length)]);
 }
 
+
 function loadSong(song) {
 	currentIndex = 0;
 	renderLyrics(song.lyrics);
@@ -186,4 +197,60 @@ function loadSong(song) {
 }
 
 	$("#lyrics-display").on("keydown", handleTyping);
+
+
+  function handleTyping(event) {
+    const lyricsSpans = document.querySelectorAll("#lyrics-display span");
+    if (currentIndex >= lyricsSpans.length) return;
+  
+    const expectedChar = lyricsSpans[currentIndex].textContent;
+    const typedChar = event.key;
+  
+    if (event.ctrlKey || event.altKey || event.metaKey) return;
+    if (typedChar.length !== 1 && event.key !== "Backspace") return;
+  
+    if (event.key === "Backspace") {
+      if (currentIndex > 0) {
+        currentIndex--;
+        lyricsSpans[currentIndex].classList.remove("correct", "incorrect");
+      }
+      event.preventDefault();
+      updateProgress();
+      return;
+    }
+  
+    if (typedChar === expectedChar) {
+      lyricsSpans[currentIndex].classList.add("correct");
+      lyricsSpans[currentIndex].classList.remove("incorrect");
+    } else {
+      lyricsSpans[currentIndex].classList.add("incorrect");
+      lyricsSpans[currentIndex].classList.remove("correct");
+    }
+  
+    currentIndex++;
+    event.preventDefault();
+  
+    function autoScrollCurrent() {
+      const lyricsSpans = document.querySelectorAll("#lyrics-display span");
+      const currentSpan = lyricsSpans[currentIndex - 1];
+      if (currentSpan) {
+        currentSpan.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+      }
+    }
+    
+    
+    lyricsSpans[currentIndex].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center" // 👈 this is crucial for horizontal scroll
+    });
+    
+  }
+  
+  function updateProgress() {
+    const progress = (currentIndex / document.querySelectorAll("#lyrics-display span").length) * 100;
+    document.getElementById("progress-bar").style.width = progress + "%";
+  }
+  
+  
 });
