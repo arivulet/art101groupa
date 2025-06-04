@@ -88,7 +88,7 @@ const songs = [
   {
   id: "darkness",
   title: "Under Cover of Darkness - The Strokes",
-  lyrics: "Slip back outta whack at your best it's a nightmare so I'm joining the army ",
+  lyrics: "Slip back outta whack at your best it's a nightmare so I'm joining the army no house phones but can I still call will you wait for me now we got the right to live fight to use it got everything but you can just choose it I won't jsut be your puppet on a string don't go that way I'll wait for you and I'm tired of all your friends listening at your door and I want what's better for you so long my friend and adversary but I'll wait for you get dressed jump outta bed and do it best are you okay I've been out around this town everybody singing the same song for ten years I'll wait for you will you wait for me too and they sacrified their lives and they lied about those odds and they said it a million times and they'll say it again so long my adversary and friend ",
   file: "videos/The Strokes - Under Cover of Darkness (Official Video).mp4",
   videoSize: "800px"
 
@@ -112,10 +112,10 @@ const songs = [
   photoSize: "700px"
   }, 
 
-  {id: "bathroom", 
-   title: "She Came In Through The Bathroom Window (Anthology 3 Version) - The Beatles", 
-   lyrics: "She came in through the bathroom window protected by a silver spoon.  "
-
+  {id: "infinity", 
+   title: "Infinity Repeating (2013 Demo) - Daft Punk feat. Julian Casablancas + The Voidz", 
+   lyrics: "I was crossing the border two old friend coincidence I don't want any other two old friend coincidences weekday weekday weekday I don't wanna play any other game on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do ",
+   file: "videos/Daft Punk - Infinity Repeating (2013 Demo) (feat. Julian Casablancas+The Voidz).mp4"
   },
 
   { 
@@ -308,17 +308,14 @@ function loadSong(song) {
       return;
     }
   
-    // ❌ Prevent letter keys if expected is a space
-    if (expectedChar === " " && typedChar !== " ") {
-      event.preventDefault();
-      return;
+    if (typedChar === expectedChar) {
+      lyricsSpans[currentIndex].classList.add("correct");
+      lyricsSpans[currentIndex].classList.remove("incorrect");
+    } else {
+      lyricsSpans[currentIndex].classList.add("incorrect");
+      lyricsSpans[currentIndex].classList.remove("correct");
     }
-  
-    // ❌ Prevent spacebar if expected is a letter
-    if (expectedChar !== " " && typedChar === " ") {
-      event.preventDefault();
-      return;
-    }
+    
   
     // Handle correctness
     if (typedChar === expectedChar) {
