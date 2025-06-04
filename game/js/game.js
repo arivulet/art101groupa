@@ -19,7 +19,7 @@ const songs = [
     id: "feeling",
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
-			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream oh yeah everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down oh yeah I've got a feeling I've got a feeling oh yeah I've got a feeling...  ",
+			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down oh yeah I've got a feeling I've got a feeling oh yeah I've got a feeling...  ",
 		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
     videoSize: "575px"
 	},
@@ -155,17 +155,6 @@ function renderLyrics(lyrics) {
 }
 
 
-function loadSongByIndex(index) {
-  if (index < 0 || index >= songs.length) {
-    console.warn("Invalid song index:", index);
-    return;
-  }
-  currentIndex = 0;
-  const song = songs[index];
-  
-  // You can just call loadSong here
-  loadSong(song);
-}
 
 function updateCursor() {
   const spans = document.querySelectorAll("#lyrics-display span");
@@ -197,12 +186,57 @@ function resetSong() {
 
   $("#progress-bar").css("width", "0%");
   
-  // Restart the media
-  const player = document.getElementById("player");
+ 
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const overlay = document.getElementById('countdown-overlay');
+  const player = document.getElementById('player');
+
+  if (!overlay || !player) {
+    console.error('Missing #countdown-overlay or #player elements');
+    return;
+  }
+
+  // Pause and reset player immediately so it won't auto play
   player.pause();
   player.currentTime = 0;
-  player.play();
-}
+
+  let countdown = 3; // Change this number to change countdown seconds
+
+  Object.assign(overlay.style, {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    color: 'white',
+    fontSize: '10vw',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: '10000',
+    fontFamily: 'sans-serif',
+  });
+
+  overlay.textContent = countdown;
+  overlay.style.display = 'flex';
+
+  const interval = setInterval(() => {
+    countdown--;
+    if (countdown > 0) {
+      overlay.textContent = countdown;
+    } else {
+      clearInterval(interval);
+      overlay.style.display = 'none';
+      player.play().catch(e => {
+        console.warn('Video playback failed:', e);
+      });
+    }
+  }, 1000);
+});
+
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -213,6 +247,7 @@ window.addEventListener("DOMContentLoaded", () => {
       currentIndex = 0;
       loadSong(song);
     }
+    
   });
   
 	const urlParams = new URLSearchParams(window.location.search);
@@ -246,7 +281,7 @@ function loadSong(song) {
 
   player.pause();
   player.src = song.file;
-  player.load();
+  player.load(); // Important: this triggers onloadeddata
 
   if (isAudio) {
     player.style.display = "block";
@@ -260,10 +295,12 @@ function loadSong(song) {
     player.style.maxWidth = song.videoSize || "700px";
   }
 
-  player.play();
+  // Start countdown after media is ready
+  player.onloadeddata = () => {
+    startCountdownAndPlay(player);
+  };
 
   $("#song-title").css("text-align", "center");
-
   $("#song-title").html("<h2>" + song.title + "</h2>");
   $("#typing-container").css("display", "block");
 
@@ -280,9 +317,8 @@ function loadSong(song) {
   updateCursor();
 
   $("#lyrics-display").focus();
-
-
 }
+
 
 	$("#lyrics-display").on("keydown", handleTyping);
 
@@ -315,16 +351,7 @@ function loadSong(song) {
       lyricsSpans[currentIndex].classList.add("incorrect");
       lyricsSpans[currentIndex].classList.remove("correct");
     }
-    
   
-    // Handle correctness
-    if (typedChar === expectedChar) {
-      lyricsSpans[currentIndex].classList.add("correct");
-      lyricsSpans[currentIndex].classList.remove("incorrect");
-    } else {
-      lyricsSpans[currentIndex].classList.add("incorrect");
-      lyricsSpans[currentIndex].classList.remove("correct");
-    }
   
     currentIndex++;
     updateCursor();
@@ -339,10 +366,7 @@ function loadSong(song) {
     document.getElementById("progress-bar").style.width = progress + "%";
   }
 
-  const player = document.getElementById("player");
-const source = document.getElementById("video-source");
-const songUrl = yourSongObject.url; // assuming this is how you get it
-
+ 
 source.src = songUrl;
 player.load();
 
@@ -360,11 +384,57 @@ function switchToVideo(src) {
   videoPlayer.style.display = 'block';
   videoPlayer.load();
   videoPlayer.play();
-
-  updateBackgroundColor(song);
   
    
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const overlay = document.getElementById('countdown-overlay');
+  const video = document.getElementById('player');
+
+  if (!overlay || !video) {
+    console.error('Missing #countdown-overlay or #player elements');
+    return;
+  }
+
+  let countdown = 5;
+
+  Object.assign(overlay.style, {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    color: 'white',
+    fontSize: '10vw',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: '10000',
+    fontFamily: 'sans-serif',
+  });
+
+  // Pause video on load
+  video.pause();
+
+  overlay.textContent = countdown;
+
+  const interval = setInterval(() => {
+    countdown--;
+    if (countdown > 0) {
+      overlay.textContent = countdown;
+    } else {
+      clearInterval(interval);
+      overlay.style.display = 'none';
+
+      video.play().catch((e) => {
+        console.warn('Video playback failed:', e);
+      });
+    }
+  }, 1000);
+});
+
 
   
 });
