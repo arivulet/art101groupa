@@ -19,7 +19,7 @@ const songs = [
     id: "feeling",
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
-			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream oh yeah everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down oh yeah I've got a feeling I've got a feeling oh yeah I've got a feeling...  ",
+			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream oh yeah everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down oh yeah I've got a feeling I've got a feeling oh yeah I've got a feeling...  ",
 		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
     videoSize: "575px"
 	},
@@ -27,7 +27,7 @@ const songs = [
     id: "nature",
 		title: "Child of Nature (Esher Demo) - The Beatles",
 		lyrics: 
-      "On the road to Rishikesh, I was dreaming more or less. And the dream I had was true, yes the dream I had was true.  I'm just a child of nature, I don't need much to set me free.",
+      "On the road to Rishikesh I was dreaming more or less and the dream I had was true yes the dream I had was true I'm just a child of nature I don't need much to set me free I'm just a child of nature I'm one of nature's children sunlight shining in my eyes as I faced the desert sky and my thoughts returned to home yes my thoughts returned to home I'm just a child of nature I don't need much to set me free I'm just a child of nature I'm one of nature's children underneath the mountain ranges where the wind that never changes touched the windows of my soul touched the windows of my soul I'm just a child of nature I don't need much to set me free I'm just a child of nature I'm one of nature's children...",
 		file: "songs/Child Of Nature (Esher Demo).mp3",
 		photo: "images/ontheroad.jpg",
     photoSize: "500px"
@@ -62,7 +62,7 @@ const songs = [
   {
   id: "paperback",
   title: "Paperback Writer - The Beatles",
-  lyrics: "Paperback writer dear sir or madam will you read my book it took me years to write will you take a look it's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer paperback writer it's a dirty story of a dirty man and his clinging wife doesn't understand his son is working for the Daily Mail it's a steady job but he wants to be a paperback writer paperback writer.",
+  lyrics: "Paperback writer dear sir or madam will you read my book it took me years to write will you take a look it's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer paperback writer it's a dirty story of a dirty man and his clinging wife doesn't understand his son is working for the daily mail it's a steady job but he wants to be a paperback writer paperback writer.",
   file: "videos/The Beatles - Paperback Writer.mp4",
   videoSize: "800px",
  
