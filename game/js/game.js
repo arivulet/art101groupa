@@ -4,8 +4,11 @@ const songs = [
 		title: "Glue Song (feat Clario)",
 		lyrics:
 			"I've never known someone like you,Tangled in love, stuck by you, from the glue Don't forget to kiss me or else you'll have to miss me I guess I'm stuck forever by the glue, oh, and you",
+      file: "songs/Glue Song (feat. Clairo).mp3",
+     photo: "",
 	},
 	{
+
     id: "smile",
 		title: "Die With a Smile",
 		lyrics:
@@ -16,7 +19,7 @@ const songs = [
     id: "feeling",
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
-			"I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah! Yeah! I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no! Oh no! Oh no.Yeah, yeah! I've got a feeling.  I've got a feeling. All these years I've been wandering around, wondering how come nobody told me all that I was looking for was somebody who looked like you!  I've got a feeling that keeps me on my toes, oh yeah.  Oh yeah!  I've got a feeling, I think that everybody knows, oh yeah, oh yeah! Oh yeah! Yeah! I've got a feeling yeah! Everybody had a hard year. Everybody had a good time. Everybody had a wet dream. Everybody saw the sunshine. Oh yeah, oh yeah, oh yeah. Everybody had a good year. Everybody let their hair down. Everybody pulled their socks up, yeah. Everybody put their foot down, oh yeah. I've got a feeling, a feeling deep inside, oh yeah.  Everybody had a wet dream, oh yeah. Everybody saw the sunshine. I've got a feeling, a feeling I can hide, oh no. Everybody pulled their socks up, oh no no. Everybody put their foot down, oh! Yeah! I've got a feeling. I've got a feeling, oh yeah. I've got a feeling.  ",
+			"I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah! Yeah! I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no! Oh no! Oh no. Yeah, yeah! I've got a feeling.  I've got a feeling. All these years I've been wandering around, wondering how come nobody told me all that I was looking for was somebody who looked like you!  I've got a feeling that keeps me on my toes, oh yeah.  Oh yeah!  I've got a feeling, I think that everybody knows, oh yeah, oh yeah! Oh yeah! Yeah! I've got a feeling yeah! Everybody had a hard year. Everybody had a good time. Everybody had a wet dream. Everybody saw the sunshine. Oh yeah, oh yeah, oh yeah. Everybody had a good year. Everybody let their hair down. Everybody pulled their socks up, yeah. Everybody put their foot down, oh yeah. I've got a feeling, a feeling deep inside, oh yeah.  Everybody had a wet dream, oh yeah. Everybody saw the sunshine. I've got a feeling, a feeling I can hide, oh no. Everybody pulled their socks up, oh no no. Everybody put their foot down, oh! Yeah! I've got a feeling. I've got a feeling, oh yeah. I've got a feeling.  ",
 		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
     videoSize: "575px"
 	},
@@ -59,7 +62,7 @@ const songs = [
   {
   id: "paperback",
   title: "Paperback Writer - The Beatles",
-  lyrics: "Paperback writer. Dear Sir or Madam will you read my book, it took me years to write will you take a look?",
+  lyrics: "Paperback writer. Dear Sir or Madam will you read my book, it took me years to write will you take a look? It's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer, paperback writer. It's a dirty story of a dirty man and his clinging wife doesn't understand. His son is working for the Daily Mail, it's a steady job but he wants to be a paperback writer, paperback writer.",
   file: "videos/The Beatles - Paperback Writer.mp4",
   videoSize: "800px",
  
@@ -78,9 +81,18 @@ const songs = [
   title: "Fake Tales of San Francisco - Arctic Monkeys",
   lyrics: "Fake tales of San Francisco echo through the room.",
   file: "videos/Arctic Monkeys - Fake Tales Of San Francisco (Official Video).mp4",
-  videoSize: "700px"
+  videoSize: "800px"
 
   },
+
+  {
+  id: "darkness",
+  title: "Under Cover of Darkness - The Strokes",
+  lyrics: "Slip back outta whack at your best, it's a nightmare.",
+  file: "videos/The Strokes - Under Cover of Darkness (Official Video).mp4",
+  videoSize: "800px"
+
+  }
 
 
 
@@ -174,6 +186,8 @@ function loadSong(song) {
   }
 
   player.play();
+
+  $("#song-title").css("text-align", "center");
 
   $("#song-title").html("<h2>" + song.title + "</h2>");
   $("#typing-container").css("display", "block");
