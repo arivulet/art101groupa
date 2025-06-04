@@ -88,7 +88,7 @@ const songs = [
   {
   id: "darkness",
   title: "Under Cover of Darkness - The Strokes",
-  lyrics: "Slip back outta whack at your best it's a nightmare so I'm joining the army no house phones but can I still call will you wait for me now we got the right to live fight to use it got everything but you can just choose it I won't jsut be your puppet on a string don't go that way I'll wait for you and I'm tired of all your friends listening at your door and I want what's better for you so long my friend and adversary but I'll wait for you get dressed jump outta bed and do it best are you okay I've been out around this town everybody singing the same song for ten years I'll wait for you will you wait for me too and they sacrified their lives and they lied about those odds and they said it a million times and they'll say it again so long my adversary and friend ",
+  lyrics: "Slip back outta whack at your best it's a nightmare so I'm joining the army no house phones but can I still call will you wait for me now we got the right to live fight to use it got everything but you can just choose it I won't just be your puppet on a string don't go that way I'll wait for you and I'm tired of all your friends listening at your door and I want what's better for you so long my friend and adversary but I'll wait for you get dressed jump outta bed and do it best are you okay I've been out around this town everybody singing the same song for ten years I'll wait for you will you wait for me too and they sacrificed their lives and they lied about those odds and they said it a million times and they'll say it again so long my adversary and friend don't go that way I'll wait for you I'm tired of all your friends knocking down your door get up in the morning saying no more so long my friend and adversary I'll wait for you...",
   file: "videos/The Strokes - Under Cover of Darkness (Official Video).mp4",
   videoSize: "800px"
 
@@ -97,7 +97,7 @@ const songs = [
   { 
   id: "fell",
   title: "If I Fell - The Beatles", 
-  lyrics: "If I fell in love with you would you promise to be true and help me understand cause I've been in love before and I found that love was more than just holding hands if I gave my heart to you I must be sure from the very start that you would love me more than her if trust in you oh please don't run and hide if I love you too oh please don't hurt my pride like her cause I couldn't stand the pain and I would be sad if our new love was in vain so I hope you see that I would love to love you and that she will cry when she learns we are two cause I couldn't stand the pain and I would be sad if our new love was in vain so I hope you see that I would love to love you and that she will cry when she learns we are two if I fell in love with you...",
+  lyrics: "If I fell in love with you would you promise to be true and help me understand cause I've been in love before and I found that love was more than just holding hands if I gave my heart to you I must be sure from the very start that you would love me more than her if I trust in you oh please don't run and hide if I love you too oh please don't hurt my pride like her cause I couldn't stand the pain and I would be sad if our new love was in vain so I hope you see that I would love to love you and that she will cry when she learns we are two cause I couldn't stand the pain and I would be sad if our new love was in vain so I hope you see that I would love to love you and that she will cry when she learns we are two if I fell in love with you...",
   file: "songs/If I Fell (Remastered 2009).mp3",
   photo: "images/ififell.jpeg",
   photoSize: "550px"
@@ -106,7 +106,7 @@ const songs = [
   {
   id: "nowhere",
   title: "Nowhere Man - The Beatles",
-  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody doesn't have a point of view knows not where he's going to isn't he a bit like you and me nowhere man please listen you don't know what you're missing nowhere man the world is at your command. He's as blind as he can be just sees what he wants to see nowhere man can you see me at all",
+  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody doesn't have a point of view knows not where he's going to isn't he a bit like you and me nowhere man please listen you don't know what you're missing nowhere man the world is at your command he's as blind as he can be just sees what he wants to see nowhere man can you see me at all",
   file: "songs/Nowhere Man (Remastered 2009).mp3",
   photo: "images/umbrellabeatles.jpg",
   photoSize: "700px"
