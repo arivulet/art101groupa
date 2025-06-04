@@ -181,7 +181,40 @@ function updateCursor() {
   }
 }
 
+function resetSong() {
+  currentIndex = 0;
+
+  const lyricsSpans = $("#lyrics-display span");
+  lyricsSpans.removeClass("correct incorrect cursor");
+
+  if (lyricsSpans.length > 0) {
+    $(lyricsSpans[0]).addClass("cursor")[0].scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest"
+    });
+  }
+
+  $("#progress-bar").css("width", "0%");
+  
+  // Restart the media
+  const player = document.getElementById("player");
+  player.pause();
+  player.currentTime = 0;
+  player.play();
+}
+
+
 window.addEventListener("DOMContentLoaded", () => {
+  $("#reset-button").on("click", function () {
+    const title = $("#song-title h2").text();
+    const song = songs.find(s => s.title === title);
+    if (song) {
+      currentIndex = 0;
+      loadSong(song);
+    }
+  });
+  
 	const urlParams = new URLSearchParams(window.location.search);
 
   const songId = urlParams.get("song");
