@@ -19,7 +19,7 @@ const songs = [
     id: "feeling",
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
-			"I've got a feeling, a feeling deep inside, oh yeah. Oh yeah. That's right. I've got a feeling, a feeling I can't hide, oh no. Oh no! Oh no. Yeah! Yeah! I've got a feeling. Oh please believe me, I'd hate to miss the train, oh yeah, yeah, oh yeah. And if you leave me, I won't be late again, oh no. Oh no! Oh no! Oh no. Yeah, yeah! I've got a feeling.  I've got a feeling. All these years I've been wandering around, wondering how come nobody told me all that I was looking for was somebody who looked like you!  I've got a feeling that keeps me on my toes, oh yeah.  Oh yeah!  I've got a feeling, I think that everybody knows, oh yeah, oh yeah! Oh yeah! Yeah! I've got a feeling yeah! Everybody had a hard year. Everybody had a good time. Everybody had a wet dream. Everybody saw the sunshine. Oh yeah, oh yeah, oh yeah. Everybody had a good year. Everybody let their hair down. Everybody pulled their socks up, yeah. Everybody put their foot down, oh yeah. I've got a feeling, a feeling deep inside, oh yeah.  Everybody had a wet dream, oh yeah. Everybody saw the sunshine. I've got a feeling, a feeling I can hide, oh no. Everybody pulled their socks up, oh no no. Everybody put their foot down, oh! Yeah! I've got a feeling. I've got a feeling, oh yeah. I've got a feeling.  ",
+			"I've got a feeling, a feeling deep inside, oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a good time everybody had a wet dream oh yeah everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down oh yeah I've got a feeling I've got a feeling oh yeah I've got a feeling...  ",
 		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
     videoSize: "575px"
 	},
@@ -53,7 +53,7 @@ const songs = [
   {
   id: "everything",
   title: "Everything She Wants - Wham!",
-  lyrics: "Ah ha ha. Oh yeah. Work. Somebody told me, boy everything she wants is everything she sees. I guess I must've loved you because I said you were the perfect girl for me, baby. And now we're six months older and everything you want and everything you see, is out of reach not good enough. I don't know what the hell you want from me, oh. Somebody tell me, won't you tell me, why I work so hard for you. Give you money, work to give you money.",
+  lyrics: "Ah ha ha. Oh yeah. Work. Somebody told me, boy everything she wants is everything she sees. I guess I must've loved you because I said you were the perfect girl for me, baby. And now we're six months older and everything you want and everything you see, is out of reach not good enough. I don't know what the hell you want from me, oh. Somebody tell me, won't you tell me, why I work so hard for you. ",
   file: "songs/Everything She Wants.mp3",
   photo: "images/wp4296903-wham-wallpapers.jpg",
   photoSize: "610px",
@@ -62,7 +62,7 @@ const songs = [
   {
   id: "paperback",
   title: "Paperback Writer - The Beatles",
-  lyrics: "Paperback writer. Dear Sir or Madam will you read my book, it took me years to write will you take a look? It's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer, paperback writer. It's a dirty story of a dirty man and his clinging wife doesn't understand. His son is working for the Daily Mail, it's a steady job but he wants to be a paperback writer, paperback writer.",
+  lyrics: "Paperback writer. Dear Sir or Madam will you read my book it took me years to write will you take a look it's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer paperback writer it's a dirty story of a dirty man and his clinging wife doesn't understand his son is working for the Daily Mail it's a steady job but he wants to be a paperback writer paperback writer.",
   file: "videos/The Beatles - Paperback Writer.mp4",
   videoSize: "800px",
  
@@ -97,7 +97,7 @@ const songs = [
   { 
   id: "fell",
   title: "If I Fell - The Beatles", 
-  lyrics: "If I fell in love with you would you promise to be true and help me understand. Cause I've been in love before and I found that love was more than just holding hands. If I gave my heart to you I must be sure from the very start that you would love me more than her. If trust in you oh please don't run and hide. If I love you too oh please don't hurt my pride like her cause I couldn't stand the pain and I would be sad if our new love was in vain. So I hope you see that I would love to love you and that she will cry when she learns we are two cause I couldn't stand the pain and I would be sad if our new love was in vain. So I hope you see that I would love to love you and that she will cry when she learns we are two. If I fell in love with you...",
+  lyrics: "If I fell in love with you would you promise to be true and help me understand cause I've been in love before and I found that love was more than just holding hands if I gave my heart to you I must be sure from the very start that you would love me more than her if trust in you oh please don't run and hide if I love you too oh please don't hurt my pride like her cause I couldn't stand the pain and I would be sad if our new love was in vain so I hope you see that I would love to love you and that she will cry when she learns we are two cause I couldn't stand the pain and I would be sad if our new love was in vain so I hope you see that I would love to love you and that she will cry when she learns we are two if I fell in love with you...",
   file: "songs/If I Fell (Remastered 2009).mp3",
   photo: "images/ififell.jpeg",
   photoSize: "550px"
@@ -106,10 +106,16 @@ const songs = [
   {
   id: "nowhere",
   title: "Nowhere Man - The Beatles",
-  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody. Doesn't have a point of view knows not where he's going to isn't he a bit like you and me? Nowhere man please listen you don't know what you're missing nowhere man the world is at your command. He's as blind as he can be jsut sees what he wants to see Nowhere man can you see me at all?",
+  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody. Doesn't have a point of view knows not where he's going to isn't he a bit like you and me? Nowhere man please listen you don't know what you're missing nowhere man the world is at your command. He's as blind as he can be just sees what he wants to see Nowhere man can you see me at all?",
   file: "songs/Nowhere Man (Remastered 2009).mp3",
   photo: "images/umbrellabeatles.jpg",
   photoSize: "700px"
+  }, 
+
+  {id: "bathroom", 
+   title: "She Came In Through The Bathroom Window (Anthology 3 Version) - The Beatles", 
+   lyrics: "She came in through the bathroom window protected by a silver spoon.  "
+
   }
 
 
@@ -232,14 +238,15 @@ function loadSong(song) {
   function handleTyping(event) {
     const lyricsSpans = document.querySelectorAll("#lyrics-display span");
     if (currentIndex >= lyricsSpans.length) return;
-  
-    const expectedChar = lyricsSpans[currentIndex].textContent;
+    const expectedChar = lyricsSpans[currentIndex].textContent === "\u00A0" ? " " : lyricsSpans[currentIndex].textContent;
+
     const typedChar = event.key;
   
     if (event.ctrlKey || event.altKey || event.metaKey) return;
     if (typedChar.length !== 1 && event.key !== "Backspace") return;
   
-    if (event.key === "Backspace") {
+    // BACKSPACE handling
+    if (typedChar === "Backspace") {
       if (currentIndex > 0) {
         currentIndex--;
         lyricsSpans[currentIndex].classList.remove("correct", "incorrect");
@@ -250,6 +257,19 @@ function loadSong(song) {
       return;
     }
   
+    // ❌ Prevent letter keys if expected is a space
+    if (expectedChar === " " && typedChar !== " ") {
+      event.preventDefault();
+      return;
+    }
+  
+    // ❌ Prevent spacebar if expected is a letter
+    if (expectedChar !== " " && typedChar === " ") {
+      event.preventDefault();
+      return;
+    }
+  
+    // Handle correctness
     if (typedChar === expectedChar) {
       lyricsSpans[currentIndex].classList.add("correct");
       lyricsSpans[currentIndex].classList.remove("incorrect");
@@ -261,9 +281,9 @@ function loadSong(song) {
     currentIndex++;
     updateCursor();
     updateProgress();
-  
     event.preventDefault();
   }
+  
   
   
   function updateProgress() {

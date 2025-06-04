@@ -30,8 +30,8 @@ h1{
 }
 
 #lyrics-display span.cursor {
-  border-left: 2px solid #00ffcc;
-  animation: blink 1s step-start infinite;
+  border-left: 2px solid #4aff03;
+  animation: blink 0.4s infinite;
 }
 
 @keyframes blink {
