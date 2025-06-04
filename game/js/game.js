@@ -116,7 +116,25 @@ const songs = [
    title: "She Came In Through The Bathroom Window (Anthology 3 Version) - The Beatles", 
    lyrics: "She came in through the bathroom window protected by a silver spoon.  "
 
-  }
+  },
+
+  { 
+    id: "sailor",
+    title: "Sailor Song - Gigi Perez",
+    lyrics: "Oh, won't you kiss me on the mouth and love me like a sailor? And when you get a taste, can you tell me what's my flavor? I don't believe in God, but I believe that you're my savior My mom says that she's worried, but I'm covered in His favor And when we're getting dirty, I forget all that is wrong I sleep so I can see you 'cause I hate to wait so long I sleep so I can see you and I hate to wait so long",
+    file: "songs/Sailor Song.mp3",
+    photo: "images/sailor.jpeg",
+    photoSize: "640px"
+    },
+
+  { 
+    id: "blood",
+    title: "Bloodline - Alex Warren",
+    lyrics: "Oh, my brother You don't have to follow in your bloodline Oh, we got each other And if you got tomorrow, then you still got time To break the chain that left you scarred From where you came isn't who you are Oh, my brother (Oh) You don't have to follow in your bloodline That storm keeps on raging, but don't you forget God's not done with you yet When it feels like you're losing the war in your head Just know this isn't the end",
+    file: "songs/Alex Warren - Bloodline.mp3",
+    photo: "images/bloodline.jpeg",
+    photoSize: "550px"
+    },
 
 
 
