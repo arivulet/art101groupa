@@ -19,7 +19,7 @@ const songs = [
     id: "feeling",
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
-			"I've got a feeling, a feeling deep inside, oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a good time everybody had a wet dream oh yeah everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down oh yeah I've got a feeling I've got a feeling oh yeah I've got a feeling...  ",
+			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream oh yeah everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down oh yeah I've got a feeling I've got a feeling oh yeah I've got a feeling...  ",
 		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
     videoSize: "575px"
 	},
@@ -37,8 +37,8 @@ const songs = [
 		title: "Forget Her - Jeff Buckley",
 		lyrics:
 			"While this town is busy sleeping, all the noise has died away, I walk the streets to stop my weeping cause she will never change her way. But don't fool yourself, she was heartache from the moment that you met her. Ah, my heart feels so still as I try to find the will To forget her somehow. Oh, I think I've forgotten her now.",
-		file: "songs/Jeff Buckley - Forget Her.mp3",
-		photo: "img/jeff-buckley.jpg",
+		file: "videos/Jeff Buckley - Forget Her.mp4",
+    videoSize: "800px"
   
 	},
   {
@@ -62,7 +62,7 @@ const songs = [
   {
   id: "paperback",
   title: "Paperback Writer - The Beatles",
-  lyrics: "Paperback writer. Dear Sir or Madam will you read my book it took me years to write will you take a look it's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer paperback writer it's a dirty story of a dirty man and his clinging wife doesn't understand his son is working for the Daily Mail it's a steady job but he wants to be a paperback writer paperback writer.",
+  lyrics: "Paperback writer dear sir or madam will you read my book it took me years to write will you take a look it's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer paperback writer it's a dirty story of a dirty man and his clinging wife doesn't understand his son is working for the Daily Mail it's a steady job but he wants to be a paperback writer paperback writer.",
   file: "videos/The Beatles - Paperback Writer.mp4",
   videoSize: "800px",
  
@@ -71,7 +71,7 @@ const songs = [
   { 
   id: "rain",
   title: "Rain - The Beatles",
-  lyrics: "If the rain comes they run and hide their heads they might as well be dead if the rain comes if the rain comes when the sun shines they slip into the shade and sip their lemonade when the shines when the sun shines rain I don't mind shine the weather's fine I can show you that when it starts to rain everything's the same I can show you I can show you rain I don't mind shine the weathers fine can you hear me that when it rains and shine it's just a state of mind can you hear me can you hear me rain...",
+  lyrics: "If the rain comes they run and hide their heads they might as well be dead if the rain comes if the rain comes when the sun shines they slip into the shade and sip their lemonade when the sun shines when the sun shines rain I don't mind shine the weather's fine I can show you that when it starts to rain everything's the same I can show you I can show you rain I don't mind shine the weathers fine can you hear me that when it rains and shine it's just a state of mind can you hear me can you hear me rain...",
   file: "videos/The Beatles - Rain.mp4",
   videoSize: "800px",
   },
@@ -106,7 +106,7 @@ const songs = [
   {
   id: "nowhere",
   title: "Nowhere Man - The Beatles",
-  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody. Doesn't have a point of view knows not where he's going to isn't he a bit like you and me? Nowhere man please listen you don't know what you're missing nowhere man the world is at your command. He's as blind as he can be just sees what he wants to see Nowhere man can you see me at all?",
+  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody doesn't have a point of view knows not where he's going to isn't he a bit like you and me nowhere man please listen you don't know what you're missing nowhere man the world is at your command. He's as blind as he can be just sees what he wants to see nowhere man can you see me at all",
   file: "songs/Nowhere Man (Remastered 2009).mp3",
   photo: "images/umbrellabeatles.jpg",
   photoSize: "700px"
