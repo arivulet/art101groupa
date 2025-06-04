@@ -92,6 +92,24 @@ const songs = [
   file: "videos/The Strokes - Under Cover of Darkness (Official Video).mp4",
   videoSize: "800px"
 
+  }, 
+
+  { 
+  id: "fell",
+  title: "If I Fell - The Beatles", 
+  lyrics: "If I fell in love with you would you promise to be true and help me understand. Cause I've been in love before and I found that love was more than just holding hands. If I gave my heart to you I must be sure from the very start that you would love me more than her. If trust in you oh please don't run and hide. If I love you too oh please don't hurt my pride like her cause I couldn't stand the pain and I would be sad if our new love was in vain. So I hope you see that I would love to love you and that she will cry when she learns we are two cause I couldn't stand the pain and I would be sad if our new love was in vain. So I hope you see that I would love to love you and that she will cry when she learns we are two. If I fell in love with you...",
+  file: "songs/If I Fell (Remastered 2009).mp3",
+  photo: "images/ififell.jpeg",
+  photoSize: "550px"
+
+  }, 
+  {
+  id: "nowhere",
+  title: "Nowhere Man - The Beatles",
+  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody. Doesn't have a point of view knows not where he's going to isn't he a bit like you and me? Nowhere man please listen you don't know what you're missing nowhere man the world is at your command. He's as blind as he can be jsut sees what he wants to see Nowhere man can you see me at all?",
+  file: "songs/Nowhere Man (Remastered 2009).mp3",
+  photo: "images/umbrellabeatles.jpg",
+  photoSize: "700px"
   }
 
 
