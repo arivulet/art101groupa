@@ -71,7 +71,7 @@ const songs = [
   { 
   id: "rain",
   title: "Rain - The Beatles",
-  lyrics: "When the rain comes, they run and hide their heads.",
+  lyrics: "If the rain comes they run and hide their heads they might as well be dead if the rain comes if the rain comes when the sun shines they slip into the shade and sip their lemonade when the shines when the sun shines rain I don't mind shine the weather's fine I can show you that when it starts to rain everything's the same I can show you I can show you rain I don't mind shine the weathers fine can you hear me that when it rains and shine it's just a state of mind can you hear me can you hear me rain...",
   file: "videos/The Beatles - Rain.mp4",
   videoSize: "800px",
   },
@@ -88,7 +88,7 @@ const songs = [
   {
   id: "darkness",
   title: "Under Cover of Darkness - The Strokes",
-  lyrics: "Slip back outta whack at your best, it's a nightmare.",
+  lyrics: "Slip back outta whack at your best it's a nightmare so I'm joining the army ",
   file: "videos/The Strokes - Under Cover of Darkness (Official Video).mp4",
   videoSize: "800px"
 
