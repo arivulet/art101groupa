@@ -37,7 +37,7 @@ const songs = [
 		title: "Forget Her - Jeff Buckley",
 		lyrics:
 			"While this town is busy sleeping, all the noise has died away, I walk the streets to stop my weeping cause she will never change her way. But don't fool yourself, she was heartache from the moment that you met her. Ah, my heart feels so still as I try to find the will To forget her somehow. Oh, I think I've forgotten her now.",
-		file: "videos/Jeff Buckley - Forget Her.mp4",
+		file: "videos/FHJB.mp4",
     videoSize: "800px"
   
 	},
@@ -63,7 +63,7 @@ const songs = [
   id: "paperback",
   title: "Paperback Writer - The Beatles",
   lyrics: "Paperback writer dear sir or madam will you read my book it took me years to write will you take a look it's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer paperback writer it's a dirty story of a dirty man and his clinging wife doesn't understand his son is working for the daily mail it's a steady job but he wants to be a paperback writer paperback writer.",
-  file: "videos/The Beatles - Paperback Writer.mp4",
+  file: "videos/PW.mp4",
   videoSize: "800px",
  
   },
@@ -72,7 +72,7 @@ const songs = [
   id: "rain",
   title: "Rain - The Beatles",
   lyrics: "If the rain comes they run and hide their heads they might as well be dead if the rain comes if the rain comes when the sun shines they slip into the shade and sip their lemonade when the sun shines when the sun shines rain I don't mind shine the weather's fine I can show you that when it starts to rain everything's the same I can show you I can show you rain I don't mind shine the weathers fine can you hear me that when it rains and shine it's just a state of mind can you hear me can you hear me rain...",
-  file: "videos/The Beatles - Rain.mp4",
+  file: "videos/RTB(2).mp4",
   videoSize: "800px",
   },
 
@@ -80,7 +80,7 @@ const songs = [
   id: "fake",
   title: "Fake Tales of San Francisco - Arctic Monkeys",
   lyrics: "Fake tales of San Francisco echo through the room.",
-  file: "videos/Arctic Monkeys - Fake Tales Of San Francisco (Official Video).mp4",
+  file: "videos/FTOSF.mp4",
   videoSize: "800px"
 
   },
@@ -89,7 +89,7 @@ const songs = [
   id: "darkness",
   title: "Under Cover of Darkness - The Strokes",
   lyrics: "Slip back outta whack at your best it's a nightmare so I'm joining the army no house phones but can I still call will you wait for me now we got the right to live fight to use it got everything but you can just choose it I won't just be your puppet on a string don't go that way I'll wait for you and I'm tired of all your friends listening at your door and I want what's better for you so long my friend and adversary but I'll wait for you get dressed jump outta bed and do it best are you okay I've been out around this town everybody singing the same song for ten years I'll wait for you will you wait for me too and they sacrificed their lives and they lied about those odds and they said it a million times and they'll say it again so long my adversary and friend don't go that way I'll wait for you I'm tired of all your friends knocking down your door get up in the morning saying no more so long my friend and adversary I'll wait for you...",
-  file: "videos/The Strokes - Under Cover of Darkness (Official Video).mp4",
+  file: "videos/UCOD.mp4",
   videoSize: "800px"
 
   }, 
@@ -115,7 +115,7 @@ const songs = [
   {id: "infinity", 
    title: "Infinity Repeating (2013 Demo) - Daft Punk feat. Julian Casablancas + The Voidz", 
    lyrics: "I was crossing the border two old friend coincidence I don't want any other two old friend coincidences weekday weekday weekday I don't wanna play any other game on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do ",
-   file: "videos/Daft Punk - Infinity Repeating (2013 Demo) (feat. Julian Casablancas+The Voidz).mp4"
+   file: "videos/IF.mp4"
   },
 
   { 
