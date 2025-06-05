@@ -178,6 +178,9 @@ const songs = [
 ];
 
 
+let currentIndex = 0;
+let correctChars = 0;
+
 function startCountdownAndPlay(player) {
   const overlay = document.getElementById('countdown-overlay');
   if (!overlay) return;
@@ -197,10 +200,6 @@ function startCountdownAndPlay(player) {
     }
   }, 1000);
 }
-
-
-let currentIndex = 0;
-let correctChars = 0;
 
 function renderLyrics(lyrics) {
   const container = document.getElementById("lyrics-display");
@@ -228,68 +227,91 @@ function updateCursor() {
 function resetSong() {
   currentIndex = 0;
   correctChars = 0;
-  const lyricsSpans = $("#lyrics-display span");
-  lyricsSpans.removeClass("correct incorrect cursor");
-
-  if (lyricsSpans.length > 0) {
-    $(lyricsSpans[0]).addClass("cursor")[0].scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "nearest"
-    });
-   
-
-  }
-
+  $("#lyrics-display span").removeClass("correct incorrect cursor");
   $("#progress-bar").css("width", "0%");
-
+  $("#ringo-rating").hide().empty(); // Hide rating
+  updateCursor();
 }
 
+function updateProgress() {
+  const spans = document.querySelectorAll("#lyrics-display span");
+  const percent = (currentIndex / spans.length) * 100;
+  document.getElementById("progress-bar").style.width = percent + "%";
+}
 
+function showRingoRating() {
+  const spans = document.querySelectorAll("#lyrics-display span");
+  const total = spans.length;
+  const percent = (correctChars / total) * 100;
 
+  let ringos = 1;
+  if (percent >= 80) ringos = 3;
+  else if (percent >= 50) ringos = 2;
 
+  const ratingDiv = document.getElementById("ringo-rating");
+  ratingDiv.innerHTML = "";
+  ratingDiv.style.display = "flex";
 
-document.addEventListener('DOMContentLoaded', function () {
-  const overlay = document.getElementById('countdown-overlay');
-  const player = document.getElementById('player');
-  if (!overlay || !player) return;
-  player.pause();
-  player.currentTime = 0;
+  for (let i = 0; i < ringos; i++) {
+    const img = document.createElement("img");
+    img.src = "game/images/ringo.avif";
+    img.alt = "Ringo Starr";
+    img.style.width = "60px";
+    img.style.height = "60px";
+    img.style.borderRadius = "50%";
+    img.style.boxShadow = "0 0 8px rgba(0,0,0,0.4)";
+    ratingDiv.appendChild(img);
+  }
+}
 
-  let countdown = 3;
-  Object.assign(overlay.style, {
-    position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)', color: 'white', fontSize: '10vw',
-    display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: '10000'
-  });
-  overlay.textContent = countdown;
-  overlay.style.display = 'flex';
+function handleTyping(event) {
+  const spans = document.querySelectorAll("#lyrics-display span");
+  if (currentIndex >= spans.length) return;
 
-  const interval = setInterval(() => {
-    countdown--;
-    if (countdown > 0) {
-      overlay.textContent = countdown;
-    } else {
-      clearInterval(interval);
-      overlay.style.display = 'none';
-      player.play().catch(e => console.warn('Playback failed:', e));
+  const expectedChar = spans[currentIndex].textContent === "\u00A0" ? " " : spans[currentIndex].textContent;
+  const typedChar = event.key;
+
+  if (event.ctrlKey || event.altKey || event.metaKey) return;
+  if (typedChar.length !== 1 && typedChar !== "Backspace") return;
+
+  if (typedChar === "Backspace") {
+    if (currentIndex > 0) {
+      currentIndex--;
+      if (spans[currentIndex].classList.contains("correct")) correctChars--;
+      spans[currentIndex].classList.remove("correct", "incorrect");
     }
-  }, 1000);
-});
+    updateCursor();
+    updateProgress();
+    event.preventDefault();
+    return;
+  }
+
+  if (typedChar === expectedChar) {
+    spans[currentIndex].classList.add("correct");
+    spans[currentIndex].classList.remove("incorrect");
+    correctChars++;
+  } else {
+    spans[currentIndex].classList.add("incorrect");
+    spans[currentIndex].classList.remove("correct");
+  }
+
+  currentIndex++;
+  updateCursor();
+  updateProgress();
+  event.preventDefault();
+}
 
 window.addEventListener("DOMContentLoaded", () => {
-  $("#reset-button").on("click", function () {
-    const title = $("#song-title h2").text();
-    const song = songs.find(s => s.title === title);
-    if (song) {
-      currentIndex = 0;
-      correctChars = 0;
-      loadSong(song);
-    }
-  });
-
   const urlParams = new URLSearchParams(window.location.search);
   const songId = urlParams.get("song");
+  const player = document.getElementById("player");
+
+  $("#reset-button").on("click", () => {
+    const title = $("#song-title h2").text();
+    const song = songs.find(s => s.title === title);
+    if (song) loadSong(song);
+  });
+
   if (songId) {
     const song = songs.find(s => s.id === songId);
     if (song) loadSong(song);
@@ -297,8 +319,12 @@ window.addEventListener("DOMContentLoaded", () => {
     loadSong(songs[Math.floor(Math.random() * songs.length)]);
   }
 
+  $("#lyrics-display").attr("tabindex", "0");
+  $(document).on("keydown", handleTyping);
+
   function loadSong(song) {
     const player = document.getElementById("player");
+
     if (!song.file) {
       player.pause();
       player.removeAttribute("src");
@@ -306,119 +332,41 @@ window.addEventListener("DOMContentLoaded", () => {
       player.load();
       return;
     }
+
     const isAudio = song.file.toLowerCase().endsWith(".mp3");
     player.pause();
     player.src = song.file;
     player.load();
+
     if (isAudio) {
       player.style.display = "block";
       player.style.width = song.fileSize || "300px";
       player.style.height = "30px";
-      player.style.maxWidth = "none";
     } else {
       player.style.display = "block";
       player.style.width = "100%";
-      player.style.height = "auto";
       player.style.maxWidth = song.videoSize || "700px";
     }
-    player.onloadeddata = () => startCountdownAndPlay(player);
-   
+
+    player.onloadeddata = () => {
+      startCountdownAndPlay(player);
+      player.onended = () => {
+        console.log("🎶 Song ended — showing Ringo rating");
+        showRingoRating();
+      };
+    };
 
     $("#song-title").css("text-align", "center").html("<h2>" + song.title + "</h2>");
     $("#typing-container").css("display", "block");
+
     if (song.photo) {
       $("#song-photo").attr("src", song.photo).css("max-width", song.photoSize || "450px").show();
     } else {
       $("#song-photo").hide();
     }
+
     renderLyrics(song.lyrics);
     updateCursor();
-    $("#lyrics-display").focus();
+    $("#ringo-rating").hide().empty(); // Reset Ringo rating on song change
   }
-
-  $("#lyrics-display").attr("tabindex", "0"); // Just in case you keep it focusable
-$(document).on("keydown", handleTyping); // Global key capture
-
-
-  function handleTyping(event) {
-    const spans = document.querySelectorAll("#lyrics-display span");
-    if (currentIndex >= spans.length) return;
-  
-    const expectedChar = spans[currentIndex].textContent === "\u00A0" ? " " : spans[currentIndex].textContent;
-    const typedChar = event.key;
-  
-    if (event.ctrlKey || event.altKey || event.metaKey) return;
-    if (typedChar.length !== 1 && event.key !== "Backspace") return;
-  
-    if (typedChar === "Backspace") {
-      if (currentIndex > 0) {
-        currentIndex--;
-        if (spans[currentIndex].classList.contains("correct")) correctChars--;
-        spans[currentIndex].classList.remove("correct", "incorrect");
-      }
-      event.preventDefault();
-      updateCursor();
-      updateProgress();
-      return;
-    }
-  
-    if (typedChar === expectedChar) {
-      spans[currentIndex].classList.add("correct");
-      spans[currentIndex].classList.remove("incorrect");
-      correctChars++;
-    } else {
-      spans[currentIndex].classList.add("incorrect");
-      spans[currentIndex].classList.remove("correct");
-    }
-  
-    currentIndex++;
-    updateCursor();
-    updateProgress();
-    event.preventDefault();
-  
-    // ✅ Check if finished typing
-    if (currentIndex >= spans.length) {
-      showRating();
-    }
-  }
-  
-  function showRating() {
-    console.log("🎉 Typing complete, showing rating..."); // ADD THIS
-    const spans = document.querySelectorAll("#lyrics-display span");
-    const total = spans.length;
-    const percent = (correctChars / total) * 100;
-    const stars = Math.round(percent / 20); // 0–5 Ringo heads
-    
-  
-    // Remove existing rating if it exists
-    const existing = document.getElementById("rating-stars");
-    if (existing) existing.remove();
-  
-    const container = document.createElement("div");
-    container.id = "rating-stars";
-    container.style.position = "absolute";
-    container.style.top = "20px";
-    container.style.right = "20px";
-    container.style.display = "flex";
-    container.style.gap = "10px";
-    container.style.zIndex = "9999";
-  
-    for (let i = 0; i < stars; i++) {
-      const img = document.createElement("img");
-      img.src = "game/images/ringo.avif";
-      img.onerror = () => console.error("Failed to load Ringo image!");
-      img.alt = "Ringo Starr head";
-      img.style.width = "50px";
-      img.style.height = "50px";
-      img.style.borderRadius = "50%";
-      img.style.boxShadow = "0 0 8px rgba(0,0,0,0.4)";
-      container.appendChild(img);
-    }
-  
-    document.body.appendChild(container);
-  }
-  
-  
-
 });
-
