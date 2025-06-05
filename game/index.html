@@ -1,79 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<!-- This title is used for tabs and bookmarks -->
-	<title>Type That Tune!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Type That Tune!</title>
+  <link rel="stylesheet" href="../css/sitewide.css" />
+  <link rel="stylesheet" href="css/game.css" />
 
-	<!-- Use UTF character set, a good idea with any webpage -->
-	<meta charset="UTF-8" />
-	<!-- Set viewport so page remains consistently scaled w narrow devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<!-- Include a sitewide CSS file for consistent styling across the site -->
-	<link rel="stylesheet" type="text/css" href="../css/sitewide.css" />
-	<!-- Lab-specifc CSS file for any special styling of this particular page -->
-	<link rel="stylesheet" type="text/css" href="css/game.css" />
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script type="text/javascript" src="js/game.js" defer></script>
-
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+  <script src="js/game.js" defer></script>
 </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
 
 <body>
-	<main id="content">
-		<section id="header">
-			<a href="../index.html">
-				<h1>Type That Tune!</h1>
-				<div id="randomsong">
-					<!-- <button id="randomsongb">Random Song</button> -->
-				</div>
+  <main id="content">
+    <section id="header">
+      <a href="../index.html">
+        <h1>Type That Tune!</h1>
+      </a>
+    </section>
 
-				  
-			</a>
-		</section>
-		<div id="karaokebox"></div>
+    <!-- Song Info -->
+    <div id="song-info">
+      <div id="song-title"></div>
+      <img id="song-photo" src="" alt="Album art" style="max-width: 400px; display: block; margin: 10px auto;" />
+    </div>
 
-		<!--creating a typing area-->
-		<div id="progress-bar" style="background: #0cf404; width: 0%; height: 100%; transition: width 0.2s ease;"></div>
-	</div>
-	<div id="progress-container" style="background: #333; border-radius: 8px; height: 10px; margin-bottom: 15px; overflow: hidden;">
-		<div id="progress-bar" style="background: #0cf404; width: 0%; height: 100%; transition: width 0.2s ease;"></div>
-	  </div>
+    <!-- Video Player -->
+    <video id="player" controls style="max-width: 550px; display: block; margin: 10px auto;">
+      <source id="video-source" src="" type="video/mp4">
+    </video>
 
-	  <div id="song-title"></div>
-		<img id="song-photo" src="" alt="Album art" style="max-width: 400px; display: block; margin: 10px auto;" />
-		
-		
-		  <video id="player" src="" style="max-width: 550px; display: block; margin: 5px auto;" controls autoplay>
-			<source id="video-source" src="" type="video/mp4">
-			not support the video tag.
-		  </video>
+    <!-- Karaoke Box -->
+    <div id="karaokebox"></div>
 
-<video id="video-player" style="display: none; max-width: 100px; margin: 5px;" controls></video>
+    <!-- Typing Container -->
+    <div id="typing-container" style="display: none;">
+      <p id="lyrics-display" tabindex="0"></p>
+    </div>
 
+    <!-- Progress Bar -->
+    <div id="progress-container" style="background: #333; border-radius: 8px; height: 10px; margin-bottom: 15px; overflow: hidden;">
+      <div id="progress-bar" style="background: #0cf404; width: 0%; height: 100%; transition: width 0.2s ease;"></div>
+    </div>
 
+    <!-- Countdown -->
+    <div id="countdown-overlay" style="display: none;">3</div>
 
-		  <div id="typing-container" style="display: none;">
-			<p id="lyrics-display" tabindex="0"></p>
+    <!-- Rating Placeholder -->
+    <div id="ringo-rating"></div>
+	<div id="ringo-overlay" style="display: none; 
+	position: fixed; 
+	top: 0; left: 0; 
+	width: 100vw; height: 100vh; 
+	background-color: rgba(0, 0, 0, 0.85); 
+	z-index: 9999; 
+	display: flex; 
+	flex-direction: column; 
+	justify-content: center; 
+	align-items: center;
+	color: white;
+	font-size: 3rem;
+	text-align: center;
+	padding: 20px;">
+	<div id="ringo-text"></div>
+	<img id="ringo-image" src="images/ringo.avif" alt="Ringo Starr" style="max-width: 200px; margin-top: 20px;" />
+  </div>
+  
+    <!-- Control Buttons -->
+    <button id="reset-button">Reset</button>
 
-		 
-		  
-
-
-	
-			  
-			  
-
-			  
-			<!-- <textarea id="typing-input" placeholder="Type the lyrics here..."></textarea>
-			</div> -->
-
-
-			<nav id="links">
-				<!-- Put links to other pages (including the homepage) here. -->
-			</nav>
-	</main>
+    <!-- Navigation -->
+    <nav id="links">
+      <!-- Add navigation links if needed -->
+    </nav>
+  </main>
 </body>
 
 </html>
