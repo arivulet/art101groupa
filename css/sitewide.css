@@ -115,7 +115,7 @@ h1:hover {
 	margin: 0 auto;
 }
 
-button {
+.menubut {
 	width: 100%;
 	height: 100%;
 	padding: 20px;
@@ -133,7 +133,7 @@ button {
 	font-family: "Ethnocentric";
 }
 
-button:hover {
+.menubut:hover {
 	background-color: var(--primary-color);
 	transform: scale(1.05);
 }
