@@ -1,154 +1,149 @@
 .home-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4CAA7E; 
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-family: 'ethnocentric';
-  transition: background-color 0.3s ease;
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #4caa7e;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	font-weight: bold;
+	font-family: "ethnocentric";
+	transition: background-color 0.3s ease;
 }
-
 
 .home-button:hover {
-  background-color: #0056b3;
+	background-color: #0056b3;
 }
 #ringo-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  color: white;
-  z-index: 1000;
-  text-align: center;
-  padding-top: 50px;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	z-index: 1000;
+	text-align: center;
+	padding-top: 50px;
 }
 
 #ringo-rating {
-  display: none;
+	display: none;
 }
-
 
 #reset-button {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  padding: 10px 15px;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  border-radius: 4px;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+	padding: 10px 15px;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	border-radius: 4px;
 }
-
-
 
 #button {
-  margin-top: 20px;
-  text-align: center;
-  color:aquamarine;
+	margin-top: 20px;
+	text-align: center;
+	color: aquamarine;
 }
 
-
-h1{
-    font-family: 'ethnocentric', sans-serif;
-    color:#4CAA7E;
+h1 {
+	font-family: "ethnocentric", sans-serif;
+	color: #4caa7e;
 }
 
 #lyrics-display span.cursor {
-  border-left: 2px solid #4aff03;
-  animation: blink 0.4s infinite;
+	border-left: 2px solid #4aff03;
+	animation: blink 0.4s infinite;
 }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+	50% {
+		border-color: transparent;
+	}
 }
 
-#song-title { 
-color: white;
-
+#song-title {
+	color: white;
 }
-
 
 #lyrics-display span.cursor::after {
-  content: "";
-  position: relative;
-  right: -1px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background-color: cyan;
-  animation: blink 1s step-start infinite;
+	content: "";
+	position: relative;
+	right: -1px;
+	top: 0;
+	width: 2px;
+	height: 100%;
+	background-color: cyan;
+	animation: blink 1s step-start infinite;
 }
 
-
-
 #typing-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden; /* Hide all overflow here */
-  position: relative;
+	max-width: 1000px;
+	margin: 0 auto;
+	overflow: hidden; /* Hide all overflow here */
+	position: relative;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
-
 
 #typing-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in WebKit */
+	display: none; /* Hide scrollbar in WebKit */
 }
 #typing-container {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 }
 
 /* Lyrics display scrolls horizontally ONLY, no vertical scroll, no scrollbar visible */
 #lyrics-display {
-  white-space: nowrap; /* keep text in one line for horizontal scroll */
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-width: 100%;
-  color: azure;
-  padding: 1rem;
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin: 0 auto;
-  user-select: none;
-  scrollbar-width: none;    /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+	white-space: nowrap; /* keep text in one line for horizontal scroll */
+	overflow-x: auto;
+	overflow-y: hidden;
+	max-width: 100%;
+	color: azure;
+	padding: 1rem;
+	font-size: 1.5rem;
+	line-height: 1.4;
+	margin: 0 auto;
+	user-select: none;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
 }
 
 #lyrics-display::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+	display: none; /* Chrome, Safari */
 }
 
 /* Your existing span styles */
 #lyrics-display span {
-  opacity: 0.7;
-  transition: opacity 0.3s ease, color 0.3s ease;
-  user-select: none;
+	opacity: 0.7;
+	transition: opacity 0.3s ease, color 0.3s ease;
+	user-select: none;
 }
 
 #lyrics-display span.correct {
-  color: #20fa27;
-  opacity: 1;
+	color: #20fa27;
+	opacity: 1;
 }
 
 #lyrics-display span.incorrect {
-  color: #f71a0a;
-  opacity: 1;
+	color: #f71a0a;
+	opacity: 1;
 }
 
 #lyrics-display:focus {
-  outline: 2px solid #2196f3;
+	outline: 2px solid #2196f3;
 }
 
-
+#reset-button {
+	height: 100px;
+	width: 100px;
+}
 
 /* Optional: hide default controls and make custom play button */
 /* That would require more JS, but this simple style helps a lot */
