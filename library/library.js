@@ -60,13 +60,13 @@ const videoSongs = [
   {
     id: "darkness",
     title: "Under Cover of Darkness - The Strokes",
-    video: "../game/videos/The Strokes - Under Cover of Darkness (Official Video).mp4",
+    video: "../game/videos/UCOD.mp4",
     thumbnail: "../game/images/tv1.webp"
   },
   {
     id: "fake",
     title: "Fake Tales of San Francisco - Arctic Monkeys",
-    video: "../game/videos/Arctic Monkeys - Fake Tales Of San Francisco (Official Video).mp4",
+    video: "../game/videos/FTOSF.mp4",
     thumbnail: "../game/images/tv1.webp"
   },
   {
@@ -78,7 +78,13 @@ const videoSongs = [
   {
     id: "infinity",
     title: "Infinity Repeating - Daft Punk",
-    video: "../game/videos/Daft Punk - Infinity Repeating (2013 Demo) (feat. Julian Casablancas+The Voidz).mp4",
+    video: "../game/videos/IF.mp4",
+    thumbnail: "../game/images/tv1.webp"
+  }, 
+  { 
+    id: "smile",
+    title: "Die With a Smile - Bruno Mars, Lady Gaga",
+    video: "../game/videos/dwas.mp4",
     thumbnail: "../game/images/tv1.webp"
   }
 ];
@@ -117,6 +123,61 @@ function loadTVStrips() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", loadTVStrips);
+document.addEventListener("DOMContentLoaded", () => {
+  loadTVStrips();
+  loadAudioAlbums(); // Add this line
+});
 
+
+function loadAudioAlbums() {
+  const container = document.getElementById("audio-album-strip");
+
+  if (!window.songs || !Array.isArray(songs)) {
+    console.warn("No songs array found.");
+    return;
+  }
+
+  const audioSongs = songs.filter(song => song.file?.endsWith(".mp3") && song.photo);
+
+  audioSongs.forEach(song => {
+    const div = document.createElement("div");
+    div.className = "album-container";
+
+    div.innerHTML = `
+      <div class="album-art-wrapper">
+        <a href="../game/index.html?song=${song.id}">
+          <img src="${song.albumArt}" class="album-image" alt="${song.title}" />
+        </a>
+        <audio class="hover-audio" preload="auto" src="${song.file}"></audio>
+      </div>
+      <a href="../game/index.html?song=${song.id}" class="album-label">${song.title}</a>
+    `;
+
+    container.appendChild(div);
+
+    const wrapper = div.querySelector(".album-art-wrapper");
+    const audio = div.querySelector(".hover-audio");
+
+    // Safely handle hover audio play
+    wrapper.addEventListener("mouseenter", () => {
+      try {
+        audio.currentTime = 0;
+        audio.play().catch(err => {
+          console.warn(`Audio play failed for ${song.title}:`, err.message);
+        });
+      } catch (err) {
+        console.error("Play error", err);
+      }
+    });
+
+    wrapper.addEventListener("mouseleave", () => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  });
   
+  document.addEventListener("click", () => {
+    document.userHasInteracted = true;
+  }, { once: true });
+  
+}

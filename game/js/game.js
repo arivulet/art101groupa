@@ -1,19 +1,22 @@
-const songs = [
+window.songs = [
 	{
     id: "glue",
 		title: "Glue Song (feat Clario)- Beabadoobee",
 		lyrics:
 			"I've never known someone like you,Tangled in love, stuck by you, from the glue Don't forget to kiss me or else you'll have to miss me I guess I'm stuck forever by the glue, oh, and you",
-      file: "songs/Glue Song (feat. Clairo).mp3",
-     photo: "",
+      file: "../game/songs/Glue Song (feat. Clairo).mp3",
+     photo: "images/b.webp",
+     albumArt: "../game/albumart/gs.jpeg"
 	},
 	{
 
     id: "smile",
-		title: "Die With a Smile",
+		title: "Die With a Smile - Bruno Mars, Lady Gaga",
 		lyrics:
 			"If the world was ending, I'd wanna be next to you If the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile If the world was ending, I'd wanna be next to you",
-		file: "songs/Lady Gaga, Bruno Mars - Die With A Smile (Official Audio).mp3",
+		file: "../game/videos/dwas.mp4",
+
+
 	},
 	{
     id: "feeling",
@@ -28,9 +31,10 @@ const songs = [
 		title: "Child of Nature (Esher Demo) - The Beatles",
 		lyrics: 
       "On the road to Rishikesh I was dreaming more or less and the dream I had was true yes the dream I had was true I'm just a child of nature I don't need much to set me free I'm just a child of nature I'm one of nature's children sunlight shining in my eyes as I faced the desert sky and my thoughts returned to home yes my thoughts returned to home I'm just a child of nature I don't need much to set me free I'm just a child of nature I'm one of nature's children underneath the mountain ranges where the wind that never changes touched the windows of my soul touched the windows of my soul I'm just a child of nature I don't need much to set me free I'm just a child of nature I'm one of nature's children...",
-		file: "songs/Child Of Nature (Esher Demo).mp3",
+		file: "../game/songs/Child Of Nature (Esher Demo).mp3",
 		photo: "images/ontheroad.jpg",
-    photoSize: "500px"
+    photoSize: "500px",
+    albumArt: "../game/albumart/tb.jpeg"
 	},
 	{
     id: "forget",
@@ -46,17 +50,19 @@ const songs = [
     title: "What Ever Happened - The Strokes",
     lyrics: 
      "I wanna be forgotten and I don't wanna be reminded. You say please don't make this harder. No I won't yet.  I wanna be beside her. She wanna be admired, you say please don't make this harder. No I won't yet. Oh dear is it really all true? Did they offend us and they want it to sound true? Top ten ideas for countdown shows, whose culture is this and does anybody know? I wait and tell myself, life ain't chess, but no one comes in and yes, you're alone. You don't miss me, I know. Oh Tennessee what did you write? ",
-    file: "songs/What Ever Happened_.mp3",
+    file: "../game/songs/What Ever Happened_.mp3",
     photo: "images/strokes2.jpg",
     photoSize: "610px",
+    albumArt: "../game/albumart/rof.jpeg"
   }, 
   {
   id: "everything",
   title: "Everything She Wants - Wham!",
   lyrics: "Ah ha ha. Oh yeah. Work. Somebody told me, boy everything she wants is everything she sees. I guess I must've loved you because I said you were the perfect girl for me, baby. And now we're six months older and everything you want and everything you see, is out of reach not good enough. I don't know what the hell you want from me, oh. Somebody tell me, won't you tell me, why I work so hard for you. ",
-  file: "songs/Everything She Wants.mp3",
+  file: "../game/songs/Everything She Wants.mp3",
   photo: "images/wp4296903-wham-wallpapers.jpg",
   photoSize: "610px",
+  albumArt: "../game/albumart/mib.jpeg"
   },
 
   {
@@ -98,18 +104,20 @@ const songs = [
   id: "fell",
   title: "If I Fell - The Beatles", 
   lyrics: "If I fell in love with you would you promise to be true and help me understand cause I've been in love before and I found that love was more than just holding hands if I gave my heart to you I must be sure from the very start that you would love me more than her if I trust in you oh please don't run and hide if I love you too oh please don't hurt my pride like her cause I couldn't stand the pain and I would be sad if our new love was in vain so I hope you see that I would love to love you and that she will cry when she learns we are two cause I couldn't stand the pain and I would be sad if our new love was in vain so I hope you see that I would love to love you and that she will cry when she learns we are two if I fell in love with you...",
-  file: "songs/If I Fell (Remastered 2009).mp3",
+  file: "../game/songs/If I Fell (Remastered 2009).mp3",
   photo: "images/ififell.jpeg",
-  photoSize: "550px"
+  photoSize: "550px",
+  albumArt: "../game/albumart/ifif.jpeg"
 
   }, 
   {
   id: "nowhere",
   title: "Nowhere Man - The Beatles",
   lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody doesn't have a point of view knows not where he's going to isn't he a bit like you and me nowhere man please listen you don't know what you're missing nowhere man the world is at your command he's as blind as he can be just sees what he wants to see nowhere man can you see me at all",
-  file: "songs/Nowhere Man (Remastered 2009).mp3",
+  file: "../game/songs/Nowhere Man (Remastered 2009).mp3",
   photo: "images/umbrellabeatles.jpg",
-  photoSize: "700px"
+  photoSize: "700px",
+  albumArt: "../game/albumart/rs.jpeg"
   }, 
 
   {id: "infinity", 
@@ -122,18 +130,21 @@ const songs = [
     id: "sailor",
     title: "Sailor Song - Gigi Perez",
     lyrics: "Oh, won't you kiss me on the mouth and love me like a sailor? And when you get a taste, can you tell me what's my flavor? I don't believe in God, but I believe that you're my savior My mom says that she's worried, but I'm covered in His favor And when we're getting dirty, I forget all that is wrong I sleep so I can see you 'cause I hate to wait so long I sleep so I can see you and I hate to wait so long",
-    file: "songs/Sailor Song.mp3",
-    photo: "images/sailor.jpeg",
-    photoSize: "640px"
+    file: "../game/songs/Sailor Song.mp3",
+    photo: "images/gg.jpg",
+    photoSize: "550px",
+    albumArt: "../game/images/sailor.jpeg"
+
     },
 
   { 
     id: "blood",
     title: "Bloodline - Alex Warren",
     lyrics: "Oh, my brother You don't have to follow in your bloodline Oh, we got each other And if you got tomorrow, then you still got time To break the chain that left you scarred From where you came isn't who you are Oh, my brother (Oh) You don't have to follow in your bloodline That storm keeps on raging, but don't you forget God's not done with you yet When it feels like you're losing the war in your head Just know this isn't the end",
-    file: "songs/Alex Warren - Bloodline.mp3",
-    photo: "images/bloodline.jpeg",
-    photoSize: "550px"
+    file: "../game/songs/Alex Warren - Bloodline.mp3",
+    photo: "../game/images/bloodline.jpeg",
+    photoSize: "550px",
+    albumArt: "../game/albumart/bdl.jpeg"
     },
     { 
       id: "backwards",
@@ -146,16 +157,20 @@ const songs = [
     {
       id: "jinji",
       title: "My Jinji - Sunset Rollercoaster",
-      lyrics: "Every time you lie in my place I do want to say It's you, you my babe It won't be too late Oh, don't leave me behind Without you, I'll cry 'Cause only you, my baby Only you can conquer time Only you can conquer time",
-      file:  "songs/Sunset Rollercoaster - My Jinji.mp3",
+      lyrics: "Every time you lie in my place I do want to say It's you you my babe It won't be too late oh don't leave me behind Without you, I'll cry 'Cause only you, my baby Only you can conquer time Only you can conquer time",
+      file:  "../game/songs/Sunset Rollercoaster - My Jinji.mp3",
+      photo: "images/sr.jpg",
       photoSize: "500px",   
+      albumArt: "../game/albumart/jj.jpeg"
     },
     {
       id: "vacay",
       title:"Dark Vacay - Cigarettes After Sex",
       lyrics: "So come on, come on, dark star, been loving you and I Can't get enough, dark star, we don't need Brazzers Feel the world around you, feel the world surround you Feel the world around you, feel it all around you crash",
-      file: "songs/Dark Vacay - Cigarettes After Sex.mp3",
+      file: "../game/songs/Dark Vacay - Cigarettes After Sex.mp3",
+      photo: "images/cas.jpg",
       photoSize: "500px",
+      albumArt: "../game/albumart/x.jpeg"
     },
     {
       id: "chihiro",

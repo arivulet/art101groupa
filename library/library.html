@@ -7,8 +7,14 @@
   <link rel="stylesheet" href="../css/sitewide.css" />
   <link rel="stylesheet" href="library.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="mainpage/mainpagejs/darkmode.js" defer></script>
-  <script src="library.js" defer></script>
+ <!-- Load the songs array -->
+<script src="/game/js/game.js"></script>
+
+<!-- Load your dark mode toggle -->
+<script src="mainpage/mainpagejs/darkmode.js" defer></script>
+
+<!-- Load your dynamic video/audio strip logic -->
+<script src="library.js" defer></script>
 
 
 </head>
@@ -33,12 +39,23 @@
 
     <section id="library">
       <ul>
-        <h2 style="text-align: center; margin-top: 40px;">🎬 Video Song Previews</h2>
+        <h2 style="text-align: center; margin-top: 40px;">Videos</h2>
         <div class="tv-strip-wrapper">
           <div id="video-tv-strip">
             <!-- dynamically added .tv-container elements -->
           </div>
+              <!-- dynamically injected album tiles -->
+            </div>
+          </div>
+          <h2 style="text-align: center; margin-top: 40px;"> Audios</h2>
+          <div class="album-strip-wrapper">
+            <div id="audio-album-strip"></div>
+          </div>
         </div>
+       
+        
+
+        
         
         <li><a href="../game/index.html?song=glue">Glue Song (feat Clario) - Beabadoobee</a></li>
         <li><a href="../game/index.html?song=smile">Die With a Smile</a></li>

@@ -118,3 +118,118 @@ body {
   font-size: 1em;
   margin-top: 8px;
 }
+
+
+/* Scrollable TV strip */
+#video-tv-strip, #audio-album-strip {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 20px;
+  margin-top: 20px;
+  scroll-behavior: smooth;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Container for audio album art */
+.album-container {
+  text-align: center;
+  flex: 0 0 auto;
+  width: 160px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.album-container:hover {
+  transform: scale(1.05);
+}
+
+/* Album art image */
+.album-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Album label under the image */
+.album-label {
+  display: block;
+  margin-top: 8px;
+  color: #61dafb;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.album-label:hover {
+  text-decoration: underline;
+}
+.album-strip-wrapper {
+  width: 100vw;
+  overflow-x: auto;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+
+#audio-album-strip {
+  display: flex;
+  gap: 30px;
+  min-width: max-content;  /* ensures children can overflow horizontally */
+  scroll-behavior: smooth;
+  
+  /* Hide scrollbars */
+  overflow-x: auto;
+  scrollbar-width: none;           /* Firefox */
+  -ms-overflow-style: none;        /* IE */
+}
+
+#audio-album-strip::-webkit-scrollbar {
+  display: hidden;                   /* Chrome, Safari */
+}
+
+/* Optional: styles for the album containers */
+.album-container {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+
+
+.album-container {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.album-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.album-image:hover {
+  transform: scale(1.05);
+}
+
+.album-label {
+  display: block;
+  color: #61dafb;
+  margin-top: 8px;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+/* Hide scrollbar for Chrome, Safari and Edge */
+#video-tv-strip::-webkit-scrollbar,
+#audio-album-strip::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+#video-tv-strip,
+#audio-album-strip {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
