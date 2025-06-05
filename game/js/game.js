@@ -1,7 +1,7 @@
 const songs = [
 	{
     id: "glue",
-		title: "Glue Song (feat Clario)",
+		title: "Glue Song (feat Clario)- Beabadoobee",
 		lyrics:
 			"I've never known someone like you,Tangled in love, stuck by you, from the glue Don't forget to kiss me or else you'll have to miss me I guess I'm stuck forever by the glue, oh, and you",
       file: "songs/Glue Song (feat. Clairo).mp3",
@@ -142,8 +142,34 @@ const songs = [
       file: "videos/Arctic Monkeys cover Tame Impala 'Feels Like We Only Go Backwards'.mp4",
       photoSize: "700px",
 
-
-
+    },
+    {
+      id: "jinji",
+      title: "My Jinji - Sunset Rollercoaster",
+      lyrics: "Every time you lie in my place I do want to say It's you, you my babe It won't be too late Oh, don't leave me behind Without you, I'll cry 'Cause only you, my baby Only you can conquer time Only you can conquer time",
+      file:  "songs/Sunset Rollercoaster - My Jinji.mp3",
+      photoSize: "500px",   
+    },
+    {
+      id: "vacay",
+      title:"Dark Vacay - Cigarettes After Sex",
+      lyrics: "So come on, come on, dark star, been loving you and I Can't get enough, dark star, we don't need Brazzers Feel the world around you, feel the world surround you Feel the world around you, feel it all around you crash",
+      file: "songs/Dark Vacay - Cigarettes After Sex.mp3",
+      photoSize: "500px",
+    },
+    {
+      id: "chihiro",
+      title: "CHIHIRO - Billie Eilish",
+      lyrics: "Saw your seat at the counter when I looked away Saw you turn around, but it wasn't your face Said, I need to be alone now, I'm takin' a break How come when I returned, you were gone away? I don't, I don't know why I called I don't know you at all I don't know you Not at all I don't, I don't know why I called I don't know you at all I don't know you Did you take My love away From me? Me",
+      file:"songs/Billie Eilish - CHIHIRO (Audio).mp3",
+      photoSize: "500px",
+    },
+    {
+      id: "everest",
+      title: "everest - Public Library Commute",
+      lyrics: "No one's ever known me better Than you Point the arm sleeve of your sweater To the moon You never let—no. Never let me down Everest. I'm ever restless now Now Now We could stay up all night Yeah We could stay up Maybe, for another few light-years Maybe, for life",
+      file: "songs/everest.mp3",
+      photoSize: "500px",
     }
 
 

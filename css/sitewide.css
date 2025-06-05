@@ -1,3 +1,21 @@
+:root {
+	--base-color: #dce1de;
+	--text-color: #1f2421;
+	--secondary-text: grey;
+	--primary-color: #49a078;
+	--secondary-color: #9cc5a1;
+	--tertiary: #0e6223;
+}
+
+.darkmode {
+	--base-color: #1f2421;
+	--text-color: #dce1de;
+	--secondary-text: grey;
+	--primary-color: #49a078;
+	--secondary-color: #9cc5a1;
+	--tertiary: #0e6223;
+}
+
 @font-face {
 	font-family: "Ethnocentric";
 	src: url("../fonts/ethnocentric/Ethnocentric.otf") format("opentype");
@@ -8,8 +26,8 @@
 
 #header {
 	font-size: 20pt;
-	border: solid 15px #1f2421;
-	background-color: #dce1de;
+	border: solid 15px var(--base-color);
+	background-color: var(--base-color);
 	text-align: center;
 	font-family: "Ethnocentric", Arial, Helvetica, sans-serif;
 	word-spacing: 1%;
@@ -17,14 +35,16 @@
 
 /* https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text */
 h1 {
-	color: #49a078;
-	text-decoration: solid 1px #1f2421;
-	text-shadow: 4px 0 #9cc5a1, -1px 0 #9cc5a1, 0 4px #9cc5a1, 0 -1px #9cc5a1,
-		2px 2px #9cc5a1, -2px -2px #9cc5a1, 2px -2px #9cc5a1, -2px 2px #9cc5a1;
+	color: var(--primary-color);
+	text-decoration: solid 1px var(--text-color);
+	text-shadow: 4px 0 var(--secondary-color), -1px 0 var(--secondary-color),
+		0 4px var(--secondary-color), 0 -1px var(--secondary-color),
+		2px 2px var(--secondary-color), -2px -2px var(--secondary-color),
+		2px -2px var(--secondary-color), -2px 2px var(--secondary-color);
 }
 
 body {
-	background-color: #1f2421;
+	background-color: var(--base-color);
 }
 
 a {
@@ -32,5 +52,97 @@ a {
 }
 
 h1:hover {
-	color: #0e6223;
+	color: var(--tertiary);
+}
+
+#daynite {
+	height: 50px;
+	width: 50px;
+	padding: 0;
+	border-radius: 50%;
+	background-color: var(--base-color);
+	display: flex;
+	align-items: center;
+	margin: 15px;
+	justify-content: center;
+	position: fixed;
+	top: 150px;
+	right: 20px;
+}
+
+#daynite svg {
+	fill: var(--text-color);
+}
+
+#daynite svg:last-child {
+	display: none;
+}
+
+.modeswitch {
+	justify-items: right;
+}
+
+.darkmode #daynite svg:first-child {
+	display: none;
+}
+
+.darkmode #daynite svg:last-child {
+	display: block;
+}
+
+#menu {
+	display: flex;
+	border: solid 15px var(--base-color);
+	background-color: var(--base-color);
+	max-height: 1000px;
+	flex-direction: row;
+	justify-content: center;
+	border-radius: 15px;
+}
+
+#container {
+	width: 500px;
+	height: 500px;
+	padding: 25px;
+	border-radius: 15px;
+	background-color: var(--base-color);
+	border: solid 10px var(--base-color);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 20px;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+button {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	font-size: 20px;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Ethnocentric";
+}
+
+button:hover {
+	background-color: var(--primary-color);
+	transform: scale(1.05);
+}
+
+a {
+	text-decoration: none;
+}
+#container a {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
