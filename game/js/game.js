@@ -138,7 +138,7 @@ const songs = [
     { 
       id: "backwards",
       title: "Feels Like We Only Go Backwards - Arctic Monkeys",
-      lyrics: "It feels like I only go backwards baby every part of me says go ahead ",
+      lyrics: "It feels like I only go backwards baby every part of me says go ahead I got my hopes again oh no not again it feels like I only go backwards darling I know that you think you sound silly when you call my name but I get it inside my head all day then I realize I'm just holding on to the hope that maybe your feelings don't show it feels like I only go backwards baby every part of me says go ahead I got my hopes up again oh no not again it feels like I only go backwards darling ",
       file: "videos/Arctic Monkeys cover Tame Impala 'Feels Like We Only Go Backwards'.mp4",
       photoSize: "700px",
 
