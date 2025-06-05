@@ -178,11 +178,17 @@ const songs = [
 ];
 
 let currentIndex = 0;
+let correctChars = 0;
+
+
+$(document).ready(function () {
+  $("#ringo-rating").hide();
+  $("#ringo-overlay").hide();
+});
 
 function renderLyrics(lyrics) {
   const container = document.getElementById("lyrics-display");
   container.innerHTML = "";
-
   for (let char of lyrics) {
     const span = document.createElement("span");
     span.innerHTML = char === " " ? "&nbsp;" : char;
@@ -190,12 +196,9 @@ function renderLyrics(lyrics) {
   }
 }
 
-
-
 function updateCursor() {
   const spans = document.querySelectorAll("#lyrics-display span");
   spans.forEach(span => span.classList.remove("cursor"));
-
   if (currentIndex < spans.length) {
     spans[currentIndex].classList.add("cursor");
     spans[currentIndex].scrollIntoView({
@@ -208,7 +211,7 @@ function updateCursor() {
 
 function resetSong() {
   currentIndex = 0;
-
+  correctChars = 0;
   const lyricsSpans = $("#lyrics-display span");
   lyricsSpans.removeClass("correct incorrect cursor");
 
@@ -221,41 +224,46 @@ function resetSong() {
   }
 
   $("#progress-bar").css("width", "0%");
-  
- 
+  $("#ringo-rating").hide().empty();
+  $("#ringo-overlay").hide();
+  $("#ringo-image").empty();
+  $("#ringo-text").empty();
+}
+
+
+function showRingoRating() {
+  const totalChars = document.querySelectorAll("#lyrics-display span").length;
+  const accuracy = correctChars / totalChars;
+  let stars = 0;
+  if (accuracy > 0.9) stars = 3;
+  else if (accuracy > 0.6) stars = 2;
+  else if (accuracy > 0.3) stars = 1;
+
+  const container = $("#ringo-rating").empty().show();
+  for (let i = 0; i < stars; i++) {
+    const img = $('<img>', {
+      src: 'images/ringo.avif',
+      class: 'ringo-head',
+      width: 100,
+      height: 100
+    });
+    container.append(img);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   const overlay = document.getElementById('countdown-overlay');
   const player = document.getElementById('player');
-
-  if (!overlay || !player) {
-    console.error('Missing #countdown-overlay or #player elements');
-    return;
-  }
-
-  // Pause and reset player immediately so it won't auto play
+  if (!overlay || !player) return;
   player.pause();
   player.currentTime = 0;
 
-  let countdown = 3; // Change this number to change countdown seconds
-
+  let countdown = 3;
   Object.assign(overlay.style, {
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    color: 'white',
-    fontSize: '10vw',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: '10000',
-    fontFamily: 'sans-serif',
+    position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)', color: 'white', fontSize: '10vw',
+    display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: '10000'
   });
-
   overlay.textContent = countdown;
   overlay.style.display = 'flex';
 
@@ -266,14 +274,10 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       clearInterval(interval);
       overlay.style.display = 'none';
-      player.play().catch(e => {
-        console.warn('Video playback failed:', e);
-      });
+      player.play().catch(e => console.warn('Playback failed:', e));
     }
   }, 1000);
 });
-
-
 
 window.addEventListener("DOMContentLoaded", () => {
   $("#reset-button").on("click", function () {
@@ -281,98 +285,75 @@ window.addEventListener("DOMContentLoaded", () => {
     const song = songs.find(s => s.title === title);
     if (song) {
       currentIndex = 0;
+      correctChars = 0;
       loadSong(song);
     }
-    
   });
-  
-	const urlParams = new URLSearchParams(window.location.search);
 
+  const urlParams = new URLSearchParams(window.location.search);
   const songId = urlParams.get("song");
-
-if (songId) {
-  const song = songs.find(s => s.id === songId);
-  if (song) {
-    loadSong(song);
+  if (songId) {
+    const song = songs.find(s => s.id === songId);
+    if (song) loadSong(song);
   } else {
-    console.warn("Song not found for id:", songId);
+    loadSong(songs[Math.floor(Math.random() * songs.length)]);
   }
-} else {
-  // fallback to random song
-  loadSong(songs[Math.floor(Math.random() * songs.length)]);
-}
 
-function loadSong(song) {
-  const player = document.getElementById("player");
-
-  if (!song.file) {
+  function loadSong(song) {
+    const player = document.getElementById("player");
+    if (!song.file) {
+      player.pause();
+      player.removeAttribute("src");
+      player.style.display = "none";
+      player.load();
+      return;
+    }
+    const isAudio = song.file.toLowerCase().endsWith(".mp3");
     player.pause();
-    player.removeAttribute("src");
-    player.style.display = "none";
+    player.src = song.file;
     player.load();
-    return;
+    if (isAudio) {
+      player.style.display = "block";
+      player.style.width = song.fileSize || "300px";
+      player.style.height = "30px";
+      player.style.maxWidth = "none";
+    } else {
+      player.style.display = "block";
+      player.style.width = "100%";
+      player.style.height = "auto";
+      player.style.maxWidth = song.videoSize || "700px";
+    }
+    player.onloadeddata = () => startCountdownAndPlay(player);
+    player.onended = () => showRingoRating();
+
+    $("#song-title").css("text-align", "center").html("<h2>" + song.title + "</h2>");
+    $("#typing-container").css("display", "block");
+    if (song.photo) {
+      $("#song-photo").attr("src", song.photo).css("max-width", song.photoSize || "450px").show();
+    } else {
+      $("#song-photo").hide();
+    }
+    renderLyrics(song.lyrics);
+    updateCursor();
+    $("#lyrics-display").focus();
   }
 
-  const isAudio = song.file.toLowerCase().endsWith(".mp3");
-
-  player.pause();
-  player.src = song.file;
-  player.load(); // Important: this triggers onloadeddata
-
-  if (isAudio) {
-    player.style.display = "block";
-    player.style.width = song.fileSize || "300px";
-    player.style.height = "30px";
-    player.style.maxWidth = "none";
-  } else {
-    player.style.display = "block";
-    player.style.width = "100%";
-    player.style.height = "auto";
-    player.style.maxWidth = song.videoSize || "700px";
-  }
-
-  // Start countdown after media is ready
-  player.onloadeddata = () => {
-    startCountdownAndPlay(player);
-  };
-
-  $("#song-title").css("text-align", "center");
-  $("#song-title").html("<h2>" + song.title + "</h2>");
-  $("#typing-container").css("display", "block");
-
-  if (song.photo) {
-    $("#song-photo")
-      .attr("src", song.photo)
-      .css("max-width", song.photoSize || "450px")
-      .show();
-  } else {
-    $("#song-photo").hide();
-  }
-
-  renderLyrics(song.lyrics);
-  updateCursor();
-
-  $("#lyrics-display").focus();
-}
-
-
-	$("#lyrics-display").on("keydown", handleTyping);
+  $("#lyrics-display").on("keydown", handleTyping);
 
   function handleTyping(event) {
-    const lyricsSpans = document.querySelectorAll("#lyrics-display span");
-    if (currentIndex >= lyricsSpans.length) return;
-    const expectedChar = lyricsSpans[currentIndex].textContent === "\u00A0" ? " " : lyricsSpans[currentIndex].textContent;
-
+    const spans = document.querySelectorAll("#lyrics-display span");
+    if (currentIndex >= spans.length) return;
+    const expectedChar = spans[currentIndex].textContent === "\u00A0" ? " " : spans[currentIndex].textContent;
     const typedChar = event.key;
   
     if (event.ctrlKey || event.altKey || event.metaKey) return;
     if (typedChar.length !== 1 && event.key !== "Backspace") return;
   
-    // BACKSPACE handling
     if (typedChar === "Backspace") {
       if (currentIndex > 0) {
         currentIndex--;
-        lyricsSpans[currentIndex].classList.remove("correct", "incorrect");
+        if (spans[currentIndex].classList.contains("correct")) correctChars--;
+        spans[currentIndex].classList.remove("correct", "incorrect");
       }
       event.preventDefault();
       updateCursor();
@@ -381,96 +362,49 @@ function loadSong(song) {
     }
   
     if (typedChar === expectedChar) {
-      lyricsSpans[currentIndex].classList.add("correct");
-      lyricsSpans[currentIndex].classList.remove("incorrect");
+      spans[currentIndex].classList.add("correct");
+      spans[currentIndex].classList.remove("incorrect");
+      correctChars++;
     } else {
-      lyricsSpans[currentIndex].classList.add("incorrect");
-      lyricsSpans[currentIndex].classList.remove("correct");
+      spans[currentIndex].classList.add("incorrect");
+      spans[currentIndex].classList.remove("correct");
     }
-  
   
     currentIndex++;
     updateCursor();
     updateProgress();
     event.preventDefault();
-  }
   
+    // ADD THIS: Show Ringo rating and overlay when finished
+    if (currentIndex === spans.length) {
+      showRingoRating();
   
+      const accuracy = correctChars / spans.length;
+      let stars = 0;
+      if (accuracy > 0.9) stars = 3;
+      else if (accuracy > 0.6) stars = 2;
+      else if (accuracy > 0.3) stars = 1;
   
-  function updateProgress() {
-    const progress = (currentIndex / document.querySelectorAll("#lyrics-display span").length) * 100;
-    document.getElementById("progress-bar").style.width = progress + "%";
-  }
-
- 
-source.src = songUrl;
-player.load();
-
-function switchToVideo(src) {
-  const videoPlayer = document.getElementById('video-player');
-  const audioPlayer = document.getElementById('audio-player');
-
-  // Stop and hide the audio player
-  audioPlayer.pause();
-  audioPlayer.currentTime = 0;
-  audioPlayer.style.display = 'none';
-
-  // Load and show the video
-  videoPlayer.src = src;
-  videoPlayer.style.display = 'block';
-  videoPlayer.load();
-  videoPlayer.play();
-  
-   
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  const overlay = document.getElementById('countdown-overlay');
-  const video = document.getElementById('player');
-
-  if (!overlay || !video) {
-    console.error('Missing #countdown-overlay or #player elements');
-    return;
-  }
-
-  let countdown = 5;
-
-  Object.assign(overlay.style, {
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    color: 'white',
-    fontSize: '10vw',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: '10000',
-    fontFamily: 'sans-serif',
-  });
-
-  // Pause video on load
-  video.pause();
-
-  overlay.textContent = countdown;
-
-  const interval = setInterval(() => {
-    countdown--;
-    if (countdown > 0) {
-      overlay.textContent = countdown;
-    } else {
-      clearInterval(interval);
-      overlay.style.display = 'none';
-
-      video.play().catch((e) => {
-        console.warn('Video playback failed:', e);
-      });
+      showRingoOverlay(stars);
     }
-  }, 1000);
-});
+  }
+  
 
-
+  function showRingoOverlay(ratingCount) {
+    const overlay = document.getElementById("ringo-overlay");
+    const text = document.getElementById("ringo-text");
+    const image = document.getElementById("ringo-image");
+  
+    text.textContent = `You got ${ratingCount} Ringo Starr${ratingCount === 1 ? "" : "'s"}`;
+  
+    // Optionally add multiple images of Ringo for each "head"
+    let ringoHeadsHTML = '';
+    for (let i = 0; i < ratingCount; i++) {
+      ringoHeadsHTML += `<img src="img/ringo-head.png" alt="Ringo Starr" style="width: 100px; margin: 10px;" />`;
+    }
+    image.outerHTML = `<div id="ringo-image" style="display: flex; flex-wrap: wrap; justify-content: center;">${ringoHeadsHTML}</div>`;
+  
+    overlay.style.display = "flex";
+  }
   
 });
