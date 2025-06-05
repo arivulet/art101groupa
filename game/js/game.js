@@ -387,6 +387,38 @@ window.addEventListener("DOMContentLoaded", () => {
   
     overlay.style.display = "flex";
   }
+  // Attach button handlers (after overlay is visible)
+const homeButton = document.getElementById("home-button");
+const replayButton = document.getElementById("replay-button");
+const nextButton = document.getElementById("next-button");
+
+if (homeButton) {
+  homeButton.onclick = () => window.location.href = "/index.html";
+}
+
+if (replayButton) {
+  replayButton.onclick = () => {
+    document.getElementById("ringo-rating").style.display = "none";
+    const title = $("#song-title h2").text();
+    const song = songs.find(s => s.title === title);
+    if (song) {
+      currentIndex = 0;
+      correctChars = 0;
+      loadSong(song); // uses the existing loadSong() function
+    }
+  };
+}
+
+if (nextButton) {
+  nextButton.onclick = () => {
+    document.getElementById("ringo-rating").style.display = "none";
+    const nextSong = songs[Math.floor(Math.random() * songs.length)];
+    currentIndex = 0;
+    correctChars = 0;
+    loadSong(nextSong);
+  };
+}
+
   
   
 });
