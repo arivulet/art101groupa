@@ -91,6 +91,29 @@
 					></div>
 				</div>
 
+        <!-- Theme Prompt Overlay -->
+<div id="theme-overlay" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10001;
+  text-align: center;
+">
+  <h2>Choose your theme:</h2>
+  <div style="margin-top: 20px;">
+    <button id="choose-light" style="margin: 10px; padding: 10px 20px;">☀️ Light Mode</button>
+    <button id="choose-dark" style="margin: 10px; padding: 10px 20px;">🌙 Dark Mode</button>
+  </div>
+</div>
+
 				<!-- Countdown Overlay -->
 				<div
 					id="countdown-overlay"

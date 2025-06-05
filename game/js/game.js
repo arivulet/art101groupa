@@ -139,7 +139,7 @@ const songs = [
       id: "backwards",
       title: "Feels Like We Only Go Backwards - Arctic Monkeys",
       lyrics: "It feels like I only go backwards baby every part of me says go ahead I got my hopes again oh no not again it feels like I only go backwards darling I know that you think you sound silly when you call my name but I get it inside my head all day then I realize I'm just holding on to the hope that maybe your feelings don't show it feels like I only go backwards baby every part of me says go ahead I got my hopes up again oh no not again it feels like I only go backwards darling ",
-      file: "videos/Arctic Monkeys cover Tame Impala 'Feels Like We Only Go Backwards'.mp4",
+      file: "videos/FLWOGB.mp4",
       photoSize: "700px",
 
     },
@@ -180,10 +180,31 @@ const songs = [
 
 let currentIndex = 0;
 let correctChars = 0;
+let startCountdownQueued = null;
+
+function applyTheme(theme) {
+  const body = document.body;
+  body.classList.toggle("darkmode", theme === "dark");
+  localStorage.setItem("theme", theme);
+  document.getElementById("theme-overlay").style.display = "none";
+
+  // resume countdown if it was queued
+  if (startCountdownQueued) {
+    startCountdownQueued();
+    startCountdownQueued = null;
+  }
+}
+
 
 function startCountdownAndPlay(player) {
-  const overlay = document.getElementById('countdown-overlay');
-  if (!overlay) return;
+  const overlay = document.getElementById("countdown-overlay");
+
+  // Wait if theme not chosen
+  if (!localStorage.getItem("theme")) {
+    startCountdownQueued = () => startCountdownAndPlay(player);
+    document.getElementById("theme-overlay").style.display = "flex";
+    return;
+  }
 
   let countdown = 3;
   overlay.textContent = countdown;
@@ -282,10 +303,28 @@ function handleTyping(event) {
   event.preventDefault();
 }
 
+
 window.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const songId = urlParams.get("song");
   const player = document.getElementById("player");
+  document.getElementById("choose-light").addEventListener("click", () => applyTheme("light"));
+document.getElementById("choose-dark").addEventListener("click", () => applyTheme("dark"));
+
+// Setup floating theme toggle button
+const toggleBtn = document.getElementById("daynite");
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    const currentTheme = document.body.classList.contains("darkmode") ? "dark" : "light";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(newTheme);
+  });
+}
+
+// Apply theme from localStorage immediately if present
+const storedTheme = localStorage.getItem("theme");
+if (storedTheme) applyTheme(storedTheme);
+
 
   $("#reset-button").on("click", () => {
     const title = $("#song-title h2").text();

@@ -99,6 +99,15 @@ html {
 	scrollbar-width: none; /* Firefox */
 }
 
+#song-title h2 {
+	color: var(--text-color); /* already themed */
+	transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#song-title h2.dark-title {
+	text-shadow: 0 0 10px var(--secondary-color);
+}
+
 /* Lyrics display scrolls horizontally ONLY, no vertical scroll, no scrollbar visible */
 #lyrics-display {
 	white-space: nowrap; /* keep text in one line for horizontal scroll */
@@ -144,6 +153,32 @@ html {
 	height: 100px;
 	width: 100px;
 }
+
+#lyrics-display span {
+	color: var(--text-color);
+	font-size: 1.2em;
+	transition: color 0.3s ease;
+}
+
+#lyrics-display span.correct {
+	color: limegreen;
+}
+
+#lyrics-display span.incorrect {
+	color: crimson;
+}
+
+#lyrics-display span.cursor {
+	border-left: 2px solid var(--text-color);
+	animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+	50% {
+		border-color: transparent;
+	}
+}
+
 
 /* Optional: hide default controls and make custom play button */
 /* That would require more JS, but this simple style helps a lot */
