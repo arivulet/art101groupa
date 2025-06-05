@@ -135,6 +135,16 @@ const songs = [
     photo: "images/bloodline.jpeg",
     photoSize: "550px"
     },
+    { 
+      id: "backwards",
+      title: "Feels Like We Only Go Backwards - Arctic Monkeys",
+      lyrics: "It feels like I only go backwards baby every part of me says go ahead ",
+      file: "videos/Arctic Monkeys cover Tame Impala 'Feels Like We Only Go Backwards'.mp4",
+      photoSize: "700px",
+
+
+
+    }
 
 
 
