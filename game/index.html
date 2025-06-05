@@ -113,32 +113,30 @@
 				>
 					3
 				</div>
+<!-- Ringo Rating Overlay -->
+<div id="ringo-rating" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+">
+  <div id="ringo-heads" style="display: flex; gap: 30px; margin-bottom: 25px;"></div>
+  <div id="ringo-message" style="font-size: 1.8em; margin-bottom: 30px;"></div>
 
-				<!-- Ringo Rating Overlay -->
-				<div
-					id="ringo-rating"
-					style="
-						display: none;
-						position: fixed;
-						top: 0;
-						left: 0;
-						width: 100vw;
-						height: 100vh;
-						background: rgba(0, 0, 0, 0.9);
-						color: white;
-						z-index: 10000;
-						justify-content: center;
-						align-items: center;
-						flex-direction: column;
-						text-align: center;
-					"
-				>
-					<div
-						id="ringo-heads"
-						style="display: flex; gap: 40px; margin-bottom: 30px"
-					></div>
-					<div id="ringo-message" style="font-size: 2em"></div>
-				</div>
+  <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+    <button id="home-button" style="padding: 10px 20px; font-size: 1em;">Back to Home</button>
+    <button id="replay-button" style="padding: 10px 20px; font-size: 1em;">Replay Song</button>
+    <button id="next-button" style="padding: 10px 20px; font-size: 1em;">Next Song</button>
+  </div>
+</div>
 
 				<!-- Reset Button -->
 				<button id="reset-button">Reset</button>
