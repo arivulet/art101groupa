@@ -151,14 +151,30 @@ const songs = [
 
 ];
 
+
+function startCountdownAndPlay(player) {
+  const overlay = document.getElementById('countdown-overlay');
+  if (!overlay) return;
+
+  let countdown = 3;
+  overlay.textContent = countdown;
+  overlay.style.display = 'flex';
+
+  const interval = setInterval(() => {
+    countdown--;
+    if (countdown > 0) {
+      overlay.textContent = countdown;
+    } else {
+      clearInterval(interval);
+      overlay.style.display = 'none';
+      player.play().catch(err => console.warn("Playback failed:", err));
+    }
+  }, 1000);
+}
+
+
 let currentIndex = 0;
 let correctChars = 0;
-
-
-$(document).ready(function () {
-  $("#ringo-rating").hide();
-  $("#ringo-overlay").hide();
-});
 
 function renderLyrics(lyrics) {
   const container = document.getElementById("lyrics-display");
@@ -195,35 +211,17 @@ function resetSong() {
       inline: "center",
       block: "nearest"
     });
+   
+
   }
 
   $("#progress-bar").css("width", "0%");
-  $("#ringo-rating").hide().empty();
-  $("#ringo-overlay").hide();
-  $("#ringo-image").empty();
-  $("#ringo-text").empty();
+
 }
 
 
-function showRingoRating() {
-  const totalChars = document.querySelectorAll("#lyrics-display span").length;
-  const accuracy = correctChars / totalChars;
-  let stars = 0;
-  if (accuracy > 0.9) stars = 3;
-  else if (accuracy > 0.6) stars = 2;
-  else if (accuracy > 0.3) stars = 1;
 
-  const container = $("#ringo-rating").empty().show();
-  for (let i = 0; i < stars; i++) {
-    const img = $('<img>', {
-      src: 'images/ringo.avif',
-      class: 'ringo-head',
-      width: 100,
-      height: 100
-    });
-    container.append(img);
-  }
-}
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const overlay = document.getElementById('countdown-overlay');
@@ -298,7 +296,7 @@ window.addEventListener("DOMContentLoaded", () => {
       player.style.maxWidth = song.videoSize || "700px";
     }
     player.onloadeddata = () => startCountdownAndPlay(player);
-    player.onended = () => showRingoRating();
+   
 
     $("#song-title").css("text-align", "center").html("<h2>" + song.title + "</h2>");
     $("#typing-container").css("display", "block");
@@ -312,11 +310,14 @@ window.addEventListener("DOMContentLoaded", () => {
     $("#lyrics-display").focus();
   }
 
-  $("#lyrics-display").on("keydown", handleTyping);
+  $("#lyrics-display").attr("tabindex", "0"); // Just in case you keep it focusable
+$(document).on("keydown", handleTyping); // Global key capture
+
 
   function handleTyping(event) {
     const spans = document.querySelectorAll("#lyrics-display span");
     if (currentIndex >= spans.length) return;
+  
     const expectedChar = spans[currentIndex].textContent === "\u00A0" ? " " : spans[currentIndex].textContent;
     const typedChar = event.key;
   
@@ -349,36 +350,49 @@ window.addEventListener("DOMContentLoaded", () => {
     updateProgress();
     event.preventDefault();
   
-    // ADD THIS: Show Ringo rating and overlay when finished
-    if (currentIndex === spans.length) {
-      showRingoRating();
-  
-      const accuracy = correctChars / spans.length;
-      let stars = 0;
-      if (accuracy > 0.9) stars = 3;
-      else if (accuracy > 0.6) stars = 2;
-      else if (accuracy > 0.3) stars = 1;
-  
-      showRingoOverlay(stars);
+    // ✅ Check if finished typing
+    if (currentIndex >= spans.length) {
+      showRating();
     }
   }
+  
+  function showRating() {
+    console.log("🎉 Typing complete, showing rating..."); // ADD THIS
+    const spans = document.querySelectorAll("#lyrics-display span");
+    const total = spans.length;
+    const percent = (correctChars / total) * 100;
+    const stars = Math.round(percent / 20); // 0–5 Ringo heads
+    
+  
+    // Remove existing rating if it exists
+    const existing = document.getElementById("rating-stars");
+    if (existing) existing.remove();
+  
+    const container = document.createElement("div");
+    container.id = "rating-stars";
+    container.style.position = "absolute";
+    container.style.top = "20px";
+    container.style.right = "20px";
+    container.style.display = "flex";
+    container.style.gap = "10px";
+    container.style.zIndex = "9999";
+  
+    for (let i = 0; i < stars; i++) {
+      const img = document.createElement("img");
+      img.src = "game/images/ringo.avif";
+      img.onerror = () => console.error("Failed to load Ringo image!");
+      img.alt = "Ringo Starr head";
+      img.style.width = "50px";
+      img.style.height = "50px";
+      img.style.borderRadius = "50%";
+      img.style.boxShadow = "0 0 8px rgba(0,0,0,0.4)";
+      container.appendChild(img);
+    }
+  
+    document.body.appendChild(container);
+  }
+  
   
 
-  function showRingoOverlay(ratingCount) {
-    const overlay = document.getElementById("ringo-overlay");
-    const text = document.getElementById("ringo-text");
-    const image = document.getElementById("ringo-image");
-  
-    text.textContent = `You got ${ratingCount} Ringo Starr${ratingCount === 1 ? "" : "'s"}`;
-  
-    // Optionally add multiple images of Ringo for each "head"
-    let ringoHeadsHTML = '';
-    for (let i = 0; i < ratingCount; i++) {
-      ringoHeadsHTML += `<img src="img/ringo-head.png" alt="Ringo Starr" style="width: 100px; margin: 10px;" />`;
-    }
-    image.outerHTML = `<div id="ringo-image" style="display: flex; flex-wrap: wrap; justify-content: center;">${ringoHeadsHTML}</div>`;
-  
-    overlay.style.display = "flex";
-  }
-  
 });
+
