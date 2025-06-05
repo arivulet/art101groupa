@@ -180,6 +180,13 @@ const songs = [
 		file: "songs/everest.mp3",
 		photoSize: "500px",
 	},
+	{
+		id: "holding",
+		title: "Holding Someone's Hair Back - Circa Survive",
+		lyrics:
+			"dont say a word dont be grateful if i ever made you laugh lets make believe whats at stake heres more than just your reputation shes got the photos but no recollection hes got the motive but no transportation purely courteous across my chest are you cutting me out now after crawling inside turn away your head what do i deserve what do i deserve instead its a surprise you havent caught on yet its nothing personal youre an embarrassment dont cut me out were offering nothing but the best accommodations just tell us who you are",
+		file: "songs/holdingsomeones.mp3",
+	},
 ];
 
 let currentIndex = 0;
