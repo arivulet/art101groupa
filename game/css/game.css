@@ -13,6 +13,20 @@
 .home-button:hover {
 	background-color: #0056b3;
 }
+#ringo-rating {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+  }
+  
+  #ringo-count-message,
+  #ringo-feedback-message {
+	font-size: 1.2em;
+	color: var(--text-color);
+  }
+  
 #ringo-overlay {
 	display: none;
 	position: fixed;

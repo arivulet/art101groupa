@@ -19,7 +19,7 @@ const songs = [
     id: "feeling",
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
-			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down oh yeah I've got a feeling I've got a feeling oh yeah I've got a feeling...  ",
+			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down  I've got a feeling I've got a feeling I've got a feeling...  ",
 		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
     videoSize: "575px"
 	},
@@ -170,8 +170,8 @@ const songs = [
       lyrics: "No one's ever known me better Than you Point the arm sleeve of your sweater To the moon You never let—no. Never let me down Everest. I'm ever restless now Now Now We could stay up all night Yeah We could stay up Maybe, for another few light-years Maybe, for life",
       file: "songs/everest.mp3",
       photoSize: "500px",
-    }
-
+    }, 
+  
 
 
 
@@ -395,23 +395,30 @@ if (storedTheme) applyTheme(storedTheme);
     const total = spans.length;
     const percent = (correctChars / total) * 100;
   
+    // Determine how many Ringos
     let ringos = 1;
-    let message = "You could use some practice, mate.";
+    let feedback = "You could use some practice, mate.";
     if (percent >= 80) {
       ringos = 3;
-      message = "Pretty fab, drum with me anytime.";
+      feedback = "Pretty fab, drum with me anytime.";
     } else if (percent >= 50) {
       ringos = 2;
-      message = "Not bad for a bloke like you.";
+      feedback = "Not bad for a bloke like you.";
     }
   
+    // Elements
     const overlay = document.getElementById("ringo-rating");
     const headsDiv = document.getElementById("ringo-heads");
+    const countDiv = document.getElementById("ringo-count-message");
     const messageDiv = document.getElementById("ringo-message");
   
+    // Clear previous content
     headsDiv.innerHTML = "";
-    messageDiv.textContent = message;
+    countDiv.textContent = `You got ${ringos} ${ringos === 1 ? "Ringo Starr" : "Ringo Starrs"}!`;
+    messageDiv.textContent = `"${feedback}"`;
+
   
+    // Add Ringo heads
     for (let i = 0; i < ringos; i++) {
       const img = document.createElement("img");
       img.src = "images/ringo.avif";
@@ -424,8 +431,11 @@ if (storedTheme) applyTheme(storedTheme);
       headsDiv.appendChild(img);
     }
   
+    // Show the overlay
     overlay.style.display = "flex";
   }
+  
+  
   // Attach button handlers (after overlay is visible)
 const homeButton = document.getElementById("home-button");
 const replayButton = document.getElementById("replay-button");
