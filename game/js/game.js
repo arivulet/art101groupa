@@ -229,8 +229,12 @@ function resetSong() {
   correctChars = 0;
   $("#lyrics-display span").removeClass("correct incorrect cursor");
   $("#progress-bar").css("width", "0%");
-  $("#ringo-rating").hide().empty(); // Hide rating
   updateCursor();
+  document.getElementById("ringo-rating").style.display = "none";
+document.getElementById("ringo-heads").innerHTML = "";
+document.getElementById("ringo-message").textContent = "";
+
+
 }
 
 function updateProgress() {
@@ -239,30 +243,7 @@ function updateProgress() {
   document.getElementById("progress-bar").style.width = percent + "%";
 }
 
-function showRingoRating() {
-  const spans = document.querySelectorAll("#lyrics-display span");
-  const total = spans.length;
-  const percent = (correctChars / total) * 100;
 
-  let ringos = 1;
-  if (percent >= 80) ringos = 3;
-  else if (percent >= 50) ringos = 2;
-
-  const ratingDiv = document.getElementById("ringo-rating");
-  ratingDiv.innerHTML = "";
-  ratingDiv.style.display = "flex";
-
-  for (let i = 0; i < ringos; i++) {
-    const img = document.createElement("img");
-    img.src = "game/images/ringo.avif";
-    img.alt = "Ringo Starr";
-    img.style.width = "60px";
-    img.style.height = "60px";
-    img.style.borderRadius = "50%";
-    img.style.boxShadow = "0 0 8px rgba(0,0,0,0.4)";
-    ratingDiv.appendChild(img);
-  }
-}
 
 function handleTyping(event) {
   const spans = document.querySelectorAll("#lyrics-display span");
@@ -350,10 +331,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     player.onloadeddata = () => {
       startCountdownAndPlay(player);
-      player.onended = () => {
-        console.log("🎶 Song ended — showing Ringo rating");
-        showRingoRating();
-      };
+      // ⭐ Show Ringo rating when song ends
+  player.onended = () => {
+    console.log("🎶 Song ended — showing Ringo rating");
+    showRingoRating();
+  };
     };
 
     $("#song-title").css("text-align", "center").html("<h2>" + song.title + "</h2>");
@@ -367,6 +349,44 @@ window.addEventListener("DOMContentLoaded", () => {
 
     renderLyrics(song.lyrics);
     updateCursor();
-    $("#ringo-rating").hide().empty(); // Reset Ringo rating on song change
+  
   }
+  function showRingoRating() {
+    const spans = document.querySelectorAll("#lyrics-display span");
+    const total = spans.length;
+    const percent = (correctChars / total) * 100;
+  
+    let ringos = 1;
+    let message = "You could use some practice, mate.";
+    if (percent >= 80) {
+      ringos = 3;
+      message = "Pretty fab, drum with me anytime.";
+    } else if (percent >= 50) {
+      ringos = 2;
+      message = "Not bad for a bloke like you.";
+    }
+  
+    const overlay = document.getElementById("ringo-rating");
+    const headsDiv = document.getElementById("ringo-heads");
+    const messageDiv = document.getElementById("ringo-message");
+  
+    headsDiv.innerHTML = "";
+    messageDiv.textContent = message;
+  
+    for (let i = 0; i < ringos; i++) {
+      const img = document.createElement("img");
+      img.src = "images/ringo.avif";
+      img.alt = "Ringo Starr";
+      img.style.width = "150px";
+      img.style.height = "150px";
+      img.style.borderRadius = "50%";
+      img.style.boxShadow = "0 0 20px rgba(255,255,255,0.7)";
+      img.style.transition = "transform 0.3s ease";
+      headsDiv.appendChild(img);
+    }
+  
+    overlay.style.display = "flex";
+  }
+  
+  
 });
