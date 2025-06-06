@@ -312,7 +312,7 @@ function startCountdownAndPlay(player) {
         setTimeout(() => {
           document.getElementById("lyrics-display").style.visibility = "visible";
           document.getElementById("song-title").style.visibility = "visible";
-        }, 3000);
+        }, 3500);
       }
     }
   }, 1000);
