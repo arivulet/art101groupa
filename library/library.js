@@ -34,7 +34,7 @@ const videoSongs = [
     title: "I've Got A Feeling - The Beatles",
     video: "../game/videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
     thumbnail: "../game/images/tv1.webp",
-    startTime: "50",  // starts at 5s
+    startTime: "90.93",  // 165.8
   },
  
   {
@@ -42,14 +42,14 @@ const videoSongs = [
     title: "Under Cover of Darkness - The Strokes",
     video: "../game/videos/UCOD.mp4",
     thumbnail: "../game/images/tv1.webp",
-    startTime: 88
+    startTime: 46.3
   },
   {
     id: "backwards",
     title: "Feels Like We Only Go Backwards - Arctic Monkeys",
     video: "../game/videos/FLWOGB.mp4",
     thumbnail: "../game/images/tv1.webp",
-    startTime: "129.7"
+    startTime: "129.8"
   },
   {
     id: "forget",
@@ -71,28 +71,28 @@ const videoSongs = [
     title: "Rain - The Beatles",
     video: "../game/videos/RTB(2).mp4",
     thumbnail: "../game/images/tv1.webp",
-    startTime: 123.5
+    startTime: "28.5"
   },
   {
     id: "fake",
     title: "Fake Tales of San Francisco - Arctic Monkeys",
     video: "../game/videos/FTOSF.mp4",
     thumbnail: "../game/images/tv1.webp",
-    startTime: 111
+    startTime: 71.2
   },
   {
     id: "infinity",
     title: "Infinity Repeating - Daft Punk",
     video: "../game/videos/IF.mp4",
     thumbnail: "../game/images/tv1.webp",
-    startTime: 90
+    startTime: 136.7
   }, 
   { 
     id: "smile",
     title: "Die With a Smile - Bruno Mars, Lady Gaga",
     video: "../game/videos/dwas.mp4",
     thumbnail: "../game/images/tv1.webp",
-    startTime: 77
+    startTime: 122.2
   }
 ];
 
@@ -204,7 +204,9 @@ function loadAudioAlbums() {
       let isHovering = true;
     
       const handlePlay = () => {
-        audio.currentTime = 0;
+        const startTime = parseFloat(song.startTime) || 0;
+        audio.currentTime = startTime;
+        
     
         const tryPlay = () => {
           if (!isHovering) return;

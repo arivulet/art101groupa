@@ -1,13 +1,5 @@
 window.songs = [
-	{
-    id: "glue",
-		title: "Glue Song (feat Clario)- Beabadoobee",
-		lyrics:
-			"I've never known someone like you,Tangled in love, stuck by you, from the glue Don't forget to kiss me or else you'll have to miss me I guess I'm stuck forever by the glue, oh, and you",
-      file: "../game/songs/Glue Song (feat. Clairo).mp3",
-     photo: "images/b.webp",
-     albumArt: "../game/albumart/gs.jpeg"
-	},
+
 	{
 
     id: "smile",
@@ -34,7 +26,8 @@ window.songs = [
 		file: "../game/songs/Child Of Nature (Esher Demo).mp3",
 		photo: "images/ontheroad.jpg",
     photoSize: "500px",
-    albumArt: "../game/albumart/tb.jpeg"
+    albumArt: "../game/albumart/tb.jpeg",
+    startTime: "79.1"
 	},
 	{
     id: "forget",
@@ -53,7 +46,8 @@ window.songs = [
     file: "../game/songs/What Ever Happened_.mp3",
     photo: "images/strokes2.jpg",
     photoSize: "610px",
-    albumArt: "../game/albumart/rof.jpeg"
+    albumArt: "../game/albumart/rof.jpeg",
+    startTime: "63.5"
   }, 
   {
   id: "everything",
@@ -62,7 +56,8 @@ window.songs = [
   file: "../game/songs/Everything She Wants.mp3",
   photo: "images/wp4296903-wham-wallpapers.jpg",
   photoSize: "610px",
-  albumArt: "../game/albumart/mib.jpeg"
+  albumArt: "../game/albumart/mib.jpeg",
+  startTime: "86.2"
   },
 
   {
@@ -107,7 +102,8 @@ window.songs = [
   file: "../game/songs/If I Fell (Remastered 2009).mp3",
   photo: "images/ififell.jpeg",
   photoSize: "550px",
-  albumArt: "../game/albumart/ifif.jpeg"
+  albumArt: "../game/albumart/ifif.jpeg",
+  startTime: "49.1"
 
   }, 
   {
@@ -117,7 +113,8 @@ window.songs = [
   file: "../game/songs/Nowhere Man (Remastered 2009).mp3",
   photo: "images/umbrellabeatles.jpg",
   photoSize: "700px",
-  albumArt: "../game/albumart/rs.jpeg"
+  albumArt: "../game/albumart/rs.jpeg",
+  startTime: "63.9"
   }, 
 
   {id: "infinity", 
@@ -133,8 +130,18 @@ window.songs = [
     file: "../game/songs/Sailor Song.mp3",
     photo: "images/gg.jpg",
     photoSize: "550px",
-    albumArt: "../game/images/sailor.jpeg"
+    albumArt: "../game/images/sailor.jpeg",
+    startTime: "69.3"
 
+    },
+    {
+      id: "glue",
+      title: "Glue Song (feat Clario)- Beabadoobee",
+      lyrics:
+        "I've never known someone like you,Tangled in love, stuck by you, from the glue Don't forget to kiss me or else you'll have to miss me I guess I'm stuck forever by the glue, oh, and you",
+        file: "../game/songs/Glue Song (feat. Clairo).mp3",
+       photo: "images/b.webp",
+       albumArt: "../game/albumart/gs.jpeg"
     },
 
   { 
@@ -415,10 +422,10 @@ if (storedTheme) applyTheme(storedTheme);
     let feedback = "You could use some practice, mate.";
     if (percent >= 80) {
       ringos = 3;
-      feedback = "Pretty fab, drum with me anytime.";
+      feedback = "I've got blisters on me fingers! Fab drumming mate.";
     } else if (percent >= 50) {
       ringos = 2;
-      feedback = "Not bad for a bloke like you.";
+      feedback = ".Good stuff lad, drum with me anytime.";
     }
   
     // Elements
