@@ -207,12 +207,13 @@ window.songs = [
 
 ];
 
-window.songId = new URLSearchParams(window.location.search).get("song");
-
 
 let currentIndex = 0;
 let correctChars = 0;
 let startCountdownQueued = null;
+
+// Top of your script
+window.songId = new URLSearchParams(window.location.search).get("song");
 
 function applyTheme(theme) {
   const body = document.body;
@@ -227,39 +228,75 @@ function applyTheme(theme) {
   }
 }
 
+function loadSong(song) {
+  const player = document.getElementById("player");
 
+  if (!song.file) {
+    player.pause();
+    player.removeAttribute("src");
+    player.style.display = "none";
+    player.load();
+    return;
+  }
+
+  const isAudio = song.file.toLowerCase().endsWith(".mp3");
+  player.pause();
+  player.src = song.file;
+  player.load();
+
+  if (isAudio) {
+    player.style.display = "block";
+    player.style.width = song.fileSize || "300px";
+    player.style.height = "30px";
+  } else {
+    player.style.display = "block";
+    player.style.width = "100%";
+    player.style.maxWidth = song.videoSize || "700px";
+  }
+
+  player.onloadeddata = () => {
+    startCountdownAndPlay(player);
+    // ⭐ Show Ringo rating when song ends
+player.onended = () => {
+  console.log("🎶 Song ended — showing Ringo rating");
+  showRingoRating();
+};
+  };
+
+  $("#song-title").css("text-align", "center").html("<h2>" + song.title + "</h2>");
+  $("#typing-container").css("display", "block");
+
+  if (song.photo) {
+    $("#song-photo").attr("src", song.photo).css("max-width", song.photoSize || "450px").show();
+  } else {
+    $("#song-photo").hide();
+  }
+
+  renderLyrics(song.lyrics);
+  updateCursor();
+
+}
 function startCountdownAndPlay(player) {
   const overlay = document.getElementById("countdown-overlay");
-  console.log("Starting countdown...");
-overlay.style.display = 'flex';
-
-
-
-
-
-
   const songId = new URLSearchParams(window.location.search).get("song");
 
+  // Default countdown setup
+  let countdown = 3;
+  overlay.textContent = countdown;
+  overlay.style.display = 'flex';
 
-  if (window.songId === "dontclick") {
+  // Full black background only for "dontclick"
+  if (songId === "dontclick") {
     overlay.style.backgroundColor = "black";
     overlay.style.color = "white";
+
+    // Hide lyrics and title initially
+    document.getElementById("lyrics-display").style.visibility = "hidden";
+    document.getElementById("song-title").style.visibility = "hidden";
   } else {
     overlay.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
     overlay.style.color = "white";
   }
-  
-
-  // Wait if theme not chosen
-  if (!localStorage.getItem("theme")) {
-    startCountdownQueued = () => startCountdownAndPlay(player);
-    document.getElementById("theme-overlay").style.display = "flex";
-    return;
-  }
-
-  let countdown = 3;
-  overlay.textContent = countdown;
-  overlay.style.display = 'flex';
 
   const interval = setInterval(() => {
     countdown--;
@@ -268,6 +305,45 @@ overlay.style.display = 'flex';
     } else {
       clearInterval(interval);
       overlay.style.display = 'none';
+      player.play().catch(err => console.warn("Playback failed:", err));
+
+      // 👇 Show lyrics & title 2 seconds after play for "dontclick"
+      if (songId === "dontclick") {
+        setTimeout(() => {
+          document.getElementById("lyrics-display").style.visibility = "visible";
+          document.getElementById("song-title").style.visibility = "visible";
+        }, 3000);
+      }
+    }
+  }, 1000);
+}
+
+
+
+function launchSecretCountdown(player) {
+  const overlay = document.getElementById("countdown-overlay");
+  const songId = new URLSearchParams(window.location.search).get("song");
+
+  overlay.textContent = "3";
+  overlay.style.display = "flex";
+
+  // Set background depending on song
+  if (songId === "dontclick") {
+    overlay.style.backgroundColor = "black";   // Full blackout
+    overlay.style.color = "white";
+  } else {
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.6)"; // Normal semi-transparent
+    overlay.style.color = "white";
+  }
+
+  let countdown = 3;
+  const interval = setInterval(() => {
+    countdown--;
+    if (countdown > 0) {
+      overlay.textContent = countdown;
+    } else {
+      clearInterval(interval);
+      overlay.style.display = "none";
       player.play().catch(err => console.warn("Playback failed:", err));
     }
   }, 1000);
@@ -392,54 +468,7 @@ if (storedTheme) applyTheme(storedTheme);
   $("#lyrics-display").attr("tabindex", "0");
   $(document).on("keydown", handleTyping);
 
-  function loadSong(song) {
-    const player = document.getElementById("player");
-
-    if (!song.file) {
-      player.pause();
-      player.removeAttribute("src");
-      player.style.display = "none";
-      player.load();
-      return;
-    }
-
-    const isAudio = song.file.toLowerCase().endsWith(".mp3");
-    player.pause();
-    player.src = song.file;
-    player.load();
-
-    if (isAudio) {
-      player.style.display = "block";
-      player.style.width = song.fileSize || "300px";
-      player.style.height = "30px";
-    } else {
-      player.style.display = "block";
-      player.style.width = "100%";
-      player.style.maxWidth = song.videoSize || "700px";
-    }
-
-    player.onloadeddata = () => {
-      startCountdownAndPlay(player);
-      // ⭐ Show Ringo rating when song ends
-  player.onended = () => {
-    console.log("🎶 Song ended — showing Ringo rating");
-    showRingoRating();
-  };
-    };
-
-    $("#song-title").css("text-align", "center").html("<h2>" + song.title + "</h2>");
-    $("#typing-container").css("display", "block");
-
-    if (song.photo) {
-      $("#song-photo").attr("src", song.photo).css("max-width", song.photoSize || "450px").show();
-    } else {
-      $("#song-photo").hide();
-    }
-
-    renderLyrics(song.lyrics);
-    updateCursor();
   
-  }
   function showRingoRating() {
     const spans = document.querySelectorAll("#lyrics-display span");
     const total = spans.length;
