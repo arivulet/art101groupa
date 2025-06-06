@@ -80,7 +80,7 @@ window.songs = [
   {
   id: "fake",
   title: "Fake Tales of San Francisco - Arctic Monkeys",
-  lyrics: "Fake tales of San Francisco echo through the room.",
+  lyrics: "Fake tales of San Francisco echo through the room more point to a wedding disco without a bride or groom there's a super cool band yeah with their trilbies and their glasses of white wine and all the weekend rockstars are in the toilet practicing their lines I don't want to hear you kick me out kick me out I don't wanna hear you no kick me out kick me out I don't wanna hear you kick me out kick me out I don't wanna hear you kick me out kick me out fake tales of San Francisco echo through the air ",
   file: "videos/FTOSF.mp4",
   videoSize: "800px"
 
@@ -119,7 +119,7 @@ window.songs = [
 
   {id: "infinity", 
    title: "Infinity Repeating (2013 Demo) - Daft Punk feat. Julian Casablancas + The Voidz", 
-   lyrics: "I was crossing the border two old friend coincidence I don't want any other two old friend coincidences weekday weekday weekday I don't wanna play any other game on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do ",
+   lyrics: "I was crossing the border two old friend coincidence I don't want any other two old friend coincidences weekday weekday weekday I don't wanna play any other game on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do what he does he does well he does well and he knows he knows it lay down just lay down I was crossing the border we were waiting in line I don't want any other two old friend coincidences voice inside my head dinner's at mine or yours weekday weekday weekday I don't wanna say what he wants to know on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do...",
    file: "videos/IF.mp4"
   },
 
@@ -156,7 +156,7 @@ window.songs = [
     { 
       id: "backwards",
       title: "Feels Like We Only Go Backwards - Arctic Monkeys",
-      lyrics: "It feels like I only go backwards baby every part of me says go ahead I got my hopes again oh no not again it feels like I only go backwards darling I know that you think you sound silly when you call my name but I get it inside my head all day then I realize I'm just holding on to the hope that maybe your feelings don't show it feels like I only go backwards baby every part of me says go ahead I got my hopes up again oh no not again it feels like I only go backwards darling ",
+      lyrics: "It feels like I only go backwards baby every part of me says go ahead I got my hopes again oh no not again it feels like I only go backwards darling I know that you think you sound silly when you call my name but I get it inside my head all day then I realize I'm just holding on to the hope that maybe your feelings don't show it feels like I only go backwards baby every part of me says go ahead I got my hopes up again oh no not again it feels like I only go backwards darling the seed of all this indecision isn't me oh no cause I decided long ago but that's the way it seems to go when trying so hard to get to something real it feels it feels like I only go backwards baby every part of me says go ahead I got my hopes again oh no not again it feels like I only go backwards baby it feels like I only go backwards baby every part of me says go ahead I got my hopes again oh no again it feels like I only go backwards baby...",
       file: "videos/FLWOGB.mp4",
       photoSize: "700px",
 
@@ -267,18 +267,17 @@ function updateCursor() {
   }
 }
 
-function resetSong() {
+$("#reset-button").on("click", () => {
   currentIndex = 0;
   correctChars = 0;
   $("#lyrics-display span").removeClass("correct incorrect cursor");
-  $("#progress-bar").css("width", "0%");
   updateCursor();
+  updateProgress();
+
   document.getElementById("ringo-rating").style.display = "none";
-document.getElementById("ringo-heads").innerHTML = "";
-document.getElementById("ringo-message").textContent = "";
-
-
-}
+  document.getElementById("ringo-heads").innerHTML = "";
+  document.getElementById("ringo-message").textContent = "";
+});
 
 function updateProgress() {
   const spans = document.querySelectorAll("#lyrics-display span");

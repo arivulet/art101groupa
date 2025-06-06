@@ -82,7 +82,7 @@ const videoSongs = [
   },
   {
     id: "infinity",
-    title: "Infinity Repeating - Daft Punk feat. Julian Casablancas + The Voidzs",
+    title: "Infinity Repeating - Daft Punk feat. Julian Casablancas + The Voidz",
     video: "../game/videos/IF.mp4",
     thumbnail: "../game/images/tv1.webp",
     startTime: 136.7
