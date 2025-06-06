@@ -63,7 +63,7 @@ const videoSongs = [
     title: "Paperback Writer - The Beatles",
     video: "../game/videos/PW.mp4",
     thumbnail: "../game/images/tv1.webp",
-    startTime: "80.7"
+    startTime: "80.78"
   },
  
   {
@@ -82,7 +82,7 @@ const videoSongs = [
   },
   {
     id: "infinity",
-    title: "Infinity Repeating - Daft Punk",
+    title: "Infinity Repeating - Daft Punk feat. Julian Casablancas + The Voidzs",
     video: "../game/videos/IF.mp4",
     thumbnail: "../game/images/tv1.webp",
     startTime: 136.7
