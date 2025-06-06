@@ -94,6 +94,8 @@ const videoSongs = [
     thumbnail: "../game/images/tv1.webp",
     startTime: 122.2
   }
+  
+  
 ];
 
 // Load the TVs dynamically

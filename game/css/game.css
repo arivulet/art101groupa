@@ -26,6 +26,12 @@
 	font-size: 1.2em;
 	color: var(--text-color);
   }
+ /* Blackout mode */
+#countdown-overlay.blackout {
+	background-color: black !important;
+  }
+  
+  
   
 #ringo-overlay {
 	display: none;

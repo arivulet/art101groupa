@@ -192,12 +192,22 @@ window.songs = [
       lyrics: "No one's ever known me better Than you Point the arm sleeve of your sweater To the moon You never let—no. Never let me down Everest. I'm ever restless now Now Now We could stay up all night Yeah We could stay up Maybe, for another few light-years Maybe, for life",
       file: "songs/everest.mp3",
       photoSize: "500px",
+
+      
     }, 
-  
+    {
+      id: "dontclick", // must match the URL param
+      title: "Why Don't We Do It In The Road - The Beatles",
+      lyrics: "Why don't we do it in the road why don't we do it in the road why don't we do it in the road why don't we do it in the road no one will be watching us why don't we do it in the road ",
+      file: "videos/why.mp4",          
+      videoSize: "600px"
+    }
 
 
 
 ];
+
+window.songId = new URLSearchParams(window.location.search).get("song");
 
 
 let currentIndex = 0;
@@ -220,6 +230,25 @@ function applyTheme(theme) {
 
 function startCountdownAndPlay(player) {
   const overlay = document.getElementById("countdown-overlay");
+  console.log("Starting countdown...");
+overlay.style.display = 'flex';
+
+
+
+
+
+
+  const songId = new URLSearchParams(window.location.search).get("song");
+
+
+  if (window.songId === "dontclick") {
+    overlay.style.backgroundColor = "black";
+    overlay.style.color = "white";
+  } else {
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    overlay.style.color = "white";
+  }
+  
 
   // Wait if theme not chosen
   if (!localStorage.getItem("theme")) {
@@ -489,6 +518,11 @@ if (nextButton) {
   };
 }
 
+if (window.songId === "wdwdiitr") {
+  overlay.classList.add("blackout");
+} else {
+  overlay.classList.remove("blackout");
+}
   
   
 });
