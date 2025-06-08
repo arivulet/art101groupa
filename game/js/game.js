@@ -543,4 +543,28 @@ if (replayButton) {
     const title = $("#song-title h2").text();
     const song = songs.find(s => s.title === title);
     if (song) {
-      curren
+      currentIndex = 0;
+      correctChars = 0;
+      loadSong(song); // uses the existing loadSong() function
+    }
+  };
+}
+
+if (nextButton) {
+  nextButton.onclick = () => {
+    document.getElementById("ringo-rating").style.display = "none";
+    const nextSong = songs[Math.floor(Math.random() * songs.length)];
+    currentIndex = 0;
+    correctChars = 0;
+    loadSong(nextSong);
+  };
+}
+
+if (window.songId === "wdwdiitr") {
+  overlay.classList.add("blackout");
+} else {
+  overlay.classList.remove("blackout");
+}
+  
+  
+});
