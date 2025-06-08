@@ -161,6 +161,15 @@ window.songs = [
       videoSize: "800px"
     
       }, 
+
+      {
+        id: "cyberpunk",
+        title: " “I Really Want to Stay At Your House” by Rosa Walton",
+        lyrics: "So, get away Another way to feel what you didn't want yourself to know And let yourself go You know you didn't lose your self-control Let's start at the rainbow Turn away Another way to be where you didn't want yourself to go Let yourself go Is that a compromise",
+        file: "videos/lucy.mp4",
+        videoSize: "800px"
+      
+        }, 
     { 
       id: "backwards",
       title: "Feels Like We Only Go Backwards - Arctic Monkeys",

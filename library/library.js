@@ -107,7 +107,14 @@ const videoSongs = [
     video: "../game/videos/why we fight.mp4",
     thumbnail: "../game/images/tv1.webp",
     startTime: 193.3
-  }
+  },
+  { 
+    id: "lucy",
+    title: " “I Really Want to Stay At Your House” by Rosa Walton",
+    video: "../game/videos/lucy.mp4",
+    thumbnail: "../game/images/tv1.webp",
+    startTime: 175.3
+  },
   
 ];
 
