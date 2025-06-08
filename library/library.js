@@ -100,8 +100,14 @@ const videoSongs = [
     video: "../game/videos/dwas.mp4",
     thumbnail: "../game/images/tv1.webp",
     startTime: 122.2
+  },
+  { 
+    id: "ego",
+    title: "WHY WE FIGHT // EGO ft.Qing Madi",
+    video: "../game/videos/why we fight.mp4",
+    thumbnail: "../game/images/tv1.webp",
+    startTime: 193.3
   }
-  
   
 ];
 

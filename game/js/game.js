@@ -153,6 +153,14 @@ window.songs = [
     photoSize: "550px",
     albumArt: "../game/albumart/bdl.jpeg"
     },
+    {
+      id: "ego",
+      title: "WHY WE FIGHT // EGO ft.Qing Madi",
+      lyrics: "Come home, come here Come out and let me breathe, oh, let me breathe now Come home, come here Come out and let me breathe, let me breathe, oh-woah And I pray that my jealousy don't turn into evil And I pray that the world doesn't shape up my ego I pray that my jealousy don't turn into evil And I pray that the world doesn't shape up my ego",
+      file: "videos/why we fight.mp4",
+      videoSize: "800px"
+    
+      }, 
     { 
       id: "backwards",
       title: "Feels Like We Only Go Backwards - Arctic Monkeys",
@@ -535,28 +543,4 @@ if (replayButton) {
     const title = $("#song-title h2").text();
     const song = songs.find(s => s.title === title);
     if (song) {
-      currentIndex = 0;
-      correctChars = 0;
-      loadSong(song); // uses the existing loadSong() function
-    }
-  };
-}
-
-if (nextButton) {
-  nextButton.onclick = () => {
-    document.getElementById("ringo-rating").style.display = "none";
-    const nextSong = songs[Math.floor(Math.random() * songs.length)];
-    currentIndex = 0;
-    correctChars = 0;
-    loadSong(nextSong);
-  };
-}
-
-if (window.songId === "wdwdiitr") {
-  overlay.classList.add("blackout");
-} else {
-  overlay.classList.remove("blackout");
-}
-  
-  
-});
+      curren
