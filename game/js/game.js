@@ -192,9 +192,14 @@ window.songs = [
       lyrics: "No one's ever known me better Than you Point the arm sleeve of your sweater To the moon You never let—no. Never let me down Everest. I'm ever restless now Now Now We could stay up all night Yeah We could stay up Maybe, for another few light-years Maybe, for life",
       file: "songs/everest.mp3",
       photoSize: "500px",
-
-      
-    }, 
+    },
+    { 
+    id: "Save a Prayer",
+    title: "Save a Prayer - Duran Duran",
+    lyrics: "You saw me standing by the wall Corner of a main street And the lights are flashing on your window sill All alone ain't much fun So you're looking for the thrill And you know just what it takes And where to go, Don't say a prayer for me now Save it till the morning after No, don't say a prayer for me now Save it till the morning after",
+    file: "videos/Duran Duran - Save A Prayer (Official Music Video).mp4",
+    videoSize: "500px",
+    },
     {
       id: "dontclick", // must match the URL param
       title: "Why Don't We Do It In The Road - The Beatles",

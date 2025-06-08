@@ -29,6 +29,13 @@ document.querySelectorAll('.tv-container').forEach(container => {
 
   // Array of video songs
 const videoSongs = [
+  { 
+    id: "Save a Prayer",
+    title: "Save a Prayer - Duran Duran",
+    video: "../game/videos/Duran Duran - Save A Prayer (Official Music Video).mp4",
+    thumbnail: "../game/images/tv1.webp",
+    startTime: 60
+  },
   {
     id: "feeling",
     title: "I've Got A Feeling - The Beatles",
