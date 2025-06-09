@@ -1,26 +1,4 @@
-/* @font-face {
-	font-family: "Ethnocentric";
-	src: url("fonts\ethnocentric\Ethnocentric Light.otf") format("opentype");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-} */
-/* .chunk {
-    border: solid 10px black;
-    border-radius: 25px;
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
-    background-color: antiquewhite;
+li {
+	text-decoration: none;
+	color: var(--text-color);
 }
-
-.text {
-    flex-direction: column;
-    padding: 20px;
-}
-
-h2 {
-    font-family: "Ethnocentric", Arial, Helvetica, sans-serif;
-    font-size: 30px;
-} */
-

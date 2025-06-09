@@ -19,14 +19,14 @@
 	align-items: center;
 	gap: 10px;
 	text-align: center;
-  }
-  
-  #ringo-count-message,
-  #ringo-feedback-message {
+}
+
+#ringo-count-message,
+#ringo-feedback-message {
 	font-size: 1.2em;
 	color: var(--text-color);
-  }
-  #countdown-overlay {
+}
+#countdown-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -39,9 +39,8 @@
 	z-index: 10000;
 	background-color: rgba(0, 0, 0, 0.6); /* gets overridden for 'dontclick' */
 	color: white;
-  }
-  
-  
+}
+
 #ringo-overlay {
 	position: fixed;
 	top: 0;
@@ -203,6 +202,81 @@ html {
 	}
 }
 
+#progress-container {
+	background: #333;
+	border-radius: 8px;
+	height: 10px;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
 
+#progress-bar {
+	background: #0cf404;
+	width: 0%;
+	height: 100%;
+	transition: width 0.2s ease;
+}
+
+#themeoverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.9);
+	color: white;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 10001;
+	text-align: center;
+}
+
+#countdown-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.85);
+	color: white;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	font-size: 10vw;
+	font-weight: bold;
+	z-index: 9999;
+	transition: opacity 0.5s ease;
+}
+
+#ringo-rating {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.95);
+	color: white;
+	z-index: 10000;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	padding: 20px;
+}
+
+#reset-button {
+	background-color: #61dafb;
+	color: #000;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s;
+}
 /* Optional: hide default controls and make custom play button */
 /* That would require more JS, but this simple style helps a lot */

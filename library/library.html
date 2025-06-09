@@ -7,26 +7,22 @@
   <link rel="stylesheet" href="../css/sitewide.css" />
   <link rel="stylesheet" href="library.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
- <!-- Load the songs array -->
-<script src="/game/js/game.js"></script>
+  <!-- Load the songs array -->
+  <script src="/game/js/game.js"></script>
 
-<!-- Load your dark mode toggle -->
-<script src="mainpage/mainpagejs/darkmode.js" defer></script>
+  <!-- Load your dark mode toggle -->
+  <script src="../mainpage/mainpagejs/darkmode.js" defer></script>
 
-<!-- Load your dynamic video/audio strip logic -->
-<script src="library.js" defer></script>
-
-
+  <!-- Load your dynamic video/audio strip logic -->
+  <script src="library.js" defer></script>
 </head>
-<body>
-	
-	  
+<body>  
   <main>
-    <h1>
-      <a href="../index.html" style="color: inherit; text-decoration: none;">Song Library</a>
-    </h1>
-    
-
+    <section id="header">
+			<a href="../index.html">
+				<h1>Type That Tune!</h1>
+			</a>
+		</section>
     <section>
       <button id="daynite">
         <!-- Dark mode icon -->
@@ -39,7 +35,6 @@
         </svg>
       </button>
     </section>
-
     <section id="library">
       <ul>
         <h2 style="text-align: center; margin-top: 40px;">Videos</h2>
@@ -55,18 +50,10 @@
             <div id="audio-album-strip"></div>
           </div>
         </div>
-       
-        
-
-        
-        
-        
         <li><a href="../game/index.html?song=chihiro">CHIHIRO - Billie Eilish</a></li>
         <li><a href="../game/index.html?song=everest">everest - Public Library Commute</a></li>
-
       </ul>
     </section>
-
     <nav>
       <a href="../index.html">Back to Menu</a>
     </nav>
