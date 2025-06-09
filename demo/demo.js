@@ -27,12 +27,18 @@ const demoSongs = [
       thumbnail: "../game/images/tv1.webp",
       startTime: 84.4
     },
+    {id: "forget",
+      title: "Forget Her - Jeff Buckley",
+      video: "../game/videos/FHJB.mp4",
+      thumbnail: "../game/images/tv1.webp",
+      startTime: 156.7
+    },
     {
-      id: "everything",
-      title: "Everything She Wants - Wham!",
-      file: "../game/songs/Everything She Wants.mp3",
-      albumArt: "../game/albumart/mib.jpeg",
-      startTime: 86.1
+      id: "for",
+      title: "If Not For You - George Harrison",
+      file: "../game/songs/If Not for You (2014 Remaster).mp3",
+      albumArt: "../game/albumart/atmp.jpeg",
+      startTime: 32.3
     },
     {
       id: "nowhere",
@@ -40,7 +46,22 @@ const demoSongs = [
       file: "../game/songs/Nowhere Man (Remastered 2009).mp3",
       albumArt: "../game/albumart/rs.jpeg",
       startTime: 127.19
-    }
+    },
+    {
+      id: "chances",
+      title: "Chances - The Strokes",
+      file: "../game/songs/Chances.mp3",
+      albumArt: "../game/albumart/cm.jpeg",
+      startTime: 55
+    }, 
+    {
+      id: "glue",
+      title: "Glue Song (feat Clario)- Beabadoobee",
+      file: "../game/songs/Glue Song (feat. Clairo).mp3",
+       photo: "images/b.webp",
+       albumArt: "../game/albumart/gs.jpeg"
+    },
+
   ];
 
   function loadDemoStrip() {

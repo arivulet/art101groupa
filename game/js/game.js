@@ -5,7 +5,7 @@ window.songs = [
     id: "smile",
 		title: "Die With a Smile - Bruno Mars, Lady Gaga",
 		lyrics:
-			"If the world was ending, I'd wanna be next to you If the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile If the world was ending, I'd wanna be next to you",
+			"I I just woke up from a dream where you and I had to say goodbye and I don't know what it all means but since I survived I realized wherever you go that's where I'll follow nobody's promised tomorrow so imma love you every night like it's the last night if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you lost lost in the words that was scream I don't even wanna do this anymore cause you already know what you mean to me and our love's the only war worth fighting for wherever you go that's where I'll follow nobody's promised tomorrow if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you right next to you next to you right next to you if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you if the world was ending Id wanna be next to you I'd wanna be next to you...",
 		file: "../game/videos/dwas.mp4",
 
 
@@ -14,9 +14,9 @@ window.songs = [
     id: "feeling",
 		title: "I've Got A Feeling - The Beatles",
 		lyrics:
-			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up yeah everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up oh no no everybody put their foot down  I've got a feeling I've got a feeling I've got a feeling...  ",
+			"I've got a feeling a feeling deep inside oh yeah oh yeah that's right I've got a feeling a feeling I can't hide oh no no oh no oh no yeah yeah I've got a feeling oh please believe me I'd hate to miss the train oh yeah yeah oh yeah and if you leave me I won't be late again oh no oh no oh no yeah yeah I've got a feeling yeah I've got a feeling all these years I've been wandering around wondering how come nobody told me all that I was looking for was somebody who looked like you I've got a feeling that keeps me on my toes oh yeah oh yeah I've got a feeling I think that everybody knows oh yeah oh yeah oh yeah yeah I've got a feeling yeah everybody had a hard year everybody had a good time everybody had a wet dream everybody saw the sunshine oh yeah oh yeah oh yeah everybody had a good year everybody let their hair down everybody pulled their socks up everybody put their foot down oh yeah everybody had a good year everybody had a hard time everybody had a wet dream everybody saw the sunshine everybody had a good year everybody let their hair down everybody pulled their socks up everybody put their foot down oh yeah I've got a feeling I've got a feeling I've got a feeling...",
 		file: "videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
-    videoSize: "575px"
+    videoSize: "595px"
 	},
 	{
     id: "nature",
@@ -33,7 +33,7 @@ window.songs = [
     id: "forget",
 		title: "Forget Her - Jeff Buckley",
 		lyrics:
-			"While this town is busy sleeping all the noise has died away I walk the streets to stop my weeping cause she will never change her ways but don't fool yourself she was heartache from the moment that you met her ah my heart feels so still as I try to find the will to forget her somehow oh I think I've forgotten her now her love is a rose pale and dying dropping her petals in vain I know all full of wine the world before while sober with no place to go don't fool yourself she was heartache from the moment that you met her my heart is frozen still as I try to find the will to forget her somehow she's somewhere out there now all my tears as I try to forget her love was a joke from the day that we met all of her words all of her men all of my pain when I think back to when remember her hair as it shone in the sun the smell of the bed when I knew what she'd done tell yourself over and over you won't ever need her again but do",
+			"While this town is busy sleeping all the noise has died away I walk the streets to stop my weeping cause she will never change her ways but don't fool yourself she was heartache from the moment that you met her ah my heart feels so still as I try to find the will to forget her somehow oh I think I've forgotten her now her love is a rose pale and dying dropping her petals in vain I know all full of wine the world before while sober with no place to go don't fool yourself she was heartache from the moment that you met her my heart is frozen still as I try to find the will to forget her somehow she's somewhere out there now all my tears as I try to forget her love was a joke from the day that we met all of her words all of her men all of my pain when I think back to when remember her hair as it shone in the sun the smell of the bed when I knew what she'd done tell yourself over and over you won't ever need her again but don't fool yourself she was heartache from the moment that you met her oh my heart is frozen still as I try to find the will to forget her somehow she's out there somewhere now she was heartache from the day I first met her my heart is frozen still as I try to find the will to forget you somehow cause I know you're somewhere out there right now...",
 		file: "videos/FHJB.mp4",
     videoSize: "800px"
   
@@ -42,7 +42,7 @@ window.songs = [
     id: "what",
     title: "What Ever Happened - The Strokes",
     lyrics: 
-     "I wanna be forgotten and I don't wanna be reminded. You say please don't make this harder. No I won't yet.  I wanna be beside her. She wanna be admired, you say please don't make this harder. No I won't yet. Oh dear is it really all true? Did they offend us and they want it to sound true? Top ten ideas for countdown shows, whose culture is this and does anybody know? I wait and tell myself, life ain't chess, but no one comes in and yes, you're alone. You don't miss me, I know. Oh Tennessee what did you write? ",
+     "I wanna be forgotten and I don't wanna be reminded you say please don't make this harder no I won't yet I wanna be beside her she wanna be admired you say please don't make this harder no I won't yet oh dear is it really all true did they offend us and they want it to sound true top ten ideas for countdown shows whose culture is this and does anybody know I wait and tell myself life ain't chess but no one comes in and yes you're alone you don't miss me I know oh Tennessee what did you write I come together in the middle of the night oh that's an ending that I can't write cause I got you to let me down I wanna be forgotten and I don't wanna be reminded you say please don't make this harder no I won't yet I wanna be beside her she wanna be admired I say please don't make this harder no I won't yet... ",
     file: "../game/songs/What Ever Happened_.mp3",
     photo: "images/strokes2.jpg",
     photoSize: "610px",
@@ -63,7 +63,7 @@ window.songs = [
   {
   id: "paperback",
   title: "Paperback Writer - The Beatles",
-  lyrics: "Paperback writer dear sir or madam will you read my book it took me years to write will you take a look it's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer paperback writer it's a dirty story of a dirty man and his clinging wife doesn't understand his son is working for the daily mail it's a steady job but he wants to be a paperback writer paperback writer.",
+  lyrics: "Paperback writer dear sir or madam will you read my book it took me years to write will you take a look it's based on a novel by a man named Lear and I need a job so I wanna be a paperback writer paperback writer it's a dirty story of a dirty man and his clinging wife doesn't understand his son is working for the daily mail it's a steady job but he wants to be a paperback writer paperback writer it's a thousand pages give or take a few I'll be writing more in a week or two I can make it longer if you like the style I can change it round and I wanna be a paperback writer paperback writer if you really like it you can have the rights it could make a million for you overnight if you must return it you can send it here but I need a break and I wanna be a paperback writer paperback writer paperback writer paperback writer paperback writer paperback writer paperback writer...",
   file: "videos/PW.mp4",
   videoSize: "800px",
  
@@ -80,7 +80,7 @@ window.songs = [
   {
   id: "fake",
   title: "Fake Tales of San Francisco - Arctic Monkeys",
-  lyrics: "Fake tales of San Francisco echo through the room more point to a wedding disco without a bride or groom there's a super cool band yeah with their trilbies and their glasses of white wine and all the weekend rockstars are in the toilet practicing their lines I don't wanna hear you kick me out kick me out I don't wanna hear you no kick me out kick me out I don't wanna hear you kick me out kick me out I don't wanna hear you kick me out kick me out fake tales of San Francisco echo through the air ",
+  lyrics: "Fake tales of San Francisco echo through the room more point to a wedding disco without a bride or groom there's a super cool band yeah with their trilbies and their glasses of white wine and all the weekend rockstars are in the toilet practicing their lines I don't wanna hear you kick me out kick me out I don't wanna hear you no kick me out kick me out I don't wanna hear you kick me out kick me out I don't wanna hear you I don't wanna hear you fake tales of San Francisco echo through the air and there's a few bored faces at the back hole wishing they weren't there and as the microphones squeaks a young girl's telephone beeps yeah she's dashing for the exit oh she's running to the streets outside oh you've saved me she screams down the line the band aren't very good and I'm not having a nice time I don't wanna hear you kick me out kick me out I don't wanna hear you no kick me out kick me out yeah but his bird thinks it's amazing though so all that's left is the proof that love's not only blind but deaf he talks of San Francisco he's from Hunter's Bar I don't quite know the distance but I'm sure that's far yeah I'm sure it's pretty far and yeah I'd love to tell you all my problem you're not from New York City you're from Rotheram so get off the bandwagon and put down the handbook yeah yeah yeah yeah get off the bandwagon put down the handbook get off the bandwagon put down the handbook get off the bandwagon put down the handbook get off the bandwagon put down the handbook yeah... ",
   file: "videos/FTOSF.mp4",
   videoSize: "800px"
 
@@ -109,14 +109,25 @@ window.songs = [
   {
   id: "nowhere",
   title: "Nowhere Man - The Beatles",
-  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody doesn't have a point of view knows not where he's going to isn't he a bit like you and me nowhere man please listen you don't know what you're missing nowhere man the world is at your command he's as blind as he can be just sees what he wants to see nowhere man can you see me at all",
+  lyrics: "He's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody doesn't have a point of view knows not where he's going to isn't he a bit like you and me nowhere man please listen you don't know what you're missing nowhere man the world is at your command he's as blind as he can be just sees what he wants to see nowhere man can you see me at all he's as blind as he can be just sees what he wants to see nowhere man can you see me at all nowhere man don't worry take your time don't hurry leave it all til somebody else lends you a hand doesn't have a point of view knows not where he's going to isn't he a bit like you and me nowhere man please listen you don't know what you're missing nowhere man the world is at your command he's a real nowhere man sitting in his nowhere land making all his nowhere plans for nobody making all his nowhere plans for nobody making all his nowhere plans for nobody...",
   file: "../game/songs/Nowhere Man (Remastered 2009).mp3",
   photo: "images/umbrellabeatles.jpg",
   photoSize: "700px",
   albumArt: "../game/albumart/rs.jpeg",
   startTime: "63.9"
   }, 
+  {
+    id: "for",
+    title: "If Not For You - George Harrison", 
+    lyrics: "If not for you babe I couldn't even find the door I couldn't even see the floor I'd be sad and blue if not for you if not for you babe the night would see me wide awake the day would surely have to break it would not be new if not for you if not for you my sky would fall rain would gather too without your love I'd be nowhere at all I'd be lost if not for you if not for you the winter would hold no spring you couldn't hear a robin sing I just wouldn't have a clue if not for you if not for you my sky would fall rain would gather to without your love I'd be nowhere at all I'd be lost if not for you if not for you the winter would hold no spring you couldn't hear a robin sing I just wouldn't have a clue if not for you if not for you...",
+    file: "../game/songs/If Not for You (2014 Remaster).mp3",
+    photo: "../game/images/gh.jpg",
+    photoSize: "700px",
+    albumArt: "../game/albumart/atmp.jpeg",
+    startTime: "44.2",
 
+
+  },
   {id: "infinity", 
    title: "Infinity Repeating (2013 Demo) - Daft Punk feat. Julian Casablancas + The Voidz", 
    lyrics: "I was crossing the border two old friend coincidence I don't want any other two old friend coincidences weekday weekday weekday I don't wanna play any other game on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do what he does he does well he does well and he knows he knows it lay down just lay down I was crossing the border we were waiting in line I don't want any other two old friend coincidences voice inside my head dinner's at mine or yours weekday weekday weekday I don't wanna say what he wants to know on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do...",
@@ -138,12 +149,27 @@ window.songs = [
       id: "glue",
       title: "Glue Song (feat Clario)- Beabadoobee",
       lyrics:
-        "I've never known someone like you,Tangled in love, stuck by you, from the glue Don't forget to kiss me or else you'll have to miss me I guess I'm stuck forever by the glue, oh, and you",
+        "I've never known someone like you tangled in love stuck by you from the glue don't forget to kiss me or else you'll have to miss me I guess I'm stuck forever by the glue oh and you you've been hiding in plain sight then appeared all I know loving you once only feels wrong I need years I always knew I'd find you to be here is worth the wait too I'm not lying when I say I've been stuck by the glue onto you I've been stuck by glue right onto you I've been stuck by glue I've never known I've never known someone like you I've never known I've never known someone like you...",
         file: "../game/songs/Glue Song (feat. Clairo).mp3",
        photo: "images/b.webp",
+       photoSize: "550px",
        albumArt: "../game/albumart/gs.jpeg"
     },
 
+    {
+      id: "chances",
+      title: "Chances - The Strokes",
+      lyrics: "I waited for ya I waited for ya I waited on ya", 
+      file: "../game/songs/Chances.mp3",
+      photo: "images/ts2.jpg",
+      photoSize: "",
+      albumArt: "../game/albumart/cm.jpeg",
+      startTime: 78
+
+
+
+
+    },
   { 
     id: "blood",
     title: "Bloodline - Alex Warren",
