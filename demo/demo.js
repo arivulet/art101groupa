@@ -4,28 +4,28 @@ const demoSongs = [
       title: "I've Got A Feeling - The Beatles",
       video: "../game/videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
       thumbnail: "../game/images/tv1.webp",
-      startTime: 70
+      startTime: 165.7
     },
     {
       id: "rain",
       title: "Rain - The Beatles",
       video: "../game/videos/RTB(2).mp4",
       thumbnail: "../game/images/tv1.webp",
-      startTime: 20
+      startTime: 123.2
     },
     {
       id: "backwards",
       title: "Feels Like We Only Go Backwards - Arctic Monkeys",
       video: "../game/videos/FLWOGB.mp4",
       thumbnail: "../game/images/tv1.webp",
-      startTime: 30
+      startTime: 117
     },
     {
       id: "darkness",
       title: "Under Cover of Darkness - The Strokes",
       video: "../game/videos/UCOD.mp4",
       thumbnail: "../game/images/tv1.webp",
-      startTime: 120
+      startTime: 84.4
     },
     {
       id: "everything",
@@ -42,7 +42,7 @@ const demoSongs = [
       startTime: 127.19
     }
   ];
-  
+
   function loadDemoStrip() {
     const strip = document.getElementById("demo-strip");
   
@@ -52,7 +52,7 @@ const demoSongs = [
       if (song.video) {
         div.innerHTML = `
           <a href="../game/index.html?song=${song.id}" class="tv-link">
-            <div class="tv-container">
+            <div class="tv-container" data-id="${song.id}">
               <video class="tv-video" preload="metadata" playsinline data-start="${song.startTime}">
                 <source src="${song.video}" type="video/mp4" />
               </video>
@@ -76,32 +76,29 @@ const demoSongs = [
       strip.appendChild(div);
     });
   
-    // Hover behavior for videos
+    // --- TV Hover Logic ---
     document.querySelectorAll('.tv-container').forEach(container => {
-        const video = container.querySelector('.tv-video');
-        const startTime = parseFloat(video.dataset.start) || 0;
-      
-        // Wait for metadata so we can seek safely
-        video.addEventListener('loadedmetadata', () => {
-          video.currentTime = startTime;
-        });
-      
-        // Playback on hover
-        container.addEventListener('mouseenter', () => {
-          video.currentTime = startTime;
-          video.play().catch(err => {
-            console.warn("Autoplay error:", err.message);
-          });
-        });
-      
-        container.addEventListener('mouseleave', () => {
-          video.pause();
-          video.currentTime = startTime;
+      const video = container.querySelector('.tv-video');
+      const startTime = parseFloat(video.dataset.start) || 0;
+  
+      video.addEventListener('loadedmetadata', () => {
+        video.currentTime = startTime;
+      });
+  
+      container.addEventListener('mouseenter', () => {
+        video.currentTime = startTime;
+        video.play().catch(err => {
+          console.warn("Autoplay error:", err.message);
         });
       });
-      
   
-    // Hover behavior for audio — only after elements exist
+      container.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = startTime;
+      });
+    });
+  
+    // --- Album Hover Logic ---
     document.querySelectorAll('.album-container').forEach(container => {
       const audio = container.querySelector('audio');
       const startTime = parseFloat(audio.dataset.start) || 0;
@@ -131,6 +128,9 @@ const demoSongs = [
       });
     });
   }
+  
+  document.addEventListener("DOMContentLoaded", loadDemoStrip);
+  
   
 
   document.querySelectorAll('.album-container').forEach(container => {
@@ -165,5 +165,4 @@ const demoSongs = [
   
   
   
-  document.addEventListener("DOMContentLoaded", loadDemoStrip);
   

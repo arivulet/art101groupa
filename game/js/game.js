@@ -33,7 +33,7 @@ window.songs = [
     id: "forget",
 		title: "Forget Her - Jeff Buckley",
 		lyrics:
-			"While this town is busy sleeping, all the noise has died away, I walk the streets to stop my weeping cause she will never change her way. But don't fool yourself, she was heartache from the moment that you met her. Ah, my heart feels so still as I try to find the will To forget her somehow. Oh, I think I've forgotten her now.",
+			"While this town is busy sleeping all the noise has died away I walk the streets to stop my weeping cause she will never change her ways but don't fool yourself she was heartache from the moment that you met her ah my heart feels so still as I try to find the will to forget her somehow oh I think I've forgotten her now her love is a rose pale and dying dropping her petals in vain I know all full of wine the world before while sober with no place to go don't fool yourself she was heartache from the moment that you met her my heart is frozen still as I try to find the will to forget her somehow she's somewhere out there now all my tears as I try to forget her love was a joke from the day that we met all of her words all of her men all of my pain when I think back to when remember her hair as it shone in the sun the smell of the bed when I knew what she'd done tell yourself over and over you won't ever need her again but do",
 		file: "videos/FHJB.mp4",
     videoSize: "800px"
   
@@ -80,7 +80,7 @@ window.songs = [
   {
   id: "fake",
   title: "Fake Tales of San Francisco - Arctic Monkeys",
-  lyrics: "Fake tales of San Francisco echo through the room more point to a wedding disco without a bride or groom there's a super cool band yeah with their trilbies and their glasses of white wine and all the weekend rockstars are in the toilet practicing their lines I don't want to hear you kick me out kick me out I don't wanna hear you no kick me out kick me out I don't wanna hear you kick me out kick me out I don't wanna hear you kick me out kick me out fake tales of San Francisco echo through the air ",
+  lyrics: "Fake tales of San Francisco echo through the room more point to a wedding disco without a bride or groom there's a super cool band yeah with their trilbies and their glasses of white wine and all the weekend rockstars are in the toilet practicing their lines I don't wanna hear you kick me out kick me out I don't wanna hear you no kick me out kick me out I don't wanna hear you kick me out kick me out I don't wanna hear you kick me out kick me out fake tales of San Francisco echo through the air ",
   file: "videos/FTOSF.mp4",
   videoSize: "800px"
 
@@ -213,9 +213,9 @@ window.songs = [
     { 
     id: "Save a Prayer",
     title: "Save a Prayer - Duran Duran",
-    lyrics: "You saw me standing by the wall Corner of a main street And the lights are flashing on your window sill All alone ain't much fun So you're looking for the thrill And you know just what it takes And where to go, Don't say a prayer for me now Save it till the morning after No, don't say a prayer for me now Save it till the morning after",
+    lyrics: "You saw me standing by the wall corner of a main street and the lights are flashing on your window sill all alone ain't much fun So you're looking for the thrill and you know just what it takes and where to go don't say a prayer for me now save it till the morning after no don't say a prayer for me now save it till the morning after",
     file: "videos/Duran Duran - Save A Prayer (Official Music Video).mp4",
-    videoSize: "500px",
+    videoSize: "800px",
     },
     {
       id: "dontclick", // must match the URL param
@@ -545,6 +545,7 @@ if (storedTheme) applyTheme(storedTheme);
 const homeButton = document.getElementById("home-button");
 const replayButton = document.getElementById("replay-button");
 const nextButton = document.getElementById("next-button");
+
 
 if (homeButton) {
   homeButton.onclick = () => window.location.href = "/index.html";

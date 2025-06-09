@@ -29,13 +29,6 @@ document.querySelectorAll('.tv-container').forEach(container => {
 
   // Array of video songs
 const videoSongs = [
-  { 
-    id: "Save a Prayer",
-    title: "Save a Prayer - Duran Duran",
-    video: "../game/videos/Duran Duran - Save A Prayer (Official Music Video).mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: 60
-  },
   {
     id: "feeling",
     title: "I've Got A Feeling - The Beatles",
@@ -50,6 +43,13 @@ const videoSongs = [
     video: "../game/videos/UCOD.mp4",
     thumbnail: "../game/images/tv1.webp",
     startTime: 46.3
+  },
+  { 
+    id: "Save a Prayer",
+    title: "Save a Prayer - Duran Duran",
+    video: "../game/videos/Duran Duran - Save A Prayer (Official Music Video).mp4",
+    thumbnail: "../game/images/tv1.webp",
+    startTime: "62.001"
   },
   {
     id: "backwards",
@@ -121,7 +121,10 @@ const videoSongs = [
 // Load the TVs dynamically
 function loadTVStrips() {
   
+  
   const container = document.getElementById("video-tv-strip");
+  console.log("loaded TV previews")
+  container.innerHTML = ""; 
   videoSongs.forEach(song => {
     const div = document.createElement("div");
     div.className = "tv-container";
@@ -175,6 +178,16 @@ function loadTVStrips() {
       }
     });
   
+
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted) {
+        document.getElementById("video-tv-strip").innerHTML = "";
+        document.getElementById("audio-album-strip").innerHTML = "";
+        loadTVStrips();
+        loadAudioAlbums();
+      }
+    });
+    
     container.addEventListener('mouseleave', () => {
       isHovering = false;
       video.pause();
@@ -195,6 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loadAudioAlbums() {
   const container = document.getElementById("audio-album-strip");
+  container.innerHTML = ""; 
 
   if (!window.songs || !Array.isArray(songs)) {
     console.warn("No songs array found.");
@@ -271,3 +285,22 @@ function loadAudioAlbums() {
   }, { once: true });
   
 }
+
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+    console.log("Restoring previews after back nav...");
+    loadTVStrips();
+    loadAudioAlbums();
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  loadTVStrips();
+  loadAudioAlbums();
+});
+
+let userHasInteracted = false;
+
+document.addEventListener("click", () => {
+  userHasInteracted = true;
+}, { once: true });
+

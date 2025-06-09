@@ -1,0 +1,51 @@
+#demo-float {
+    position: fixed;
+    top: 50%;
+    left: 120px;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+  
+  #demo-float-btn {
+    background-color: #9cffa3;
+    color: black;
+    font-weight: bold;
+    padding: 60px 60px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.3);
+    transition: transform 0.2s ease;
+  }
+  
+  #demo-float-btn:hover {
+    transform: scale(1.08);
+  }
+  
+
+  #dont-click-wrapper {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+  
+  #dont-click-btn {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    transition: transform 0.2s ease;
+  }
+  
+  #dont-click-btn:hover {
+    transform: scale(1.08);
+  }
+  

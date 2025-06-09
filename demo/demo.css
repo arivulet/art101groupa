@@ -28,7 +28,7 @@ body {
   .tv-video {
     position: absolute;
     top: 10%;
-    left: 9%;
+    left: 8%;
     width: 62%;
     height: 62%;
     object-fit: cover;
@@ -43,9 +43,19 @@ body {
   .tv-container:hover .tv-video {
     filter: brightness(1);
   }
+
+  /* Special case for "Feels Like We Only Go Backwards" */
+.tv-container[data-id="backwards"] .tv-video {
+  top: 7%;        /* match others or tweak */
+  left: 6%;
+  width: 64.8%;
+  height: 62%;
+  transform: scale(1.09) translateY(-2px); /* fine-tune the vertical offset */
+}
+
   
   .tv-image {
-    width: 100%;
+    width: 97%;
     display: block;
     z-index: 2;
   }
