@@ -29,6 +29,13 @@ document.querySelectorAll('.tv-container').forEach(container => {
 
   // Array of video songs
 const videoSongs = [
+  { 
+    id: "Save a Prayer",
+    title: "Save a Prayer - Duran Duran",
+    video: "../game/videos/Duran Duran - Save A Prayer (Official Music Video).mp4",
+    thumbnail: "../game/images/tv1.webp",
+    startTime: 60
+  },
   {
     id: "feeling",
     title: "I've Got A Feeling - The Beatles",
@@ -93,8 +100,21 @@ const videoSongs = [
     video: "../game/videos/dwas.mp4",
     thumbnail: "../game/images/tv1.webp",
     startTime: 122.2
-  }
-  
+  },
+  { 
+    id: "ego",
+    title: "WHY WE FIGHT // EGO ft.Qing Madi",
+    video: "../game/videos/why we fight.mp4",
+    thumbnail: "../game/images/tv1.webp",
+    startTime: 193.3
+  },
+  { 
+    id: "lucy",
+    title: " “I Really Want to Stay At Your House” by Rosa Walton",
+    video: "../game/videos/lucy.mp4",
+    thumbnail: "../game/images/tv1.webp",
+    startTime: 175.3
+  },
   
 ];
 
