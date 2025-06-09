@@ -52,7 +52,7 @@ window.songs = [
   {
   id: "everything",
   title: "Everything She Wants - Wham!",
-  lyrics: "Ah ha ha. Oh yeah. Work. Somebody told me, boy everything she wants is everything she sees. I guess I must've loved you because I said you were the perfect girl for me, baby. And now we're six months older and everything you want and everything you see, is out of reach not good enough. I don't know what the hell you want from me, oh. Somebody tell me, won't you tell me, why I work so hard for you. ",
+  lyrics: "Ah ha ha oh yeah work somebody told me boy everything she wants is everything she sees I guess I must have loved you because I said you were the perfect girl for me baby and now we're six months older and everything you want and everything you see is out of reach not good enough I don't know what the hell you want from me oh somebody tell me won't you tell me why I work so hard for you some people work for a living some people work for fun girl I just work for you they told me marriage was a give and take well you've shown me you can take you got some giving to do and now you tell me that you're having my baby I'll tell you that I'm happy if you want me to but one step further and my back will break if my best isn't good enough then how can it be good enough for two I can't work any harder than I do somebody tell me won't you tell me why I work so hard for you oh why do I do the things I do tell you if I knew my god I don't even think that I love you won't you tell me give you money work to give you money somebody tell me why I work so hard for you somebody tell me won't you tell me why I work so hard for you somebody tell me won't you tell me why I do the things that I do..",
   file: "../game/songs/Everything She Wants.mp3",
   photo: "images/wp4296903-wham-wallpapers.jpg",
   photoSize: "610px",
@@ -230,7 +230,62 @@ function applyTheme(theme) {
 
 function loadSong(song) {
   const player = document.getElementById("player");
+  function showRingoRating() {
+    console.log("🎶 Song ended — showing Ringo rating");
+    const spans = document.querySelectorAll("#lyrics-display span");
+    const total = spans.length; 
+    console.log("Total letters:", total);
+    console.log("Correct letters:", correctChars);
+    const percent = (correctChars / total) * 100;
+  
+    // Determine how many Ringos
+    let ringos = 1;
+    let feedback = "You could use some practice, mate.";
+    if (percent >= 80) {
+      ringos = 3;
+      feedback = "I've got blisters on me fingers! Fab drumming mate.";
+    } else if (percent >= 50) {
+      ringos = 2;
+      feedback = ".Good stuff lad, drum with me anytime.";
+    }
+  
+    // Elements
+    const overlay = document.getElementById("ringo-rating");
+    const headsDiv = document.getElementById("ringo-heads");
+    const countDiv = document.getElementById("ringo-count-message");
+    const messageDiv = document.getElementById("ringo-message");
+  
+    // Clear previous content
+    headsDiv.innerHTML = "";
+    countDiv.textContent = `You got ${ringos} ${ringos === 1 ? "Ringo Starr" : "Ringo Starrs"}!`;
+    messageDiv.textContent = `"${feedback}"`;
 
+  
+    // Add Ringo heads
+    for (let i = 0; i < ringos; i++) {
+      const img = document.createElement("img");
+      img.src = "images/ringo.avif";
+      img.alt = "Ringo Starr";
+      img.style.width = "150px";
+      img.style.height = "150px";
+      img.style.borderRadius = "50%";
+      img.style.boxShadow = "0 0 20px rgba(255,255,255,0.7)";
+      img.style.transition = "transform 0.3s ease";
+      headsDiv.appendChild(img);
+    }
+  
+    // Show the overlay
+    overlay.style.display = "flex";
+  }
+
+  player.onloadeddata = () => {
+    startCountdownAndPlay(player);
+    // ⭐ Show Ringo rating when song ends
+player.onended = () => {
+  console.log("🎶 Song ended — showing Ringo rating");
+  showRingoRating();
+};
+  };
   if (!song.file) {
     player.pause();
     player.removeAttribute("src");
@@ -254,14 +309,6 @@ function loadSong(song) {
     player.style.maxWidth = song.videoSize || "700px";
   }
 
-  player.onloadeddata = () => {
-    startCountdownAndPlay(player);
-    // ⭐ Show Ringo rating when song ends
-player.onended = () => {
-  console.log("🎶 Song ended — showing Ringo rating");
-  showRingoRating();
-};
-  };
 
   $("#song-title").css("text-align", "center").html("<h2>" + song.title + "</h2>");
   $("#typing-container").css("display", "block");
@@ -469,50 +516,7 @@ if (storedTheme) applyTheme(storedTheme);
   $(document).on("keydown", handleTyping);
 
   
-  function showRingoRating() {
-    const spans = document.querySelectorAll("#lyrics-display span");
-    const total = spans.length;
-    const percent = (correctChars / total) * 100;
   
-    // Determine how many Ringos
-    let ringos = 1;
-    let feedback = "You could use some practice, mate.";
-    if (percent >= 80) {
-      ringos = 3;
-      feedback = "I've got blisters on me fingers! Fab drumming mate.";
-    } else if (percent >= 50) {
-      ringos = 2;
-      feedback = ".Good stuff lad, drum with me anytime.";
-    }
-  
-    // Elements
-    const overlay = document.getElementById("ringo-rating");
-    const headsDiv = document.getElementById("ringo-heads");
-    const countDiv = document.getElementById("ringo-count-message");
-    const messageDiv = document.getElementById("ringo-message");
-  
-    // Clear previous content
-    headsDiv.innerHTML = "";
-    countDiv.textContent = `You got ${ringos} ${ringos === 1 ? "Ringo Starr" : "Ringo Starrs"}!`;
-    messageDiv.textContent = `"${feedback}"`;
-
-  
-    // Add Ringo heads
-    for (let i = 0; i < ringos; i++) {
-      const img = document.createElement("img");
-      img.src = "images/ringo.avif";
-      img.alt = "Ringo Starr";
-      img.style.width = "150px";
-      img.style.height = "150px";
-      img.style.borderRadius = "50%";
-      img.style.boxShadow = "0 0 20px rgba(255,255,255,0.7)";
-      img.style.transition = "transform 0.3s ease";
-      headsDiv.appendChild(img);
-    }
-  
-    // Show the overlay
-    overlay.style.display = "flex";
-  }
   
   
   // Attach button handlers (after overlay is visible)

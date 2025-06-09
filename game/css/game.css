@@ -43,7 +43,6 @@
   
   
 #ringo-overlay {
-	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -54,10 +53,6 @@
 	z-index: 1000;
 	text-align: center;
 	padding-top: 50px;
-}
-
-#ringo-rating {
-	display: none;
 }
 
 #reset-button {
