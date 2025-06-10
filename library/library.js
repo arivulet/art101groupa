@@ -122,6 +122,13 @@ const videoSongs = [
 		thumbnail: "../game/images/tv1.webp",
 		startTime: 175.3,
 	},
+	{
+	id: "everybody",
+	title: "Everybody Here Wants You - Jeff Buckley",
+	video: "../game/videos/ehwy.mp4",
+	thumbnail: "../game/images/tv1.webp",
+	startTime: 34
+	}
 ];
 
 // Load the TVs dynamically

@@ -275,6 +275,8 @@ window.songs = [
 		lyrics:
 			"Twentynine pearls in your kiss a singing smile Coffee smell and lilac skin your flame in me Twentynine pearls in your kiss a singing smile Coffee smell and lilac skin your flame in me Im only here for this moment I know everybody here wants you I know everybody here thinks they need you Ill be waiting right here just to show you How our love will blow it all away Such a thing of wonder in this crowd Im a stranger in this town youre free with me And our eyes are locked in downcast love I sit here proud Even now youre undressed in your dreams with me Im only here for this moment I know everybody here wants you I know everybody here thinks he needs you Ill be waiting right here just to show you How our love will blow it all away And all the tears we cried have dried on yesterday A sea of fools have parted for us theres nothing in our way my love Dont you see Dont you see Youre just the torch to put the flame to all our guilt and shame And Ill rise like an ember in your name No no I know everybody here wants you No I know everybody here thinks they need you Ill be waiting right here just to show you Oh let me show you that love can rise just like embers Love can taste like the wine of the age oh babe And I know they all look so good from a distance But I tell you Im the one I know everybody here well thinks he needs you thinks he need you And Ill be waiting right by here just to show you",
 		file: "videos/ehwy.mp4",
+    photo: "",
+    photoSize: "",
 	},
 	{
 		id: "fatale",
