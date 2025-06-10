@@ -52,7 +52,7 @@ const demoSongs = [
       title: "Chances - The Strokes",
       file: "../game/songs/Chances.mp3",
       albumArt: "../game/albumart/cm.jpeg",
-      startTime: 55
+      startTime: 63.3
     }, 
     {
       id: "glue",

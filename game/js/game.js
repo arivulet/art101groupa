@@ -222,8 +222,10 @@ window.songs = [
 		title: "CHIHIRO - Billie Eilish",
 		lyrics:
 			"Saw your seat at the counter when I looked away Saw you turn around, but it wasn't your face Said, I need to be alone now, I'm takin' a break How come when I returned, you were gone away? I don't, I don't know why I called I don't know you at all I don't know you Not at all I don't, I don't know why I called I don't know you at all I don't know you Did you take My love away From me? Me",
-		file: "songs/Billie Eilish - CHIHIRO (Audio).mp3",
+		file: "../game/songs/Billie Eilish - CHIHIRO (Audio).mp3",
+		photo:"images/chihiro.jpg",
 		photoSize: "500px",
+		albumArt: "../game/albumart/chihiro.jpg",
 	},
 	{
 		id: "everest",
