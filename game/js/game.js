@@ -5,6 +5,8 @@ window.songs = [
 		lyrics:
 			"I I just woke up from a dream where you and I had to say goodbye and I don't know what it all means but since I survived I realized wherever you go that's where I'll follow nobody's promised tomorrow so imma love you every night like it's the last night if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you lost lost in the words that was scream I don't even wanna do this anymore cause you already know what you mean to me and our love's the only war worth fighting for wherever you go that's where I'll follow nobody's promised tomorrow if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you right next to you next to you right next to you if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you if the world was ending Id wanna be next to you I'd wanna be next to you...",
 		file: "../game/videos/dwas.mp4",
+		albumArt:images/Lady_Gaga_and_Bruno_Mars_-_Die_with_a_Smile.png,
+		startTime:
 	},
 	{
 		id: "feeling",
