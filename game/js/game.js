@@ -253,6 +253,7 @@ window.songs = [
 			"Tie me up with sheets and hang me from your tree Ill stay out here all night it doesnt even matter As long as I can see into your room and feel Like Im inside your life Ill follow you forever Dont cut me down just yet Ill make things right again Dont close your blinds on me on me I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started The snow wont go away my nose runs down my face No one sees me here it doesnt even matter And every step I take I stay in the same place I cant begin to start again why cant I just be perfect I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started",
 		file: "songs/idesofmarch.mp3",
 		photo: "images/silverstien.jpg",
+		albumArt: "images/silverstien.jpg",
 	},
 	{
 		id: "holding",
@@ -260,6 +261,27 @@ window.songs = [
 		lyrics:
 			"Dont say a word dont be grateful if I ever made you laugh Lets make believe what's at stake here's more than just your reputation Shes got the photos but no recollection Hes got the motive but no transportation Purely courteous across my chest Are you cutting me out now after crawling inside Turn away your head What do I deserve what do I deserve instead Its a surprise you havent caught on yet Its nothing personal youre an embarrassment Dont cut me out Were offering nothing but the best accommodations Just tell us who you are just tell us who you are Were offering nothing but the best accommodations Just tell us who you are, just tell us who you are Turn away your head What do I deserve what do I deserve instead? Its a surprise you havent caught on yet Its nothing personal youre an embarrassment Dont cut me out Its a surprise you havent caught on yet It's nothing personal youre an embarrassment Dont cut me out",
 		file: "songs/holdingsomeones.mp3",
+	},
+	{
+		id: "buttons",
+		title: "Buttons - Steve Lacy",
+		lyrics:
+			"Hey I fall in love with you I dont know where I am Youre runnin through my mind And then you show me love In my room in my room Uh Hey you went away to save Yourself from all the rain And then I picked you up And then I showed you love And then we talked Let our guards down Down down I say You you took me all around Then treat me like a dog And make me walk for miles And then you held me up I will never not love you Not love you uh About my pride About my pride About my pride About my prize Theres something bout my pride About my prize Theres something bout my loving About my pride Theres something bout my pride About my pride Theres something bout my loving",
+		file: "songs/buttons.mp3",
+	},
+	{
+		id: "everybody",
+		title: "Everybody Here Wants You - Jeff Buckley",
+		lyrics:
+			"Twentynine pearls in your kiss a singing smile Coffee smell and lilac skin your flame in me Twentynine pearls in your kiss a singing smile Coffee smell and lilac skin your flame in me Im only here for this moment I know everybody here wants you I know everybody here thinks they need you Ill be waiting right here just to show you How our love will blow it all away Such a thing of wonder in this crowd Im a stranger in this town youre free with me And our eyes are locked in downcast love I sit here proud Even now youre undressed in your dreams with me Im only here for this moment I know everybody here wants you I know everybody here thinks he needs you Ill be waiting right here just to show you How our love will blow it all away And all the tears we cried have dried on yesterday A sea of fools have parted for us theres nothing in our way my love Dont you see Dont you see Youre just the torch to put the flame to all our guilt and shame And Ill rise like an ember in your name No no I know everybody here wants you No I know everybody here thinks they need you Ill be waiting right here just to show you Oh let me show you that love can rise just like embers Love can taste like the wine of the age oh babe And I know they all look so good from a distance But I tell you Im the one I know everybody here well thinks he needs you thinks he need you And Ill be waiting right by here just to show you",
+		file: "videos/ehwy.mp4",
+	},
+	{
+		id: "fatale",
+		title: "Femme Fatale - The Velvet Underground & Nico",
+		lyrics:
+			"Here she comes You better watch your step Shes going to break your heart in two its true Its not hard to realize Just look into her false colored eyes Shell build you up to just put you down what a clown Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale See the way she walks Hear the way she talks Youre written in her book Youre number thirtyseven have a look Shes going to smile to make you frown what a clown Little boy shes from the street Before you start youre already beat Shes going to play you for a fool yes its true Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale See the way she walks Hear the way she talks Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale Oh woah woah Shes a femme fatale Oh woah woah Shes a femme fatale Oh woah woah Shes a femme fatale",
+		file: "songs/femme.mp3",
 	},
 ];
 

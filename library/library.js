@@ -1,227 +1,245 @@
-document.querySelectorAll('.tv-container').forEach(container => {
-    const video = container.querySelector('.tv-video');
-    const startTime = parseFloat(video.dataset.start) || 0;
+document.querySelectorAll(".tv-container").forEach((container) => {
+	const video = container.querySelector(".tv-video");
+	const startTime = parseFloat(video.dataset.start) || 0;
 
-    let isReady = false;
+	let isReady = false;
 
-    // When the video has loaded metadata, mark it as ready
-    video.addEventListener('loadedmetadata', () => {
-      isReady = true;
-    });
+	// When the video has loaded metadata, mark it as ready
+	video.addEventListener("loadedmetadata", () => {
+		isReady = true;
+	});
 
-    container.addEventListener('mouseenter', () => {
-      if (!isReady) {
-        video.addEventListener('loadedmetadata', () => {
-          video.currentTime = startTime;
-          video.play();
-        }, { once: true });
-      } else {
-        video.currentTime = startTime;
-        video.play();
-      }
-    });
+	container.addEventListener("mouseenter", () => {
+		if (!isReady) {
+			video.addEventListener(
+				"loadedmetadata",
+				() => {
+					video.currentTime = startTime;
+					video.play();
+				},
+				{ once: true }
+			);
+		} else {
+			video.currentTime = startTime;
+			video.play();
+		}
+	});
 
-    container.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = startTime;
-    });
-  });
+	container.addEventListener("mouseleave", () => {
+		video.pause();
+		video.currentTime = startTime;
+	});
+});
 
-  // Array of video songs
+// Array of video songs
 const videoSongs = [
-  {
-    id: "feeling",
-    title: "I've Got A Feeling - The Beatles",
-    video: "../game/videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: "90.93",  // 165.8
-  },
- 
-  {
-    id: "darkness",
-    title: "Under Cover of Darkness - The Strokes",
-    video: "../game/videos/UCOD.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: 46.3
-  },
-  { 
-    id: "Save a Prayer",
-    title: "Save a Prayer - Duran Duran",
-    video: "../game/videos/Duran Duran - Save A Prayer (Official Music Video).mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: "62.001"
-  },
-  {
-    id: "backwards",
-    title: "Feels Like We Only Go Backwards - Arctic Monkeys",
-    video: "../game/videos/FLWOGB.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: "129.8"
-  },
-  {
-    id: "forget",
-    title: "Forget Her - Jeff Buckley",
-    video: "../game/videos/FHJB.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: "39"
-  },
-  {
-    id: "paperback",
-    title: "Paperback Writer - The Beatles",
-    video: "../game/videos/PW.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: "80.78"
-  },
- 
-  {
-    id: "rain",
-    title: "Rain - The Beatles",
-    video: "../game/videos/RTB(2).mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: "28.5"
-  },
-  {
-    id: "fake",
-    title: "Fake Tales of San Francisco - Arctic Monkeys",
-    video: "../game/videos/FTOSF.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: 71.2
-  },
-  {
-    id: "infinity",
-    title: "Infinity Repeating - Daft Punk feat. Julian Casablancas + The Voidz",
-    video: "../game/videos/IF.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: 136.7
-  }, 
-  { 
-    id: "smile",
-    title: "Die With a Smile - Bruno Mars, Lady Gaga",
-    video: "../game/videos/dwas.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: 122.2
-  },
-  { 
-    id: "ego",
-    title: "WHY WE FIGHT // EGO ft.Qing Madi",
-    video: "../game/videos/why we fight.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: 193.3
-  },
-  { 
-    id: "lucy",
-    title: " “I Really Want to Stay At Your House” by Rosa Walton",
-    video: "../game/videos/lucy.mp4",
-    thumbnail: "../game/images/tv1.webp",
-    startTime: 175.3
-  },
-  
+	{
+		id: "feeling",
+		title: "I've Got A Feeling - The Beatles",
+		video:
+			"../game/videos/I'VE A GOT A FEELING TAKE 1 ｜ THE BEATLES ROOFTOP CONCERT.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 90.9,
+	},
+
+	{
+		id: "darkness",
+		title: "Under Cover of Darkness - The Strokes",
+		video: "../game/videos/UCOD.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 46.3,
+	},
+	{
+		id: "Save a Prayer",
+		title: "Save a Prayer - Duran Duran",
+		video:
+			"../game/videos/Duran Duran - Save A Prayer (Official Music Video).mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 62.1,
+	},
+	{
+		id: "backwards",
+		title: "Feels Like We Only Go Backwards - Arctic Monkeys",
+		video: "../game/videos/FLWOGB.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 129.8,
+	},
+	{
+		id: "forget",
+		title: "Forget Her - Jeff Buckley",
+		video: "../game/videos/FHJB.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 39.2,
+	},
+	{
+		id: "paperback",
+		title: "Paperback Writer - The Beatles",
+		video: "../game/videos/PW.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 80.7,
+	},
+
+	{
+		id: "rain",
+		title: "Rain - The Beatles",
+		video: "../game/videos/RTB(2).mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 28.5,
+	},
+	{
+		id: "fake",
+		title: "Fake Tales of San Francisco - Arctic Monkeys",
+		video: "../game/videos/FTOSF.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 71.2,
+	},
+	{
+		id: "infinity",
+		title:
+			"Infinity Repeating - Daft Punk feat. Julian Casablancas + The Voidz",
+		video: "../game/videos/IF.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 136.7,
+	},
+	{
+		id: "smile",
+		title: "Die With a Smile - Bruno Mars, Lady Gaga",
+		video: "../game/videos/dwas.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 122.2,
+	},
+	{
+		id: "ego",
+		title: "WHY WE FIGHT // EGO ft.Qing Madi",
+		video: "../game/videos/why we fight.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 193.3,
+	},
+	{
+		id: "lucy",
+		title: " “I Really Want to Stay At Your House” by Rosa Walton",
+		video: "../game/videos/lucy.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 175.3,
+	},
 ];
 
 // Load the TVs dynamically
 function loadTVStrips() {
-  
-  
-  const container = document.getElementById("video-tv-strip");
-  console.log("loaded TV previews")
-  container.innerHTML = ""; 
-  videoSongs.forEach(song => {
-    const div = document.createElement("div");
-    div.className = "tv-container";
+	const container = document.getElementById("video-tv-strip");
+	console.log("loaded TV previews");
+	container.innerHTML = "";
+	videoSongs.forEach((song) => {
+		const div = document.createElement("div");
+		div.className = "tv-container";
 
-    div.innerHTML = `
-      <video class="tv-video" preload="metadata" playsinline data-start="${song.startTime || 0}">
+		div.innerHTML = `
+      <video class="tv-video" preload="metadata" playsinline data-start="${
+				song.startTime || 0
+			}">
         <source src="${song.video}" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <img src="${song.thumbnail}" class="tv-image" alt="TV" />
-      <a href="../game/index.html?song=${song.id}" class="tv-click-layer" aria-label="${song.title}"></a>
-      <a href="../game/index.html?song=${song.id}" class="tv-label">${song.title}</a>
+      <a href="../game/index.html?song=${
+				song.id
+			}" class="tv-click-layer" aria-label="${song.title}"></a>
+      <a href="../game/index.html?song=${song.id}" class="tv-label">${
+			song.title
+		}</a>
     `;
 
-    container.appendChild(div);
-  });
+		container.appendChild(div);
+	});
 
-  document.querySelectorAll('.tv-container').forEach(container => {
-    const video = container.querySelector('.tv-video');
-    const startTime = parseFloat(video.dataset.start) || 0;
-  
-    let isHovering = false;
-    let hasSeeked = false;
-  
-    // Hide video frame until it's seeked to startTime
-    video.style.visibility = "hidden";
-  
-    // After metadata loads, set preview frame
-    video.addEventListener('loadedmetadata', () => {
-      video.currentTime = startTime;
-    });
-  
-    // Once seeked to correct frame, show it
-    video.addEventListener('seeked', () => {
-      video.style.visibility = "visible";
-      hasSeeked = true;
-    });
-  
-    container.addEventListener('mouseenter', () => {
-      isHovering = true;
-  
-      if (video.readyState >= 1 && hasSeeked) {
-        video.play().catch(err => console.warn("Autoplay error:", err.message));
-      } else {
-        // In case seek hasn't happened yet
-        video.addEventListener("seeked", () => {
-          if (isHovering) {
-            video.play().catch(err => console.warn("Autoplay error (delayed):", err.message));
-          }
-        }, { once: true });
-      }
-    });
-  
+	document.querySelectorAll(".tv-container").forEach((container) => {
+		const video = container.querySelector(".tv-video");
+		const startTime = parseFloat(video.dataset.start) || 0;
 
-    window.addEventListener("pageshow", (event) => {
-      if (event.persisted) {
-        document.getElementById("video-tv-strip").innerHTML = "";
-        document.getElementById("audio-album-strip").innerHTML = "";
-        loadTVStrips();
-        loadAudioAlbums();
-      }
-    });
-    
-    container.addEventListener('mouseleave', () => {
-      isHovering = false;
-      video.pause();
-      video.currentTime = startTime;
-      video.style.visibility = "hidden"; // re-hide until properly seeked again
-      hasSeeked = false;
-    });
-  });
-  
-  
+		let isHovering = false;
+		let hasSeeked = false;
+
+		// Hide video frame until it's seeked to startTime
+		video.style.visibility = "hidden";
+
+		// After metadata loads, set preview frame
+		video.addEventListener("loadedmetadata", () => {
+			video.currentTime = startTime;
+		});
+
+		// Once seeked to correct frame, show it
+		video.addEventListener("seeked", () => {
+			video.style.visibility = "visible";
+			hasSeeked = true;
+		});
+
+		container.addEventListener("mouseenter", () => {
+			isHovering = true;
+
+			if (video.readyState >= 1 && hasSeeked) {
+				video
+					.play()
+					.catch((err) => console.warn("Autoplay error:", err.message));
+			} else {
+				// In case seek hasn't happened yet
+				video.addEventListener(
+					"seeked",
+					() => {
+						if (isHovering) {
+							video
+								.play()
+								.catch((err) =>
+									console.warn("Autoplay error (delayed):", err.message)
+								);
+						}
+					},
+					{ once: true }
+				);
+			}
+		});
+
+		window.addEventListener("pageshow", (event) => {
+			if (event.persisted) {
+				document.getElementById("video-tv-strip").innerHTML = "";
+				document.getElementById("audio-album-strip").innerHTML = "";
+				loadTVStrips();
+				loadAudioAlbums();
+			}
+		});
+
+		container.addEventListener("mouseleave", () => {
+			isHovering = false;
+			video.pause();
+			video.currentTime = startTime;
+			video.style.visibility = "hidden"; // re-hide until properly seeked again
+			hasSeeked = false;
+		});
+	});
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadTVStrips();
-  loadAudioAlbums(); // Add this line
+	loadTVStrips();
+	loadAudioAlbums(); // Add this line
 });
 
-
 function loadAudioAlbums() {
-  const container = document.getElementById("audio-album-strip");
-  container.innerHTML = ""; 
+	const container = document.getElementById("audio-album-strip");
+	container.innerHTML = "";
 
-  if (!window.songs || !Array.isArray(songs)) {
-    console.warn("No songs array found.");
-    return;
-  }
+	if (!window.songs || !Array.isArray(songs)) {
+		console.warn("No songs array found.");
+		return;
+	}
 
-  const audioSongs = songs.filter(song => song.file?.endsWith(".mp3") && song.photo);
+	const audioSongs = songs.filter(
+		(song) => song.file?.endsWith(".mp3") && song.photo
+	);
 
-  audioSongs.forEach(song => {
-    const div = document.createElement("div");
-    div.className = "album-container";
+	audioSongs.forEach((song) => {
+		const div = document.createElement("div");
+		div.className = "album-container";
 
-    div.innerHTML = `
+		div.innerHTML = `
       <div class="album-art-wrapper">
         <a href="../game/index.html?song=${song.id}">
           <img src="${song.albumArt}" class="album-image" alt="${song.title}" />
@@ -231,76 +249,87 @@ function loadAudioAlbums() {
       <a href="../game/index.html?song=${song.id}" class="album-label">${song.title}</a>
     `;
 
-    container.appendChild(div);
+		container.appendChild(div);
 
-    const wrapper = div.querySelector(".album-art-wrapper");
-    const audio = div.querySelector(".hover-audio");
+		const wrapper = div.querySelector(".album-art-wrapper");
+		const audio = div.querySelector(".hover-audio");
 
-    wrapper.addEventListener("mouseenter", () => {
-      let isHovering = true;
-    
-      const handlePlay = () => {
-        const startTime = parseFloat(song.startTime) || 0;
-        audio.currentTime = startTime;
-        
-    
-        const tryPlay = () => {
-          if (!isHovering) return;
-          audio.play().catch(err => {
-            console.warn(`Audio play failed for ${song.title}:`, err.message);
-          });
-        };
-    
-        // Wait for seek before playing
-        const onSeeked = () => {
-          audio.removeEventListener('seeked', onSeeked);
-          tryPlay();
-        };
-    
-        audio.addEventListener('seeked', onSeeked);
-      };
-    
-      if (audio.readyState >= 1) {
-        handlePlay();
-      } else {
-        audio.addEventListener("loadeddata", handlePlay, { once: true });
-      }
-    
-      wrapper.addEventListener("mouseleave", () => {
-        isHovering = false;
-        audio.pause();
-        audio.currentTime = 0;
-      }, { once: true });
-    });
-    
+		wrapper.addEventListener("mouseenter", () => {
+			let isHovering = true;
 
-    wrapper.addEventListener("mouseleave", () => {
-      audio.pause();
-      audio.currentTime = 0;
-    });
-  });
-  
-  document.addEventListener("click", () => {
-    document.userHasInteracted = true;
-  }, { once: true });
-  
+			const handlePlay = () => {
+				const startTime = parseFloat(song.startTime) || 0;
+				audio.currentTime = startTime;
+
+				const tryPlay = () => {
+					if (!isHovering) return;
+					audio.play().catch((err) => {
+						console.warn(`Audio play failed for ${song.title}:`, err.message);
+					});
+				};
+
+				// Wait for seek before playing
+				const onSeeked = () => {
+					audio.removeEventListener("seeked", onSeeked);
+					tryPlay();
+				};
+
+				audio.addEventListener("seeked", onSeeked);
+			};
+
+			if (audio.readyState >= 1) {
+				handlePlay();
+			} else {
+				audio.addEventListener("loadeddata", handlePlay, { once: true });
+			}
+
+			wrapper.addEventListener(
+				"mouseleave",
+				() => {
+					isHovering = false;
+					audio.pause();
+					audio.currentTime = 0;
+				},
+				{ once: true }
+			);
+		});
+
+		wrapper.addEventListener("mouseleave", () => {
+			audio.pause();
+			audio.currentTime = 0;
+		});
+	});
+
+	document.addEventListener(
+		"click",
+		() => {
+			document.userHasInteracted = true;
+		},
+		{ once: true }
+	);
 }
 
 window.addEventListener("pageshow", (event) => {
-  if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
-    console.log("Restoring previews after back nav...");
-    loadTVStrips();
-    loadAudioAlbums();
-  }
+	if (
+		event.persisted ||
+		performance.getEntriesByType("navigation")[0].type === "back_forward"
+	) {
+		console.log("Restoring previews after back nav...");
+		loadTVStrips();
+		loadAudioAlbums();
+	}
 });
 document.addEventListener("DOMContentLoaded", () => {
-  loadTVStrips();
-  loadAudioAlbums();
+	loadTVStrips();
+	loadAudioAlbums();
 });
 
 let userHasInteracted = false;
 
-document.addEventListener("click", () => {
-  userHasInteracted = true;
-}, { once: true });
-
+document.addEventListener(
+	"click",
+	() => {
+		userHasInteracted = true;
+	},
+	{ once: true }
+);
