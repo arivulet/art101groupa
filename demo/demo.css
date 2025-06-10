@@ -8,6 +8,20 @@ h1 {
 	text-align: center;
 	margin-bottom: 30px;
 }
+/* Default (light mode) */
+a,
+.tv-label,
+.album-label {
+  color: #1a1a1a; /* dark text for light background */
+}
+
+/* Dark mode override */
+body.darkmode a,
+body.darkmode .tv-label,
+body.darkmode .album-label {
+  color: #61dafb; /* light blue or any color you like */
+}
+
 
 #demo-strip {
 	display: flex;
