@@ -291,7 +291,8 @@ window.songs = [
 		lyrics:
 			"Hey I fall in love with you I don't know where I am you're runnin through my mind and then you show me love in my room in my room uh hey you went away to save yourself from all the rain and then I picked you up and then I showed you love and then we talked let our guards down down down I say you you took me all around then treat me like a dog and make me walk for miles and then you held me up I will never not love you not love you uh about my pride about my pride about my pride about my prize there's something bout my pride about my prize there's something bout my loving about my pride there's something bout my pride about my pride there's something bout my loving...s",
 		file: "../game/songs/buttons.mp3",
-		photo: "../game/images/stevelacy2022cochella.jpg",
+		photo: "../game/images/stevelacy2022coachella.jpg",
+		photoSize: "600px",
 		albumArt: "../game/albumart/geminirights.jpg",
 	},
 	{
