@@ -246,6 +246,21 @@ window.songs = [
 		file: "videos/why.mp4",
 		videoSize: "600px",
 	},
+	{
+		id: "idesof",
+		title: "Ides of March - Silverstein",
+		lyrics:
+			"Tie me up with sheets and hang me from your tree Ill stay out here all night it doesnt even matter As long as I can see into your room and feel Like Im inside your life Ill follow you forever Dont cut me down just yet Ill make things right again Dont close your blinds on me on me I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started The snow wont go away my nose runs down my face No one sees me here it doesnt even matter And every step I take I stay in the same place I cant begin to start again why cant I just be perfect I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started",
+		file: "songs/idesofmarch.mp3",
+		photo: "images/silverstien.jpg",
+	},
+	{
+		id: "holding",
+		title: "Holding Someone's Hair Back - Circa Survive",
+		lyrics:
+			"Dont say a word dont be grateful if I ever made you laugh Lets make believe what's at stake here's more than just your reputation Shes got the photos but no recollection Hes got the motive but no transportation Purely courteous across my chest Are you cutting me out now after crawling inside Turn away your head What do I deserve what do I deserve instead Its a surprise you havent caught on yet Its nothing personal youre an embarrassment Dont cut me out Were offering nothing but the best accommodations Just tell us who you are just tell us who you are Were offering nothing but the best accommodations Just tell us who you are, just tell us who you are Turn away your head What do I deserve what do I deserve instead? Its a surprise you havent caught on yet Its nothing personal youre an embarrassment Dont cut me out Its a surprise you havent caught on yet It's nothing personal youre an embarrassment Dont cut me out",
+		file: "songs/holdingsomeones.mp3",
+	},
 ];
 
 let currentIndex = 0;
