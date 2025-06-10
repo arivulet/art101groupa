@@ -315,6 +315,15 @@ window.songs = [
 		photo: "../game/images/elliotperform.jpg",
 		albumArt: "../game/albumart/eitheror.jpg",
 	},
+	{
+		id: "white",
+		title: "White - Odd Future (ft. Frank Ocean)",
+		lyrics:
+			"Could this be Earth Could this be light Does this mean everything is going to be alright One look out my window theres trees talking like people Ive dreamt of storms Ive dreamt of sound Ive dreamt of gravity keeping us around Ive slept in the darkness it was lonely and it was silent What is this love I dont feel the same Dont believe what this is could be given a name I woke you were there tracing planets on my forehead But Ill forget 23 like I forget 17 And I forget my first love like you forget a daydream And what of all my wild friends and the times Ive had with them Well all fade to grey soon on the TV station",
+		file: "..game/songs/White.mp3",
+		photo: "../game/images/frankocean.jpg",
+		albumArt: "../games/albumart/ofalbum.jpg",
+	},
 ];
 
 let currentIndex = 0;
