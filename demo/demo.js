@@ -59,7 +59,8 @@ const demoSongs = [
       title: "Glue Song (feat Clario)- Beabadoobee",
       file: "../game/songs/Glue Song (feat. Clairo).mp3",
        photo: "images/b.webp",
-       albumArt: "../game/albumart/gs.jpeg"
+       albumArt: "../game/albumart/gs.jpeg",
+       startTime: ""
     },
 
   ];

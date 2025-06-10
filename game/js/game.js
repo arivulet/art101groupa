@@ -252,8 +252,8 @@ window.songs = [
 		lyrics:
 			"Tie me up with sheets and hang me from your tree Ill stay out here all night it doesnt even matter As long as I can see into your room and feel Like Im inside your life Ill follow you forever Dont cut me down just yet Ill make things right again Dont close your blinds on me on me I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started The snow wont go away my nose runs down my face No one sees me here it doesnt even matter And every step I take I stay in the same place I cant begin to start again why cant I just be perfect I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started",
 		file: "songs/idesofmarch.mp3",
-		photo: "images/silverstien.jpg",
-		albumArt: "images/silverstien.jpg",
+		photo: "../game/images/silverstien.jpg",
+		albumArt: "../game/images/silverstien.jpg",
 	},
 	{
 		id: "holding",
