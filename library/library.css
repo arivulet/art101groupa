@@ -45,6 +45,14 @@ nav a:hover {
 	margin-right: -50vw;
 	overflow-x: auto;
 }
+.scroll-strip {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem; /* optional: space between TVs */
+  scroll-behavior: smooth;
+  padding: 1rem; /* optional */
+}
+
 
 #video-tv-strip {
 	display: flex;
