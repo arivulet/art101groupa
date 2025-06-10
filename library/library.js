@@ -1,35 +1,3 @@
-document.querySelectorAll(".tv-container").forEach((container) => {
-	const video = container.querySelector(".tv-video");
-	const startTime = parseFloat(video.dataset.start) || 0;
-
-	let isReady = false;
-
-	// When the video has loaded metadata, mark it as ready
-	video.addEventListener("loadedmetadata", () => {
-		isReady = true;
-	});
-
-	container.addEventListener("mouseenter", () => {
-		if (!isReady) {
-			video.addEventListener(
-				"loadedmetadata",
-				() => {
-					video.currentTime = startTime;
-					video.play();
-				},
-				{ once: true }
-			);
-		} else {
-			video.currentTime = startTime;
-			video.play();
-		}
-	});
-
-	container.addEventListener("mouseleave", () => {
-		video.pause();
-		video.currentTime = startTime;
-	});
-});
 
 // Array of video songs
 const videoSongs = [
@@ -131,212 +99,144 @@ const videoSongs = [
 	}
 ];
 
-// Load the TVs dynamically
 function loadTVStrips() {
 	const container = document.getElementById("video-tv-strip");
-	console.log("loaded TV previews");
 	container.innerHTML = "";
 	videoSongs.forEach((song) => {
-		const div = document.createElement("div");
-		div.className = "tv-container";
-
-		div.innerHTML = `
-      <video class="tv-video" preload="metadata" playsinline data-start="${
-				song.startTime || 0
-			}">
-        <source src="${song.video}" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <img src="${song.thumbnail}" class="tv-image" alt="TV" />
-      <a href="../game/index.html?song=${
-				song.id
-			}" class="tv-click-layer" aria-label="${song.title}"></a>
-      <a href="../game/index.html?song=${song.id}" class="tv-label">${
-			song.title
-		}</a>
-    `;
-
-		container.appendChild(div);
+	  const div = document.createElement("div");
+	  div.className = "tv-container";
+	  div.innerHTML = `
+		<video class="tv-video" preload="metadata" playsinline data-start="${song.startTime || 0}">
+		  <source src="${song.video}" type="video/mp4" />
+		  Your browser does not support the video tag.
+		</video>
+		<img src="${song.thumbnail}" class="tv-image" alt="TV" />
+		<a href="../game/index.html?song=${song.id}" class="tv-click-layer" aria-label="${song.title}"></a>
+		<a href="../game/index.html?song=${song.id}" class="tv-label">${song.title}</a>
+	  `;
+	  container.appendChild(div);
 	});
-
+  
+	// Setup video hover interaction
 	document.querySelectorAll(".tv-container").forEach((container) => {
-		const video = container.querySelector(".tv-video");
-		const startTime = parseFloat(video.dataset.start) || 0;
-
-		let isHovering = false;
-		let hasSeeked = false;
-
-		// Hide video frame until it's seeked to startTime
+	  const video = container.querySelector(".tv-video");
+	  const startTime = parseFloat(video.dataset.start) || 0;
+	  let isHovering = false;
+	  let hasSeeked = false;
+  
+	  video.style.visibility = "hidden";
+  
+	  video.addEventListener("loadedmetadata", () => {
+		video.currentTime = startTime;
+	  });
+  
+	  video.addEventListener("seeked", () => {
+		video.style.visibility = "visible";
+		hasSeeked = true;
+	  });
+  
+	  container.addEventListener("mouseenter", () => {
+		isHovering = true;
+		if (video.readyState >= 1 && hasSeeked) {
+		  video.play().catch((err) => console.warn("Autoplay error:", err.message));
+		} else {
+		  video.addEventListener("seeked", () => {
+			if (isHovering) video.play().catch((err) => console.warn("Autoplay error (delayed):", err.message));
+		  }, { once: true });
+		}
+	  });
+  
+	  container.addEventListener("mouseleave", () => {
+		isHovering = false;
+		video.pause();
+		video.currentTime = startTime;
 		video.style.visibility = "hidden";
-
-		// After metadata loads, set preview frame
-		video.addEventListener("loadedmetadata", () => {
-			video.currentTime = startTime;
-		});
-
-		// Once seeked to correct frame, show it
-		video.addEventListener("seeked", () => {
-			video.style.visibility = "visible";
-			hasSeeked = true;
-		});
-
-		container.addEventListener("mouseenter", () => {
-			isHovering = true;
-
-			if (video.readyState >= 1 && hasSeeked) {
-				video
-					.play()
-					.catch((err) => console.warn("Autoplay error:", err.message));
-			} else {
-				// In case seek hasn't happened yet
-				video.addEventListener(
-					"seeked",
-					() => {
-						if (isHovering) {
-							video
-								.play()
-								.catch((err) =>
-									console.warn("Autoplay error (delayed):", err.message)
-								);
-						}
-					},
-					{ once: true }
-				);
-			}
-		});
-
-		window.addEventListener("pageshow", (event) => {
-			if (event.persisted) {
-				document.getElementById("video-tv-strip").innerHTML = "";
-				document.getElementById("audio-album-strip").innerHTML = "";
-				loadTVStrips();
-				loadAudioAlbums();
-			}
-		});
-
-		container.addEventListener("mouseleave", () => {
-			isHovering = false;
-			video.pause();
-			video.currentTime = startTime;
-			video.style.visibility = "hidden"; // re-hide until properly seeked again
-			hasSeeked = false;
-		});
+		hasSeeked = false;
+	  });
 	});
-}
-
-document.addEventListener("DOMContentLoaded", () => {
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
 	loadTVStrips();
-	loadAudioAlbums(); // Add this line
-});
-
-function loadAudioAlbums() {
+	loadAudioAlbums(); // assume songs is already defined
+  });
+  
+  function loadAudioAlbums() {
 	const container = document.getElementById("audio-album-strip");
 	container.innerHTML = "";
-
-	if (!window.songs || !Array.isArray(songs)) {
-		console.warn("No songs array found.");
-		return;
+  
+	if (!window.songs || !Array.isArray(window.songs)) {
+	  console.warn("No songs array found.");
+	  return;
 	}
-
-	const audioSongs = songs.filter(
-		(song) => song.file?.endsWith(".mp3") && song.photo
-	);
-
+  
+	const audioSongs = window.songs.filter(song => song.file?.endsWith(".mp3") && song.photo);
+  
 	audioSongs.forEach((song) => {
-		const div = document.createElement("div");
-		div.className = "album-container";
-
-		div.innerHTML = `
-      <div class="album-art-wrapper">
-        <a href="../game/index.html?song=${song.id}">
-          <img src="${song.albumArt}" class="album-image" alt="${song.title}" />
-        </a>
-        <audio class="hover-audio" preload="auto" src="${song.file}"></audio>
-      </div>
-      <a href="../game/index.html?song=${song.id}" class="album-label">${song.title}</a>
-    `;
-
-		container.appendChild(div);
-
-		const wrapper = div.querySelector(".album-art-wrapper");
-		const audio = div.querySelector(".hover-audio");
-
-		wrapper.addEventListener("mouseenter", () => {
-			let isHovering = true;
-
-			const handlePlay = () => {
-				const startTime = parseFloat(song.startTime) || 0;
-				audio.currentTime = startTime;
-
-				const tryPlay = () => {
-					if (!isHovering) return;
-					audio.play().catch((err) => {
-						console.warn(`Audio play failed for ${song.title}:`, err.message);
-					});
-				};
-
-				// Wait for seek before playing
-				const onSeeked = () => {
-					audio.removeEventListener("seeked", onSeeked);
-					tryPlay();
-				};
-
-				audio.addEventListener("seeked", onSeeked);
-			};
-
-			if (audio.readyState >= 1) {
-				handlePlay();
-			} else {
-				audio.addEventListener("loadeddata", handlePlay, { once: true });
-			}
-
-			wrapper.addEventListener(
-				"mouseleave",
-				() => {
-					isHovering = false;
-					audio.pause();
-					audio.currentTime = 0;
-				},
-				{ once: true }
-			);
-		});
-
+	  const div = document.createElement("div");
+	  div.className = "album-container";
+	  div.innerHTML = `
+		<div class="album-art-wrapper">
+		  <a href="../game/index.html?song=${song.id}">
+			<img src="${song.albumArt}" class="album-image" alt="${song.title}" />
+		  </a>
+		  <audio class="hover-audio" preload="auto" src="${song.file}"></audio>
+		</div>
+		<a href="../game/index.html?song=${song.id}" class="album-label">${song.title}</a>
+	  `;
+	  container.appendChild(div);
+  
+	  const wrapper = div.querySelector(".album-art-wrapper");
+	  const audio = div.querySelector(".hover-audio");
+  
+	  wrapper.addEventListener("mouseenter", () => {
+		let isHovering = true;
+  
+		const handlePlay = () => {
+		  const startTime = parseFloat(song.startTime) || 0;
+		  audio.currentTime = startTime;
+  
+		  const tryPlay = () => {
+			if (!isHovering) return;
+			audio.play().catch((err) => console.warn(`Audio play failed for ${song.title}:`, err.message));
+		  };
+  
+		  const onSeeked = () => {
+			audio.removeEventListener("seeked", onSeeked);
+			tryPlay();
+		  };
+  
+		  audio.removeEventListener("seeked", onSeeked); // prevent duplicates
+		  audio.addEventListener("seeked", onSeeked);
+		};
+  
+		if (audio.readyState >= 1) {
+		  handlePlay();
+		} else {
+		  audio.addEventListener("loadeddata", handlePlay, { once: true });
+		}
+  
 		wrapper.addEventListener("mouseleave", () => {
-			audio.pause();
-			audio.currentTime = 0;
-		});
+		  isHovering = false;
+		  audio.pause();
+		  audio.currentTime = 0;
+		}, { once: true });
+	  });
+  
+	  wrapper.addEventListener("mouseleave", () => {
+		audio.pause();
+		audio.currentTime = 0;
+	  });
 	});
+  }
+  
 
-	document.addEventListener(
-		"click",
-		() => {
-			document.userHasInteracted = true;
-		},
-		{ once: true }
-	);
-}
-
-window.addEventListener("pageshow", (event) => {
-	if (
-		event.persisted ||
-		performance.getEntriesByType("navigation")[0].type === "back_forward"
-	) {
-		console.log("Restoring previews after back nav...");
-		loadTVStrips();
-		loadAudioAlbums();
+  
+  // ✅ Restore after back navigation
+  window.addEventListener("pageshow", (event) => {
+	if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+	  console.log("Restoring previews...");
+	  loadTVStrips();
+	  loadAudioAlbums();
 	}
-});
-document.addEventListener("DOMContentLoaded", () => {
-	loadTVStrips();
-	loadAudioAlbums();
-});
-
-let userHasInteracted = false;
-
-document.addEventListener(
-	"click",
-	() => {
-		userHasInteracted = true;
-	},
-	{ once: true }
-);
+  });
