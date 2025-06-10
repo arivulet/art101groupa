@@ -1,4 +1,3 @@
-
 // Array of video songs
 const videoSongs = [
 	{
@@ -91,91 +90,115 @@ const videoSongs = [
 		startTime: 175.3,
 	},
 	{
-	id: "everybody",
-	title: "Everybody Here Wants You - Jeff Buckley",
-	video: "../game/videos/ehwy.mp4",
-	thumbnail: "../game/images/tv1.webp",
-	startTime: 34
-	}
+		id: "everybody",
+		title: "Everybody Here Wants You - Jeff Buckley",
+		video: "../game/videos/ehwy.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 34,
+	},
+	{
+		id: "posingin",
+		title: "Posing In Bondage - Japanese Breakfast",
+		video: "../game/videos/posinginbondage.mp4",
+		thumbnail: "../game/images/tv1.webp",
+		startTime: 14,
+	},
 ];
 
 function loadTVStrips() {
 	const container = document.getElementById("video-tv-strip");
 	container.innerHTML = "";
 	videoSongs.forEach((song) => {
-	  const div = document.createElement("div");
-	  div.className = "tv-container";
-	  div.innerHTML = `
-		<video class="tv-video" preload="metadata" playsinline data-start="${song.startTime || 0}">
+		const div = document.createElement("div");
+		div.className = "tv-container";
+		div.innerHTML = `
+		<video class="tv-video" preload="metadata" playsinline data-start="${
+			song.startTime || 0
+		}">
 		  <source src="${song.video}" type="video/mp4" />
 		  Your browser does not support the video tag.
 		</video>
 		<img src="${song.thumbnail}" class="tv-image" alt="TV" />
-		<a href="../game/index.html?song=${song.id}" class="tv-click-layer" aria-label="${song.title}"></a>
+		<a href="../game/index.html?song=${
+			song.id
+		}" class="tv-click-layer" aria-label="${song.title}"></a>
 		<a href="../game/index.html?song=${song.id}" class="tv-label">${song.title}</a>
 	  `;
-	  container.appendChild(div);
+		container.appendChild(div);
 	});
-  
+
 	// Setup video hover interaction
 	document.querySelectorAll(".tv-container").forEach((container) => {
-	  const video = container.querySelector(".tv-video");
-	  const startTime = parseFloat(video.dataset.start) || 0;
-	  let isHovering = false;
-	  let hasSeeked = false;
-  
-	  video.style.visibility = "hidden";
-  
-	  video.addEventListener("loadedmetadata", () => {
-		video.currentTime = startTime;
-	  });
-  
-	  video.addEventListener("seeked", () => {
-		video.style.visibility = "visible";
-		hasSeeked = true;
-	  });
-  
-	  container.addEventListener("mouseenter", () => {
-		isHovering = true;
-		if (video.readyState >= 1 && hasSeeked) {
-		  video.play().catch((err) => console.warn("Autoplay error:", err.message));
-		} else {
-		  video.addEventListener("seeked", () => {
-			if (isHovering) video.play().catch((err) => console.warn("Autoplay error (delayed):", err.message));
-		  }, { once: true });
-		}
-	  });
-  
-	  container.addEventListener("mouseleave", () => {
-		isHovering = false;
-		video.pause();
-		video.currentTime = startTime;
+		const video = container.querySelector(".tv-video");
+		const startTime = parseFloat(video.dataset.start) || 0;
+		let isHovering = false;
+		let hasSeeked = false;
+
 		video.style.visibility = "hidden";
-		hasSeeked = false;
-	  });
+
+		video.addEventListener("loadedmetadata", () => {
+			video.currentTime = startTime;
+		});
+
+		video.addEventListener("seeked", () => {
+			video.style.visibility = "visible";
+			hasSeeked = true;
+		});
+
+		container.addEventListener("mouseenter", () => {
+			isHovering = true;
+			if (video.readyState >= 1 && hasSeeked) {
+				video
+					.play()
+					.catch((err) => console.warn("Autoplay error:", err.message));
+			} else {
+				video.addEventListener(
+					"seeked",
+					() => {
+						if (isHovering)
+							video
+								.play()
+								.catch((err) =>
+									console.warn("Autoplay error (delayed):", err.message)
+								);
+					},
+					{ once: true }
+				);
+			}
+		});
+
+		container.addEventListener("mouseleave", () => {
+			isHovering = false;
+			video.pause();
+			video.currentTime = startTime;
+			video.style.visibility = "hidden";
+			hasSeeked = false;
+		});
 	});
-  }
-  
-  document.addEventListener("DOMContentLoaded", () => {
+}
+
+document.addEventListener("DOMContentLoaded", () => {
 	loadTVStrips();
 	loadAudioAlbums(); // assume songs is already defined
-  });
-  
-  function loadAudioAlbums() {
+});
+
+function loadAudioAlbums() {
 	const container = document.getElementById("audio-album-strip");
 	container.innerHTML = "";
-  
+
 	if (!window.songs || !Array.isArray(window.songs)) {
-	  console.warn("No songs array found.");
-	  return;
+		console.warn("No songs array found.");
+		return;
 	}
-  
-	const audioSongs = window.songs.filter(song => song.file?.endsWith(".mp3") && song.photo);
-  
+
+	const audioSongs = window.songs.filter(
+		(song) => song.file?.endsWith(".mp3") && song.photo
+	);
+
 	audioSongs.forEach((song) => {
-	  const div = document.createElement("div");
-	  div.className = "album-container";
-	  div.innerHTML = `
+		const div = document.createElement("div");
+		div.className = "album-container";
+		div.innerHTML = `
 		<div class="album-art-wrapper">
 		  <a href="../game/index.html?song=${song.id}">
 			<img src="${song.albumArt}" class="album-image" alt="${song.title}" />
@@ -184,59 +207,68 @@ function loadTVStrips() {
 		</div>
 		<a href="../game/index.html?song=${song.id}" class="album-label">${song.title}</a>
 	  `;
-	  container.appendChild(div);
-  
-	  const wrapper = div.querySelector(".album-art-wrapper");
-	  const audio = div.querySelector(".hover-audio");
-  
-	  wrapper.addEventListener("mouseenter", () => {
-		let isHovering = true;
-  
-		const handlePlay = () => {
-		  const startTime = parseFloat(song.startTime) || 0;
-		  audio.currentTime = startTime;
-  
-		  const tryPlay = () => {
-			if (!isHovering) return;
-			audio.play().catch((err) => console.warn(`Audio play failed for ${song.title}:`, err.message));
-		  };
-  
-		  const onSeeked = () => {
-			audio.removeEventListener("seeked", onSeeked);
-			tryPlay();
-		  };
-  
-		  audio.removeEventListener("seeked", onSeeked); // prevent duplicates
-		  audio.addEventListener("seeked", onSeeked);
-		};
-  
-		if (audio.readyState >= 1) {
-		  handlePlay();
-		} else {
-		  audio.addEventListener("loadeddata", handlePlay, { once: true });
-		}
-  
-		wrapper.addEventListener("mouseleave", () => {
-		  isHovering = false;
-		  audio.pause();
-		  audio.currentTime = 0;
-		}, { once: true });
-	  });
-  
-	  wrapper.addEventListener("mouseleave", () => {
-		audio.pause();
-		audio.currentTime = 0;
-	  });
-	});
-  }
-  
+		container.appendChild(div);
 
-  
-  // ✅ Restore after back navigation
-  window.addEventListener("pageshow", (event) => {
-	if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
-	  console.log("Restoring previews...");
-	  loadTVStrips();
-	  loadAudioAlbums();
+		const wrapper = div.querySelector(".album-art-wrapper");
+		const audio = div.querySelector(".hover-audio");
+
+		wrapper.addEventListener("mouseenter", () => {
+			let isHovering = true;
+
+			const handlePlay = () => {
+				const startTime = parseFloat(song.startTime) || 0;
+				audio.currentTime = startTime;
+
+				const tryPlay = () => {
+					if (!isHovering) return;
+					audio
+						.play()
+						.catch((err) =>
+							console.warn(`Audio play failed for ${song.title}:`, err.message)
+						);
+				};
+
+				const onSeeked = () => {
+					audio.removeEventListener("seeked", onSeeked);
+					tryPlay();
+				};
+
+				audio.removeEventListener("seeked", onSeeked); // prevent duplicates
+				audio.addEventListener("seeked", onSeeked);
+			};
+
+			if (audio.readyState >= 1) {
+				handlePlay();
+			} else {
+				audio.addEventListener("loadeddata", handlePlay, { once: true });
+			}
+
+			wrapper.addEventListener(
+				"mouseleave",
+				() => {
+					isHovering = false;
+					audio.pause();
+					audio.currentTime = 0;
+				},
+				{ once: true }
+			);
+		});
+
+		wrapper.addEventListener("mouseleave", () => {
+			audio.pause();
+			audio.currentTime = 0;
+		});
+	});
+}
+
+// ✅ Restore after back navigation
+window.addEventListener("pageshow", (event) => {
+	if (
+		event.persisted ||
+		performance.getEntriesByType("navigation")[0].type === "back_forward"
+	) {
+		console.log("Restoring previews...");
+		loadTVStrips();
+		loadAudioAlbums();
 	}
-  });
+});

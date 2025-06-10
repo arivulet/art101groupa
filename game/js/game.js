@@ -5,9 +5,10 @@ window.songs = [
 		lyrics:
 			"I I just woke up from a dream where you and I had to say goodbye and I don't know what it all means but since I survived I realized wherever you go that's where I'll follow nobody's promised tomorrow so imma love you every night like it's the last night if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you lost lost in the words that was scream I don't even wanna do this anymore cause you already know what you mean to me and our love's the only war worth fighting for wherever you go that's where I'll follow nobody's promised tomorrow if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you right next to you next to you right next to you if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you if the world was ending Id wanna be next to you I'd wanna be next to you...",
 		file: "../game/videos/dwas.mp4",
-		photo:"../game/images/Lady_Gaga_and_Bruno_Mars_-_Die_with_a_Smile.png",
-		albumArt:"../game/albumart/Lady_Gaga_and_Bruno_Mars_-_Die_with_a_Smile.png",
-		startTime:"0.0",
+		photo: "../game/images/Lady_Gaga_and_Bruno_Mars_-_Die_with_a_Smile.png",
+		albumArt:
+			"../game/albumart/Lady_Gaga_and_Bruno_Mars_-_Die_with_a_Smile.png",
+		startTime: "0.0",
 	},
 	{
 		id: "feeling",
@@ -156,7 +157,8 @@ window.songs = [
 	{
 		id: "chances",
 		title: "Chances - The Strokes",
-		lyrics: "I waited for ya I waited for ya I waited on ya but now I don't you didn't see it I didn't see it but now oh I do I play your game I play your game now I play your game I play your game I take my chances alone get on your horse and be gone I will not wait up for you anymore so you can ask me if something is wrong will you go I don't know anymore when the night isn't ready for you it's a fleeting unorthodox view they invited a stewardess too now they want you to see it here's to days he decides he's got time and he claims that it's not a surprise when he finds out the truth's on his side I take my chances alone get on your horse and be gone I will not wait up for you anymore so you can ask me if something is wrong will you go I don't know anymore I don't believe anyone as they crawl out of my way waiting for the night leaving night by night you can see me travel we could be in trouble every night why haven't you arrived...",
+		lyrics:
+			"I waited for ya I waited for ya I waited on ya but now I don't you didn't see it I didn't see it but now oh I do I play your game I play your game now I play your game I play your game I take my chances alone get on your horse and be gone I will not wait up for you anymore so you can ask me if something is wrong will you go I don't know anymore when the night isn't ready for you it's a fleeting unorthodox view they invited a stewardess too now they want you to see it here's to days he decides he's got time and he claims that it's not a surprise when he finds out the truth's on his side I take my chances alone get on your horse and be gone I will not wait up for you anymore so you can ask me if something is wrong will you go I don't know anymore I don't believe anyone as they crawl out of my way waiting for the night leaving night by night you can see me travel we could be in trouble every night why haven't you arrived...",
 		file: "../game/songs/Chances.mp3",
 		photo: "images/ts2.jpg",
 		photoSize: "",
@@ -223,7 +225,7 @@ window.songs = [
 		lyrics:
 			"Saw your seat at the counter when I looked away Saw you turn around, but it wasn't your face Said, I need to be alone now, I'm takin' a break How come when I returned, you were gone away? I don't, I don't know why I called I don't know you at all I don't know you Not at all I don't, I don't know why I called I don't know you at all I don't know you Did you take My love away From me? Me",
 		file: "../game/songs/Billie Eilish - CHIHIRO (Audio).mp3",
-		photo:"images/chihiro.jpg",
+		photo: "images/chihiro.jpg",
 		photoSize: "500px",
 		albumArt: "../game/albumart/chihiro.jpg",
 	},
@@ -259,39 +261,59 @@ window.songs = [
 		title: "Ides of March - Silverstein",
 		lyrics:
 			"Tie me up with sheets and hang me from your tree Ill stay out here all night it doesnt even matter As long as I can see into your room and feel Like Im inside your life Ill follow you forever Dont cut me down just yet Ill make things right again Dont close your blinds on me on me I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started The snow wont go away my nose runs down my face No one sees me here it doesnt even matter And every step I take I stay in the same place I cant begin to start again why cant I just be perfect I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started",
-		file: "songs/idesofmarch.mp3",
+		file: "../game/songs/idesofmarch.mp3",
 		photo: "../game/images/silverstien.jpg",
-		albumArt: "../game/images/silverstien.jpg",
+		albumArt: "../game/albumart/typeshi.png",
 	},
 	{
 		id: "holding",
 		title: "Holding Someone's Hair Back - Circa Survive",
 		lyrics:
 			"Dont say a word dont be grateful if I ever made you laugh Lets make believe what's at stake here's more than just your reputation Shes got the photos but no recollection Hes got the motive but no transportation Purely courteous across my chest Are you cutting me out now after crawling inside Turn away your head What do I deserve what do I deserve instead Its a surprise you havent caught on yet Its nothing personal youre an embarrassment Dont cut me out Were offering nothing but the best accommodations Just tell us who you are just tell us who you are Were offering nothing but the best accommodations Just tell us who you are, just tell us who you are Turn away your head What do I deserve what do I deserve instead? Its a surprise you havent caught on yet Its nothing personal youre an embarrassment Dont cut me out Its a surprise you havent caught on yet It's nothing personal youre an embarrassment Dont cut me out",
-		file: "songs/holdingsomeones.mp3",
+		file: "../game/songs/holdingsomeones.mp3",
+		photo: "../game/images/CIRCA-SURVIVE_2012.jpg",
+		albumArt: "../game/albumart/juturnaalbum.jpg",
 	},
 	{
 		id: "buttons",
 		title: "Buttons - Steve Lacy",
 		lyrics:
 			"Hey I fall in love with you I dont know where I am Youre runnin through my mind And then you show me love In my room in my room Uh Hey you went away to save Yourself from all the rain And then I picked you up And then I showed you love And then we talked Let our guards down Down down I say You you took me all around Then treat me like a dog And make me walk for miles And then you held me up I will never not love you Not love you uh About my pride About my pride About my pride About my prize Theres something bout my pride About my prize Theres something bout my loving About my pride Theres something bout my pride About my pride Theres something bout my loving",
-		file: "songs/buttons.mp3",
+		file: "../game/songs/buttons.mp3",
+		photo: "../game/images/stevelacy2022cochella.jpg",
+		albumArt: "../game/albumart/geminirights.jpg",
 	},
 	{
 		id: "everybody",
 		title: "Everybody Here Wants You - Jeff Buckley",
 		lyrics:
 			"Twentynine pearls in your kiss a singing smile Coffee smell and lilac skin your flame in me Twentynine pearls in your kiss a singing smile Coffee smell and lilac skin your flame in me Im only here for this moment I know everybody here wants you I know everybody here thinks they need you Ill be waiting right here just to show you How our love will blow it all away Such a thing of wonder in this crowd Im a stranger in this town youre free with me And our eyes are locked in downcast love I sit here proud Even now youre undressed in your dreams with me Im only here for this moment I know everybody here wants you I know everybody here thinks he needs you Ill be waiting right here just to show you How our love will blow it all away And all the tears we cried have dried on yesterday A sea of fools have parted for us theres nothing in our way my love Dont you see Dont you see Youre just the torch to put the flame to all our guilt and shame And Ill rise like an ember in your name No no I know everybody here wants you No I know everybody here thinks they need you Ill be waiting right here just to show you Oh let me show you that love can rise just like embers Love can taste like the wine of the age oh babe And I know they all look so good from a distance But I tell you Im the one I know everybody here well thinks he needs you thinks he need you And Ill be waiting right by here just to show you",
-		file: "videos/ehwy.mp4",
-    photo: "",
-    photoSize: "",
+		file: "../game/videos/ehwy.mp4",
 	},
 	{
 		id: "fatale",
 		title: "Femme Fatale - The Velvet Underground & Nico",
 		lyrics:
 			"Here she comes You better watch your step Shes going to break your heart in two its true Its not hard to realize Just look into her false colored eyes Shell build you up to just put you down what a clown Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale See the way she walks Hear the way she talks Youre written in her book Youre number thirtyseven have a look Shes going to smile to make you frown what a clown Little boy shes from the street Before you start youre already beat Shes going to play you for a fool yes its true Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale See the way she walks Hear the way she talks Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale Oh woah woah Shes a femme fatale Oh woah woah Shes a femme fatale Oh woah woah Shes a femme fatale",
-		file: "songs/femme.mp3",
+		file: "../game/songs/femme.mp3",
+		photo: "../game/images/velvetband.jpg",
+		albumArt: "../game/albumart/velvetalbum.jpg",
+	},
+	{
+		id: "posingin",
+		title: "Posing In Bondage - Japanese Breakfast",
+		lyrics:
+			"Can you tell Ive been posing This way alone for hours Waiting for your affection Waiting for you Done up and drunk Done up and fixed on All of the nights you turned away my touch Closeness Proximity I needed Bondage Closeness Proximity I needed Bondage When the world divides into two people Those who have felt pain And those who have yet to And I cant unsee it Although I would like to Posing in bondage I hope you come home soon Closeness Proximity I needed Bondage Closeness Proximity I need it Bondage",
+		file: "../game/videos/posinginbondage.mp4",
+	},
+	{
+		id: "sayyes",
+		title: "Say Yes - Elliot Smith",
+		lyrics:
+			"Im in love with the world Through the eyes of a girl Whos still around the morning after We broke up a month ago And I grew up I didnt know Id be around the morning after Its always been wait and see A happy day and then you pay And feel like shit the morning after But now I feel changed around And instead of falling down Im standing up the morning after Situations get fucked up And turned around sooner or later And I could be another fool Or an exception to the rule You tell me the morning after Crooked spin cant come to rest Im damaged bad at best Shell decide what she wants Ill probably be the last to know No one says until it shows see how it is They want you or they dont Say yes",
+		file: "../game/songs/sayyes.mp3",
+		photo: "../game/images/elliotperform.jpg",
+		albumArt: "../game/albumart/eitheror.jpg",
 	},
 ];
 
