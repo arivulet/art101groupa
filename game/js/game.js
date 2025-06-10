@@ -156,7 +156,7 @@ window.songs = [
 	{
 		id: "chances",
 		title: "Chances - The Strokes",
-		lyrics: "I waited for ya I waited for ya I waited on ya",
+		lyrics: "I waited for ya I waited for ya I waited on ya but now I don't you didn't see it I didn't see it but now oh I do I play your game I play your game now I play your game I play your game I take my chances alone get on your horse and be gone I will not wait up for you anymore so you can ask me if something is wrong will you go I don't know anymore when the night isn't ready for you it's a fleeting unorthodox view they invited a stewardess too now they want you to see it here's to days he decides he's got time and he claims that it's not a surprise when he finds out the truth's on his side I take my chances alone get on your horse and be gone I will not wait up for you anymore so you can ask me if something is wrong will you go I don't know anymore I don't believe anyone as they crawl out of my way waiting for the night leaving night by night you can see me travel we could be in trouble every night why haven't you arrived...",
 		file: "../game/songs/Chances.mp3",
 		photo: "images/ts2.jpg",
 		photoSize: "",
