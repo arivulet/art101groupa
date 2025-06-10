@@ -638,7 +638,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	const nextButton = document.getElementById("next-button");
 
 	if (homeButton) {
-		homeButton.onclick = () => (window.location.href = "/index.html");
+		homeButton.onclick = () => (window.location.href = "../index.html");
 	}
 
 	if (replayButton) {
