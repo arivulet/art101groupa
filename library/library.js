@@ -29,7 +29,7 @@ const videoSongs = [
 		title: "Feels Like We Only Go Backwards - Arctic Monkeys",
 		video: "../game/videos/FLWOGB.mp4",
 		thumbnail: "../game/images/tv1.webp",
-		startTime: 129.8,
+		startTime: 117,
 	},
 	{
 		id: "forget",
@@ -51,7 +51,7 @@ const videoSongs = [
 		title: "Rain - The Beatles",
 		video: "../game/videos/RTB(2).mp4",
 		thumbnail: "../game/images/tv1.webp",
-		startTime: 28.5,
+		startTime: 123.2,
 	},
 	{
 		id: "fake",
@@ -84,7 +84,7 @@ const videoSongs = [
 	},
 	{
 		id: "lucy",
-		title: " “I Really Want to Stay At Your House” by Rosa Walton",
+		title: "I Really Want to Stay At Your House - Rosa Walton",
 		video: "../game/videos/lucy.mp4",
 		thumbnail: "../game/images/tv1.webp",
 		startTime: 175.3,

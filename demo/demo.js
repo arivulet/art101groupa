@@ -11,14 +11,14 @@ const demoSongs = [
       title: "Rain - The Beatles",
       video: "../game/videos/RTB(2).mp4",
       thumbnail: "../game/images/tv1.webp",
-      startTime: 123.2
+      startTime: 28.5
     },
     {
       id: "backwards",
       title: "Feels Like We Only Go Backwards - Arctic Monkeys",
       video: "../game/videos/FLWOGB.mp4",
       thumbnail: "../game/images/tv1.webp",
-      startTime: 117
+      startTime: 129.8,
     },
     {
       id: "darkness",
@@ -52,7 +52,7 @@ const demoSongs = [
       title: "Chances - The Strokes",
       file: "../game/songs/Chances.mp3",
       albumArt: "../game/albumart/cm.jpeg",
-      startTime: 63.3
+      startTime: 47
     }, 
     {
       id: "glue",
@@ -60,7 +60,7 @@ const demoSongs = [
       file: "../game/songs/Glue Song (feat. Clairo).mp3",
        photo: "images/b.webp",
        albumArt: "../game/albumart/gs.jpeg",
-       startTime: ""
+       startTime: "49.9"
     },
 
   ];

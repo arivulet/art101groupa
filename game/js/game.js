@@ -3,7 +3,7 @@ window.songs = [
 		id: "smile",
 		title: "Die With a Smile - Bruno Mars, Lady Gaga",
 		lyrics:
-			"I I just woke up from a dream where you and I had to say goodbye and I don't know what it all means but since I survived I realized wherever you go that's where I'll follow nobody's promised tomorrow so imma love you every night like it's the last night if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you lost lost in the words that was scream I don't even wanna do this anymore cause you already know what you mean to me and our love's the only war worth fighting for wherever you go that's where I'll follow nobody's promised tomorrow if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you right next to you next to you right next to you if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you if the world was ending Id wanna be next to you I'd wanna be next to you...",
+			"I I just woke up from a dream where you and I had to say goodbye and I don't know what it all means but since I survived I realized wherever you go that's where I'll follow nobody's promised tomorrow so imma love you every night like it's the last night if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you lost lost in the words that was scream I don't even wanna do this anymore cause you already know what you mean to me and our love's the only war worth fighting for wherever you go that's where I'll follow nobody's promised tomorrow if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you right next to you next to you right next to you if the world was ending I'd wanna be next to you if the party was over and our time on Earth was through I'd wanna hold you just for a while and die with a smile if the world was ending I'd wanna be next to you if the world was ending I'd wanna be next to you I'd wanna be next to you...",
 		file: "../game/videos/dwas.mp4",
 		photo: "../game/images/Lady_Gaga_and_Bruno_Mars_-_Die_with_a_Smile.png",
 		albumArt:
@@ -132,12 +132,22 @@ window.songs = [
 			"I was crossing the border two old friend coincidence I don't want any other two old friend coincidences weekday weekday weekday I don't wanna play any other game on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do what he does he does well he does well and he knows he knows it lay down just lay down I was crossing the border we were waiting in line I don't want any other two old friend coincidences voice inside my head dinner's at mine or yours weekday weekday weekday I don't wanna say what he wants to know on a simpler day it's not right it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do it's not true it's not right it's not how we used to do...",
 		file: "videos/IF.mp4",
 	},
+	{
+		id: "sayyes",
+		title: "Say Yes - Elliot Smith",
+		lyrics:
+			"Im in love with the world through the eyes of a girl who's still around the morning after we broke up a month ago and I grew up I didn't know I'd be around the morning after it's always been wait and see a happy day and then you pay and feel like shit the morning after but now I feel changed around and instead of falling down I'm standing up the morning after situations get fucked up and turned around sooner or later and I could be another fool or an exception to the rule you tell me the morning after crooked spin can't come to rest I'm damaged bad at best she'll decide what she wants I'll probably be the last to know no one says until it shows see how it is they want you or they don't say yes...",
+		file: "../game/songs/sayyes.mp3",
+		photo: "../game/images/elliotperform.jpg",
+		albumArt: "../game/albumart/eitheror.jpg",
+		startTime: "92.56"
+	},
 
 	{
 		id: "sailor",
 		title: "Sailor Song - Gigi Perez",
 		lyrics:
-			"Oh, won't you kiss me on the mouth and love me like a sailor? And when you get a taste, can you tell me what's my flavor? I don't believe in God, but I believe that you're my savior My mom says that she's worried, but I'm covered in His favor And when we're getting dirty, I forget all that is wrong I sleep so I can see you 'cause I hate to wait so long I sleep so I can see you and I hate to wait so long",
+			"I saw her in the rightest way looking like Anne Hathaway laughing why she hit her pen and coughed and coughed and then she came up to my knees begging baby would you please do the things you said you'd do to me to me oh won't you kiss me on the mouth and love me like a sailor and when you get a taste can you tell me what's my flavor I don't believe in God but I believe that you're my savior my mom says that she's worried but I'm covered in His favor and when we're getting dirty I forget all that is wrong I sleep so I can see you cause I hate to wait so long I sleep so I can see you and I hate to wait so long she took my fingers to her mouth the kind of thing that makes you proud that nothing else had ever worked out and maybe I tried other things but nothing can capture the sting of the venom she's gonna spit out right now oh won't you kiss me on the mouth and love me like a sailor when you get a taste can you tell me what's my flavor I don't believe in God but I believe that you're my savior I know that you've been worried but you're dripping in my favor and when we're getting dirty I forget that all is wrong I sleep so I can see you but I hate to wait so long I sleep so that I can see you and I hate to wait so long and we can run away to the walls inside your house I can be the cat baby you can be the mouse and we can laugh off things that we know nothing about we can go forever until you wanna sit it out...",
 		file: "../game/songs/Sailor Song.mp3",
 		photo: "images/gg.jpg",
 		photoSize: "550px",
@@ -153,6 +163,7 @@ window.songs = [
 		photo: "images/b.webp",
 		photoSize: "550px",
 		albumArt: "../game/albumart/gs.jpeg",
+		startTime: "107.3"
 	},
 	{
 		id: "chances",
@@ -169,7 +180,7 @@ window.songs = [
 		id: "blood",
 		title: "Bloodline - Alex Warren",
 		lyrics:
-			"Oh, my brother You don't have to follow in your bloodline Oh, we got each other And if you got tomorrow, then you still got time To break the chain that left you scarred From where you came isn't who you are Oh, my brother (Oh) You don't have to follow in your bloodline That storm keeps on raging, but don't you forget God's not done with you yet When it feels like you're losing the war in your head Just know this isn't the end",
+			"Take that pain pass it down like bottles on the wall mama said her dad's to blame but that's his daddy's fault oh there's not one left to call you stay up counting down the days til you make your escape but you're afraid you can't outrun what's running through your veins oh you're carrying the weight in the dead of night on that broken road I won't let you walk alone oh my brother you don't have to follow in your bloodline oh we got each other and if you got tomorrow then you still got time to break the chain that left you scarred from where you came isn't who you are oh my brother you don't have to follow in your bloodline oh I won't pretend that I know half the hell you've seeen but that don't mean that's something that you're destined to repeat oh you're stronger than you think I know it has to end but you don't know where to start you can pack your bags and I'll meet you where you are oh I'll be waiting in the car That storm keeps on raging, but don't you forget God's not done with you yet When it feels like you're losing the war in your head Just know this isn't the end",
 		file: "../game/songs/Alex Warren - Bloodline.mp3",
 		photo: "../game/images/bloodline.jpeg",
 		photoSize: "550px",
@@ -252,7 +263,7 @@ window.songs = [
 		id: "dontclick", // must match the URL param
 		title: "Why Don't We Do It In The Road - The Beatles",
 		lyrics:
-			"Why don't we do it in the road why don't we do it in the road why don't we do it in the road why don't we do it in the road no one will be watching us why don't we do it in the road ",
+			"Why don't we do it in the road why don't we do it in the road why don't we do it in the road why don't we do it in the road no one will be watching us why don't we do it in the road why don't we do it in the road why don't we do it in the road why don't we do it in the road why don't we do it in the road no one will be watching us why don't we do it in the road why don't we do it in the road why don't we do it in the road why don't we do it do it in the road why don't we do it in the road no one will be watching us why don't we do it in the road...",
 		file: "videos/why.mp4",
 		videoSize: "600px",
 	},
@@ -260,7 +271,7 @@ window.songs = [
 		id: "idesof",
 		title: "Ides of March - Silverstein",
 		lyrics:
-			"Tie me up with sheets and hang me from your tree Ill stay out here all night it doesnt even matter As long as I can see into your room and feel Like Im inside your life Ill follow you forever Dont cut me down just yet Ill make things right again Dont close your blinds on me on me I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started The snow wont go away my nose runs down my face No one sees me here it doesnt even matter And every step I take I stay in the same place I cant begin to start again why cant I just be perfect I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started I will never recover from this I will never believe in this again And I can never go back to the way I used to be before this started",
+			"Tie me up with sheets and hang me from your tree Ill stay out here all night it doesnt even matter as long as I can see into your room and feel like Im inside your life I'll follow you forever don't cut me down just yet I'll make things right again don't close your blinds on me on me I will never recover from this I will never believe in this again and I can never go back to the way I used to be before this started the snow won't go away my nose runs down my face mo one sees me here it doesn't even matter and every step I take I stay in the same place I can't begin to start again why can't I just be perfect I will never recover from this I will never believe in this again and I can never go back to the way I used to be before this started I will never recover from this I will never believe in this again and I can never go back to the way I used to be before this started...",
 		file: "../game/songs/idesofmarch.mp3",
 		photo: "../game/images/silverstien.jpg",
 		albumArt: "../game/albumart/typeshi.png",
@@ -269,7 +280,7 @@ window.songs = [
 		id: "holding",
 		title: "Holding Someone's Hair Back - Circa Survive",
 		lyrics:
-			"Dont say a word dont be grateful if I ever made you laugh Lets make believe what's at stake here's more than just your reputation Shes got the photos but no recollection Hes got the motive but no transportation Purely courteous across my chest Are you cutting me out now after crawling inside Turn away your head What do I deserve what do I deserve instead Its a surprise you havent caught on yet Its nothing personal youre an embarrassment Dont cut me out Were offering nothing but the best accommodations Just tell us who you are just tell us who you are Were offering nothing but the best accommodations Just tell us who you are, just tell us who you are Turn away your head What do I deserve what do I deserve instead? Its a surprise you havent caught on yet Its nothing personal youre an embarrassment Dont cut me out Its a surprise you havent caught on yet It's nothing personal youre an embarrassment Dont cut me out",
+			"Don't say a word dont be grateful if I ever made you laugh let's make believe what's at stake here's more than just your reputation she's got the photos but no recollection he's got the motive but no transportation purely courteous across my chest are you cutting me out now after crawling inside turn away your head what do I deserve what do I deserve instead it's a surprise you havent caught on yet it's nothing personal you're an embarrassment don't cut me out we're offering nothing but the best accommodations just tell us who you are just tell us who you are we're offering nothing but the best accommodations just tell us who you are just tell us who you are turn away your head what do I deserve what do I deserve instead it's a surprise you haven't caught on yet it's nothing personal youre an embarrassment don't cut me out it's a surprise you haven't caught on yet it's nothing personal you're an embarrassment don't cut me out...",
 		file: "../game/songs/holdingsomeones.mp3",
 		photo: "../game/images/CIRCA-SURVIVE_2012.jpg",
 		albumArt: "../game/albumart/juturnaalbum.jpg",
@@ -278,7 +289,7 @@ window.songs = [
 		id: "buttons",
 		title: "Buttons - Steve Lacy",
 		lyrics:
-			"Hey I fall in love with you I dont know where I am Youre runnin through my mind And then you show me love In my room in my room Uh Hey you went away to save Yourself from all the rain And then I picked you up And then I showed you love And then we talked Let our guards down Down down I say You you took me all around Then treat me like a dog And make me walk for miles And then you held me up I will never not love you Not love you uh About my pride About my pride About my pride About my prize Theres something bout my pride About my prize Theres something bout my loving About my pride Theres something bout my pride About my pride Theres something bout my loving",
+			"Hey I fall in love with you I don't know where I am you're runnin through my mind and then you show me love in my room in my room uh hey you went away to save yourself from all the rain and then I picked you up and then I showed you love and then we talked let our guards down down down I say you you took me all around then treat me like a dog and make me walk for miles and then you held me up I will never not love you not love you uh about my pride about my pride about my pride about my prize there's something bout my pride about my prize there's something bout my loving about my pride there's something bout my pride about my pride there's something bout my loving...s",
 		file: "../game/songs/buttons.mp3",
 		photo: "../game/images/stevelacy2022cochella.jpg",
 		albumArt: "../game/albumart/geminirights.jpg",
@@ -287,14 +298,14 @@ window.songs = [
 		id: "everybody",
 		title: "Everybody Here Wants You - Jeff Buckley",
 		lyrics:
-			"Twentynine pearls in your kiss a singing smile Coffee smell and lilac skin your flame in me Twentynine pearls in your kiss a singing smile Coffee smell and lilac skin your flame in me Im only here for this moment I know everybody here wants you I know everybody here thinks they need you Ill be waiting right here just to show you How our love will blow it all away Such a thing of wonder in this crowd Im a stranger in this town youre free with me And our eyes are locked in downcast love I sit here proud Even now youre undressed in your dreams with me Im only here for this moment I know everybody here wants you I know everybody here thinks he needs you Ill be waiting right here just to show you How our love will blow it all away And all the tears we cried have dried on yesterday A sea of fools have parted for us theres nothing in our way my love Dont you see Dont you see Youre just the torch to put the flame to all our guilt and shame And Ill rise like an ember in your name No no I know everybody here wants you No I know everybody here thinks they need you Ill be waiting right here just to show you Oh let me show you that love can rise just like embers Love can taste like the wine of the age oh babe And I know they all look so good from a distance But I tell you Im the one I know everybody here well thinks he needs you thinks he need you And Ill be waiting right by here just to show you",
+			"29 pearls in your kiss a singing smile coffee smell and lilac skin your flame in me 29 pearls in your kiss a singing smile coffee smell and lilac skin your flame in me I'm only here for this moment I know everybody here wants you I know everybody here thinks they need you I'll be waiting right here just to show you how our love will blow it all away such a thing of wonder in this crowd I'm a stranger in this town you're free with me and our eyes are locked in downcast love I sit here proud even now youre undressed in your dreams with me I'm only here for this moment I know everybody here wants you I know everybody here thinks he needs you I'll be waiting right here just to show you how our love will blow it all away and all the tears we cried have dried on yesterday a sea of fools have parted for us there's nothing in our way my love don't you see don't you see you're just the torch to put the flame to all our guilt and shame and I'll rise like an ember in your name no no I know everybody here wants you no I know everybody here thinks they need you I'll be waiting right here just to show you oh let me show you that love can rise just like embers love can taste like the wine of the age oh babe and I know they all look so good from a distance but I tell you I'm the one I know everybody here well thinks he needs you thinks he need you and I'll be waiting right by here just to show you...",
 		file: "../game/videos/ehwy.mp4",
 	},
 	{
 		id: "fatale",
 		title: "Femme Fatale - The Velvet Underground & Nico",
 		lyrics:
-			"Here she comes You better watch your step Shes going to break your heart in two its true Its not hard to realize Just look into her false colored eyes Shell build you up to just put you down what a clown Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale See the way she walks Hear the way she talks Youre written in her book Youre number thirtyseven have a look Shes going to smile to make you frown what a clown Little boy shes from the street Before you start youre already beat Shes going to play you for a fool yes its true Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale See the way she walks Hear the way she talks Cause everybody knows Shes a femme fatale The things she does to please Shes a femme fatale Shes just a little tease Shes a femme fatale Oh woah woah Shes a femme fatale Oh woah woah Shes a femme fatale Oh woah woah Shes a femme fatale",
+			"Here she comes you better watch your step she's going to break your heart in two its true it's not hard to realize just look into her false colored eyes she'll build you up to just put you down what a clown cause everybody knows she's a femme fatale the things she does to please she's a femme fatale she's just a little tease she's a femme fatale see the way she walks hear the way she talks you're written in her book you're number 37 have a look she's going to smile to make you frown what a clown little boy she's from the street before you start you're already beat she's going to play you for a fool yes its true cause everybody knows she's a femme fatale the things she does to please she's a femme fatale she's just a little tease she's a femme fatale see the way she walks hear the way she talks cause everybody knows she's a femme fatale the things she does to please she's a femme fatale she's just a little tease she's a femme fatale oh woah woah she's a femme fatale oh woah woah she's a femme fatale oh woah woah she's a femme fatale...",
 		file: "../game/songs/femme.mp3",
 		photo: "../game/images/velvetband.jpg",
 		albumArt: "../game/albumart/velvetalbum.jpg",
@@ -303,26 +314,19 @@ window.songs = [
 		id: "posingin",
 		title: "Posing In Bondage - Japanese Breakfast",
 		lyrics:
-			"Can you tell Ive been posing This way alone for hours Waiting for your affection Waiting for you Done up and drunk Done up and fixed on All of the nights you turned away my touch Closeness Proximity I needed Bondage Closeness Proximity I needed Bondage When the world divides into two people Those who have felt pain And those who have yet to And I cant unsee it Although I would like to Posing in bondage I hope you come home soon Closeness Proximity I needed Bondage Closeness Proximity I need it Bondage",
+			"Can you tell I've been posing this way alone for hours waiting for your affection waiting for you done up and drunk done up and fixed on all of the nights you turned away my touch closeness proximity I needed bondage closeness proximity I needed bondage when the world divides into two people those who have felt pain and those who have yet to and I can't unsee it although I would like to posing in bondage I hope you come home soon closeness proximity I needed bondage closeness proximity I need it bondage...",
 		file: "../game/videos/posinginbondage.mp4",
 	},
-	{
-		id: "sayyes",
-		title: "Say Yes - Elliot Smith",
-		lyrics:
-			"Im in love with the world Through the eyes of a girl Whos still around the morning after We broke up a month ago And I grew up I didnt know Id be around the morning after Its always been wait and see A happy day and then you pay And feel like shit the morning after But now I feel changed around And instead of falling down Im standing up the morning after Situations get fucked up And turned around sooner or later And I could be another fool Or an exception to the rule You tell me the morning after Crooked spin cant come to rest Im damaged bad at best Shell decide what she wants Ill probably be the last to know No one says until it shows see how it is They want you or they dont Say yes",
-		file: "../game/songs/sayyes.mp3",
-		photo: "../game/images/elliotperform.jpg",
-		albumArt: "../game/albumart/eitheror.jpg",
-	},
+	
 	{
 		id: "white",
 		title: "White - Odd Future (ft. Frank Ocean)",
 		lyrics:
-			"Could this be Earth Could this be light Does this mean everything is going to be alright One look out my window theres trees talking like people Ive dreamt of storms Ive dreamt of sound Ive dreamt of gravity keeping us around Ive slept in the darkness it was lonely and it was silent What is this love I dont feel the same Dont believe what this is could be given a name I woke you were there tracing planets on my forehead But Ill forget 23 like I forget 17 And I forget my first love like you forget a daydream And what of all my wild friends and the times Ive had with them Well all fade to grey soon on the TV station",
-		file: "..game/songs/White.mp3",
-		photo: "../game/images/frankocean.jpg",
-		albumArt: "../games/albumart/ofalbum.jpg",
+			"Could this be Earth could this be light does this mean everything is going to be alright one look out my window there's trees talking like people I've dreamt of storms I've dreamt of sound I've dreamt of gravity keeping us around I've slept in the darkness it was lonely and it was silent what is this love I don't feel the same don't believe what this is could be given a name I woke you were there tracing planets on my forehead but I'll forget 23 like I forget 17 and I forget my first love like you forget a daydream and what of all my wild friends and the times I've had with them we'll all fade to grey soon on the TV station...",
+		file: "../game/songs/White.mp3",
+		photo: "images/frankocean.jpg",
+		photoSize: "600px",
+		albumArt: "../game/albumart/ofalbum.jpg",
 	},
 ];
 
@@ -364,7 +368,7 @@ function loadSong(song) {
 			feedback = "I've got blisters on me fingers! Fab drumming mate.";
 		} else if (percent >= 50) {
 			ringos = 2;
-			feedback = ".Good stuff lad, drum with me anytime.";
+			feedback = "Good stuff lad, drum with me anytime.";
 		}
 
 		// Elements
